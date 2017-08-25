@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0340C2B9438C43A081D613B2 /* Pods_PowerCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274273FFBA5985F96DEE7679 /* Pods_PowerCardsTests.framework */; };
-		3CACCE8C3FD06DFAF6138A67 /* Pods_PowerCardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0D94AF4A56AE97FD1D74BE /* Pods_PowerCardsUITests.framework */; };
+		234145686419B6DC81D73D12 /* libPods-PowerCardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */; };
 		71A4AC80E343DC8EA061FD07 /* Pods_PowerCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE14D40014500F8E479755 /* Pods_PowerCards.framework */; };
+		734CB12F1F509E1100059618 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB12E1F509E1100059618 /* RemoteService.swift */; };
+		734CB1351F509F7A00059618 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734CB1341F509F7A00059618 /* Settings.plist */; };
+		734CB1371F509FAD00059618 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB1361F509FAD00059618 /* AppSettings.swift */; };
+		734CB1391F50A08B00059618 /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB1381F50A08B00059618 /* AppSettingKeys.swift */; };
 		737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D11F509AAF00377EAD /* AppDelegate.swift */; };
 		737357D41F509AAF00377EAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D31F509AAF00377EAD /* ViewController.swift */; };
 		737357D71F509AAF00377EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357D51F509AAF00377EAD /* Main.storyboard */; };
@@ -17,6 +20,8 @@
 		737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */; };
 		737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357E61F509AAF00377EAD /* PowerCardsTests.swift */; };
 		737357F21F509AAF00377EAD /* PowerCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357F11F509AAF00377EAD /* PowerCardsUITests.swift */; };
+		73F69D501F50A3F7000EDB49 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */; };
+		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		274273FFBA5985F96DEE7679 /* Pods_PowerCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A6612F3E2F2A0FCE3FAF60 /* Pods-PowerCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		734CB12E1F509E1100059618 /* RemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		734CB1341F509F7A00059618 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		734CB1361F509FAD00059618 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		734CB1381F50A08B00059618 /* AppSettingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingKeys.swift; sourceTree = "<group>"; };
 		737357CE1F509AAF00377EAD /* PowerCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357D11F509AAF00377EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737357D31F509AAF00377EAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +62,8 @@
 		737357ED1F509AAF00377EAD /* PowerCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357F11F509AAF00377EAD /* PowerCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardsUITests.swift; sourceTree = "<group>"; };
 		737357F31F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D0D94AF4A56AE97FD1D74BE /* Pods_PowerCardsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerCardsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C73EE349D635CEC5CC142560 /* Pods-PowerCardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7DE14D40014500F8E479755 /* Pods_PowerCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0340C2B9438C43A081D613B2 /* Pods_PowerCardsTests.framework in Frameworks */,
+				234145686419B6DC81D73D12 /* libPods-PowerCardsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CACCE8C3FD06DFAF6138A67 /* Pods_PowerCardsUITests.framework in Frameworks */,
+				95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +110,47 @@
 				B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		734CB1291F509DC900059618 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				734CB12D1F509DF600059618 /* Storyboards */,
+				734CB12C1F509DEF00059618 /* ViewControllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		734CB12A1F509DD600059618 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				734CB12E1F509E1100059618 /* RemoteService.swift */,
+				734CB1361F509FAD00059618 /* AppSettings.swift */,
+				734CB1381F50A08B00059618 /* AppSettingKeys.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		734CB12B1F509DDB00059618 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		734CB12C1F509DEF00059618 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				737357D31F509AAF00377EAD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		734CB12D1F509DF600059618 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		737357C51F509AAF00377EAD = {
@@ -127,12 +178,15 @@
 		737357D01F509AAF00377EAD /* PowerCards */ = {
 			isa = PBXGroup;
 			children = (
+				734CB12B1F509DDB00059618 /* Models */,
+				734CB12A1F509DD600059618 /* Services */,
+				734CB1291F509DC900059618 /* View */,
 				737357D11F509AAF00377EAD /* AppDelegate.swift */,
-				737357D31F509AAF00377EAD /* ViewController.swift */,
 				737357D51F509AAF00377EAD /* Main.storyboard */,
 				737357D81F509AAF00377EAD /* Assets.xcassets */,
 				737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */,
 				737357DD1F509AAF00377EAD /* Info.plist */,
+				734CB1341F509F7A00059618 /* Settings.plist */,
 			);
 			path = PowerCards;
 			sourceTree = "<group>";
@@ -142,6 +196,7 @@
 			children = (
 				737357E61F509AAF00377EAD /* PowerCardsTests.swift */,
 				737357E81F509AAF00377EAD /* Info.plist */,
+				73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */,
 			);
 			path = PowerCardsTests;
 			sourceTree = "<group>";
@@ -159,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				D7DE14D40014500F8E479755 /* Pods_PowerCards.framework */,
-				274273FFBA5985F96DEE7679 /* Pods_PowerCardsTests.framework */,
-				9D0D94AF4A56AE97FD1D74BE /* Pods_PowerCardsUITests.framework */,
+				400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */,
+				2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */,
+				734CB1351F509F7A00059618 /* Settings.plist in Resources */,
 				737357D91F509AAF00377EAD /* Assets.xcassets in Resources */,
 				737357D71F509AAF00377EAD /* Main.storyboard in Resources */,
 			);
@@ -450,6 +506,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				737357D41F509AAF00377EAD /* ViewController.swift in Sources */,
+				734CB1391F50A08B00059618 /* AppSettingKeys.swift in Sources */,
+				734CB12F1F509E1100059618 /* RemoteService.swift in Sources */,
+				734CB1371F509FAD00059618 /* AppSettings.swift in Sources */,
 				737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F69D501F50A3F7000EDB49 /* AppSettingsTests.swift in Sources */,
 				737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,6 +769,7 @@
 				737357F81F509AAF00377EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		737357F91F509AAF00377EAD /* Build configuration list for PBXNativeTarget "PowerCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +778,7 @@
 				737357FB1F509AAF00377EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		737357FC1F509AAF00377EAD /* Build configuration list for PBXNativeTarget "PowerCardsUITests" */ = {
 			isa = XCConfigurationList;
@@ -725,6 +787,7 @@
 				737357FE1F509AAF00377EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

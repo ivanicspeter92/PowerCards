@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TEST_SERVER_ADDRESS</key>
+	<string></string>
+	<key>TEST_SERVER_PORT</key>
+	<string></string>
+	<key>PRODUCTION_SERVER_ADDRESS</key>
+	<string>10.112.49.111</string>
+	<key>PRODUCTION_SERVER_PORT</key>
+	<string>8000</string>
+	<key>IS_PRODUCTION_VERSION</key>
+	<true/>
+</dict>
+</plist>
