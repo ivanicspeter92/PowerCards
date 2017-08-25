@@ -43,4 +43,12 @@ struct AppSettings {
             return settingsDicionary[AppSettingKeys.testServerPort.rawValue] as! String
         }
     }
+    
+    static var hostname: String {
+        return AppSettings.´protocol´ + "://" + AppSettings.serverAddress + ":" + AppSettings.serverPort
+    }
+    
+    static var ´protocol´: String {
+        return "http"
+    }
 }

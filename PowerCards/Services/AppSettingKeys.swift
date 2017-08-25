@@ -12,6 +12,6 @@ enum AppSettingKeys: String {
     case productionServerAddress = "PRODUCTION_SERVER_ADDRESS"
     case testServerAddress = "TEST_SERVER_ADDRESS"
     
-    case productionServerPort = "PRODUCITON_SERVER_PORT"
+    case productionServerPort = "PRODUCTION_SERVER_PORT"
     case testServerPort = "TEST_SERVER_PORT"
 }
