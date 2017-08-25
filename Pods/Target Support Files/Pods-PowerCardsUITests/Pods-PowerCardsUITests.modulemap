@@ -1,0 +1,6 @@
+framework module Pods_PowerCardsUITests {
+  umbrella header "Pods-PowerCardsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
