@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vas-EA-Duf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MDr-9Z-Oie">
+            <objects>
+                <viewController id="AYy-oA-iad" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HFa-PN-bfi"/>
+                        <viewControllerLayoutGuide type="bottom" id="rKe-Z7-OjM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wfE-RY-nRK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnm-Jf-L5L">
+                                <rect key="frame" x="142" y="323" width="91.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xnm-Jf-L5L" firstAttribute="centerX" secondItem="wfE-RY-nRK" secondAttribute="centerX" id="gX5-pD-p2I"/>
+                            <constraint firstItem="xnm-Jf-L5L" firstAttribute="centerY" secondItem="wfE-RY-nRK" secondAttribute="centerY" id="pC3-wk-eBi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WG-rn-5xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="226" y="211"/>
+        </scene>
+        <!--Powercards-->
+        <scene sceneID="FAx-Vk-hFf">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="sOb-UK-x5p" customClass="PowerdeckListTableViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7dR-gX-5J5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YON-ur-h0d">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YON-ur-h0d" id="6cD-zr-2wE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sOb-UK-x5p" id="TPR-If-zO9"/>
+                            <outlet property="delegate" destination="sOb-UK-x5p" id="cpC-ri-LBh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Powercards" id="EIq-T4-KPA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8g-nq-69W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177" y="-444"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CJQ-cF-eAV">
+            <objects>
+                <navigationController id="i7b-xO-6A7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQ3-qz-OWY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sOb-UK-x5p" kind="relationship" relationship="rootViewController" id="qRj-3e-vUZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnH-nA-EPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="226" y="-444"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="1k1-Eg-z7M">
+            <objects>
+                <splitViewController id="Vas-EA-Duf" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="i7b-xO-6A7" kind="relationship" relationship="masterViewController" id="zcN-qN-3xI"/>
+                        <segue destination="AYy-oA-iad" kind="relationship" relationship="detailViewController" id="yDs-zS-m2S"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DV5-jZ-Yx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="-116"/>
+        </scene>
+    </scenes>
+</document>

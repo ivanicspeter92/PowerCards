@@ -9,17 +9,26 @@
 /* Begin PBXBuildFile section */
 		234145686419B6DC81D73D12 /* libPods-PowerCardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */; };
 		71A4AC80E343DC8EA061FD07 /* Pods_PowerCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE14D40014500F8E479755 /* Pods_PowerCards.framework */; };
+		733B244D1F50D19B0070C5FE /* Powercard+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B244C1F50D19B0070C5FE /* Powercard+Hashable.swift */; };
+		733B24501F51594C0070C5FE /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B244F1F51594C0070C5FE /* PowerdeckList.swift */; };
+		733B24521F5159AF0070C5FE /* Powerdeck+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B24511F5159AF0070C5FE /* Powerdeck+Hashable.swift */; };
 		734CB12F1F509E1100059618 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB12E1F509E1100059618 /* RemoteService.swift */; };
 		734CB1351F509F7A00059618 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734CB1341F509F7A00059618 /* Settings.plist */; };
 		734CB1371F509FAD00059618 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB1361F509FAD00059618 /* AppSettings.swift */; };
 		734CB1391F50A08B00059618 /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734CB1381F50A08B00059618 /* AppSettingKeys.swift */; };
+		734DCAFF1F50BC2400CBE709 /* PowerdeckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCAFE1F50BC2400CBE709 /* PowerdeckListTableViewController.swift */; };
+		734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */; };
+		734DCB031F50D10200CBE709 /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB021F50D10200CBE709 /* Powercard.swift */; };
+		734DCB051F50D12200CBE709 /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB041F50D12200CBE709 /* Powerdeck.swift */; };
 		737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D11F509AAF00377EAD /* AppDelegate.swift */; };
-		737357D41F509AAF00377EAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D31F509AAF00377EAD /* ViewController.swift */; };
 		737357D71F509AAF00377EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357D51F509AAF00377EAD /* Main.storyboard */; };
 		737357D91F509AAF00377EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737357D81F509AAF00377EAD /* Assets.xcassets */; };
 		737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */; };
 		737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357E61F509AAF00377EAD /* PowerCardsTests.swift */; };
-		737357F21F509AAF00377EAD /* PowerCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357F11F509AAF00377EAD /* PowerCardsUITests.swift */; };
+		73D78B031F50A7F4009116D2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B021F50A7F4009116D2 /* Endpoint.swift */; };
+		73D78B051F50A94E009116D2 /* CreatePowerDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */; };
+		73D78B061F50A9C9009116D2 /* PowercardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B001F50A730009116D2 /* PowercardRequest.swift */; };
+		73D78B081F50AA94009116D2 /* RemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B071F50AA94009116D2 /* RemoteServiceTests.swift */; };
 		73F69D501F50A3F7000EDB49 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */; };
 		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
 /* End PBXBuildFile section */
@@ -45,13 +54,19 @@
 		2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A6612F3E2F2A0FCE3FAF60 /* Pods-PowerCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		733B244C1F50D19B0070C5FE /* Powercard+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Powercard+Hashable.swift"; sourceTree = "<group>"; };
+		733B244F1F51594C0070C5FE /* PowerdeckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckList.swift; sourceTree = "<group>"; };
+		733B24511F5159AF0070C5FE /* Powerdeck+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Powerdeck+Hashable.swift"; sourceTree = "<group>"; };
 		734CB12E1F509E1100059618 /* RemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
 		734CB1341F509F7A00059618 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		734CB1361F509FAD00059618 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		734CB1381F50A08B00059618 /* AppSettingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingKeys.swift; sourceTree = "<group>"; };
+		734DCAFE1F50BC2400CBE709 /* PowerdeckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckListTableViewController.swift; sourceTree = "<group>"; };
+		734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckDetailsViewController.swift; sourceTree = "<group>"; };
+		734DCB021F50D10200CBE709 /* Powercard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powercard.swift; sourceTree = "<group>"; };
+		734DCB041F50D12200CBE709 /* Powerdeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powerdeck.swift; sourceTree = "<group>"; };
 		737357CE1F509AAF00377EAD /* PowerCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357D11F509AAF00377EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		737357D31F509AAF00377EAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		737357D61F509AAF00377EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737357D81F509AAF00377EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737357DB1F509AAF00377EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +75,11 @@
 		737357E61F509AAF00377EAD /* PowerCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardsTests.swift; sourceTree = "<group>"; };
 		737357E81F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737357ED1F509AAF00377EAD /* PowerCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		737357F11F509AAF00377EAD /* PowerCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardsUITests.swift; sourceTree = "<group>"; };
 		737357F31F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73D78B001F50A730009116D2 /* PowercardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowercardRequest.swift; sourceTree = "<group>"; };
+		73D78B021F50A7F4009116D2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePowerDeckRequest.swift; sourceTree = "<group>"; };
+		73D78B071F50AA94009116D2 /* RemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceTests.swift; sourceTree = "<group>"; };
 		73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +130,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		733B244E1F5158550070C5FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				733B244F1F51594C0070C5FE /* PowerdeckList.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		734CB1291F509DC900059618 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +150,7 @@
 		734CB12A1F509DD600059618 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				734CB12E1F509E1100059618 /* RemoteService.swift */,
+				73D78AFE1F50A716009116D2 /* Networking */,
 				734CB1361F509FAD00059618 /* AppSettings.swift */,
 				734CB1381F50A08B00059618 /* AppSettingKeys.swift */,
 			);
@@ -134,6 +160,10 @@
 		734CB12B1F509DDB00059618 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				734DCB021F50D10200CBE709 /* Powercard.swift */,
+				733B244C1F50D19B0070C5FE /* Powercard+Hashable.swift */,
+				734DCB041F50D12200CBE709 /* Powerdeck.swift */,
+				733B24511F5159AF0070C5FE /* Powerdeck+Hashable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,7 +171,8 @@
 		734CB12C1F509DEF00059618 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				737357D31F509AAF00377EAD /* ViewController.swift */,
+				734DCAFE1F50BC2400CBE709 /* PowerdeckListTableViewController.swift */,
+				734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +180,7 @@
 		734CB12D1F509DF600059618 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				737357D51F509AAF00377EAD /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -178,11 +210,11 @@
 		737357D01F509AAF00377EAD /* PowerCards */ = {
 			isa = PBXGroup;
 			children = (
+				733B244E1F5158550070C5FE /* ViewModels */,
 				734CB12B1F509DDB00059618 /* Models */,
 				734CB12A1F509DD600059618 /* Services */,
 				734CB1291F509DC900059618 /* View */,
 				737357D11F509AAF00377EAD /* AppDelegate.swift */,
-				737357D51F509AAF00377EAD /* Main.storyboard */,
 				737357D81F509AAF00377EAD /* Assets.xcassets */,
 				737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */,
 				737357DD1F509AAF00377EAD /* Info.plist */,
@@ -197,6 +229,7 @@
 				737357E61F509AAF00377EAD /* PowerCardsTests.swift */,
 				737357E81F509AAF00377EAD /* Info.plist */,
 				73F69D4F1F50A3F7000EDB49 /* AppSettingsTests.swift */,
+				73D78B071F50AA94009116D2 /* RemoteServiceTests.swift */,
 			);
 			path = PowerCardsTests;
 			sourceTree = "<group>";
@@ -204,10 +237,28 @@
 		737357F01F509AAF00377EAD /* PowerCardsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				737357F11F509AAF00377EAD /* PowerCardsUITests.swift */,
 				737357F31F509AAF00377EAD /* Info.plist */,
 			);
 			path = PowerCardsUITests;
+			sourceTree = "<group>";
+		};
+		73D78AFE1F50A716009116D2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				73D78AFF1F50A720009116D2 /* Requests */,
+				734CB12E1F509E1100059618 /* RemoteService.swift */,
+				73D78B021F50A7F4009116D2 /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		73D78AFF1F50A720009116D2 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				73D78B001F50A730009116D2 /* PowercardRequest.swift */,
+				73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		E3EB74F4A7A0D8CBD2CF94B7 /* Frameworks */ = {
@@ -292,23 +343,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Powercards;
 				TargetAttributes = {
 					737357CD1F509AAF00377EAD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FCGED7Q6S2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					737357E11F509AAF00377EAD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FCGED7Q6S2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 737357CD1F509AAF00377EAD;
 					};
 					737357EC1F509AAF00377EAD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FCGED7Q6S2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 737357CD1F509AAF00377EAD;
 					};
@@ -505,10 +559,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737357D41F509AAF00377EAD /* ViewController.swift in Sources */,
+				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
+				733B244D1F50D19B0070C5FE /* Powercard+Hashable.swift in Sources */,
+				734DCAFF1F50BC2400CBE709 /* PowerdeckListTableViewController.swift in Sources */,
+				733B24501F51594C0070C5FE /* PowerdeckList.swift in Sources */,
+				73D78B061F50A9C9009116D2 /* PowercardRequest.swift in Sources */,
+				733B24521F5159AF0070C5FE /* Powerdeck+Hashable.swift in Sources */,
+				73D78B051F50A94E009116D2 /* CreatePowerDeckRequest.swift in Sources */,
+				734DCB031F50D10200CBE709 /* Powercard.swift in Sources */,
+				734DCB051F50D12200CBE709 /* Powerdeck.swift in Sources */,
 				734CB1391F50A08B00059618 /* AppSettingKeys.swift in Sources */,
 				734CB12F1F509E1100059618 /* RemoteService.swift in Sources */,
 				734CB1371F509FAD00059618 /* AppSettings.swift in Sources */,
+				73D78B031F50A7F4009116D2 /* Endpoint.swift in Sources */,
 				737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F69D501F50A3F7000EDB49 /* AppSettingsTests.swift in Sources */,
+				73D78B081F50AA94009116D2 /* RemoteServiceTests.swift in Sources */,
 				737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +590,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737357F21F509AAF00377EAD /* PowerCardsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +638,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -583,7 +648,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -626,7 +695,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -634,7 +705,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
