@@ -12,12 +12,16 @@ class DeckDetailsTableViewController: UITableViewController {
     var deck: Powerdeck? {
         didSet {
             tableView.reloadData()
+            title = deck?.name
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.emptyDataSetDataSource = self
+        tableView.emptyDataSetDelegate = self
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

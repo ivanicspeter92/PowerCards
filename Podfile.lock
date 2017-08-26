@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.5.0)
+  - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: 1b2db4a80a315a5c8d2b2b1497d437075377148b
+PODFILE CHECKSUM: 3246cebf8f4c88098432d5dcb90890b085d36a69
 
 COCOAPODS: 1.2.1

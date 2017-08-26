@@ -7,6 +7,7 @@ target 'PowerCards' do
     
     # Pods for PowerCards
     pod 'Alamofire', '~> 4.4'
+    pod 'TBEmptyDataSet'
 end
 
 target 'PowerCardsTests' do

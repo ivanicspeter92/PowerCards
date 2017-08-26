@@ -14,6 +14,7 @@ class PowerdecksSplitViewController: UISplitViewController {
 
         // Do any additional setup after loading the view.
         powerdeckListViewController.delegate = self
+        preferredDisplayMode = .allVisible
     }
     
     var powerdeckListViewController: PowerdeckListTableViewController! {
@@ -23,7 +24,7 @@ class PowerdecksSplitViewController: UISplitViewController {
     }
     
     var deckdetailsViewController: DeckDetailsTableViewController! {
-        let detail = self.childViewControllers.last
+        let detail = childViewControllers.last
         
         return (detail as! UINavigationController).topViewController as! DeckDetailsTableViewController
     }
