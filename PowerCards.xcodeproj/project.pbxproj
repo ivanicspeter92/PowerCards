@@ -34,6 +34,8 @@
 		737357D91F509AAF00377EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737357D81F509AAF00377EAD /* Assets.xcassets */; };
 		737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */; };
 		737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357E61F509AAF00377EAD /* PowerCardsTests.swift */; };
+		73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73745B141F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift */; };
+		73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73745B161F51DCA00065D968 /* CLImageToolKeys.swift */; };
 		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
 		7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */; };
 		7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */; };
@@ -108,6 +110,8 @@
 		737357E81F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737357ED1F509AAF00377EAD /* PowerCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357F31F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73745B141F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+isPresentingForFirstTime.swift"; sourceTree = "<group>"; };
+		73745B161F51DCA00065D968 /* CLImageToolKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLImageToolKeys.swift; sourceTree = "<group>"; };
 		7398EBF41F516B5700F70416 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift"; sourceTree = "<group>"; };
 		7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift"; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 		733395321F51679500041472 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				73745B141F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift */,
+				73745B161F51DCA00065D968 /* CLImageToolKeys.swift */,
 				733395331F51679F00041472 /* Set+ItemAt.swift */,
 				73C2FDF91F519F0A000AAD39 /* JSONInitialziable.swift */,
 			);
@@ -693,6 +699,8 @@
 				734CB1391F50A08B00059618 /* AppSettingKeys.swift in Sources */,
 				7333952F1F5163D700041472 /* DeckDetailsTableViewController.swift in Sources */,
 				734CB12F1F509E1100059618 /* RemoteService.swift in Sources */,
+				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
+				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				734CB1371F509FAD00059618 /* AppSettings.swift in Sources */,
 				73D78B031F50A7F4009116D2 /* Endpoint.swift in Sources */,
 				73BC291A1F51907500C3EB2C /* PowercardViewModel.swift in Sources */,

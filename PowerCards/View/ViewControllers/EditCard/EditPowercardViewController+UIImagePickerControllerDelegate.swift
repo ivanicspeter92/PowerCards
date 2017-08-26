@@ -14,6 +14,7 @@ extension EditPowercardViewController: UIImagePickerControllerDelegate, UINaviga
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.card.image = pickedImage
             self.cardImageView.image = pickedImage
+            self.showImageEditor()
         }
     }
 }

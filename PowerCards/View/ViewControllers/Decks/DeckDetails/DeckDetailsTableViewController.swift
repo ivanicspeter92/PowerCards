@@ -22,7 +22,7 @@ class DeckDetailsTableViewController: UITableViewController {
                 isUpToDate = false
                 tableView.reloadData()
             }
-            self.addTitle(text: deckDetails?.deck.name)
+            self.addTitle(text: (deckDetails?.deck.name ?? "Unknown deck") + " (\(deckDetails?.cards.count ?? 0) cards)")
             
             takeQuizButton.isEnabled = deckDetails != nil && deckDetails?.cards.count != 0
             addCardButton.isEnabled = deckDetails != nil

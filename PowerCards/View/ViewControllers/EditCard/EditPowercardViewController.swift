@@ -15,12 +15,22 @@ class EditPowercardViewController: UIViewController {
     var card: PowercardViewModel!
     
     private let defaultCameraIcon = UIImage(named: "camera")
+    private var didAppearOnce = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cardImageView.image = card.image ?? defaultCameraIcon
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !didAppearOnce {
+            showImageEditor()
+        }
+        didAppearOnce = true
     }
     
     @IBAction func backTapped(_ sender: UIBarButtonItem) {
@@ -32,7 +42,7 @@ class EditPowercardViewController: UIViewController {
         
         if card.image != nil {
             alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (action) in
-                self.present(CLImageEditor(image: self.cardImageView.image)!, animated: true, completion: nil)
+                self.showImageEditor()
             }))
             alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { action in
                 self.cardImageView.image = self.defaultCameraIcon
@@ -53,5 +63,21 @@ class EditPowercardViewController: UIViewController {
         alert.popoverPresentationController?.sourceRect = cardImageView.bounds
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func showImageEditor() {
+        let editor = CLImageEditor(image: self.cardImageView.image)!
+        let disabledTools: Set<CLImageToolKeys> = [.adjustment, .blur, .effect, .filter, .toneCurve]
+        
+        disabledTools.forEach({
+            if let toolInfo = editor.toolInfo.subToolInfo(withToolName: $0.rawValue, recursive: true) {
+                toolInfo.available = false
+            }
+        })
+        if let stickerToolInfo = editor.toolInfo.subToolInfo(withToolName: CLImageToolKeys.sticker.rawValue, recursive: true) {
+            stickerToolInfo.title = "Pigabo-o"
+        }
+        
+        present(editor, animated: true, completion: nil)
     }
 }

@@ -23,6 +23,7 @@ extension DeckDetailsTableViewController {
         
         cell.textLabel?.text = card.name
         cell.detailTextLabel?.text = card.subTitle
+        cell.imageView?.image = UIImage(named: "camera")
         
         return cell
     }
