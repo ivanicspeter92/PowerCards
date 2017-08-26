@@ -37,6 +37,8 @@
 		7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */; };
 		7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */; };
 		7398EBFB1F517DF000F70416 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBFA1F517DF000F70416 /* Answer.swift */; };
+		73A7DED61F51A8DB004849C2 /* GetPowercardsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7DED51F51A8DB004849C2 /* GetPowercardsRequest.swift */; };
+		73A7DED81F51A9D9004849C2 /* PowercardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7DED71F51A9D9004849C2 /* PowercardList.swift */; };
 		73BC29181F51902800C3EB2C /* EditPowercardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowercardViewController.swift */; };
 		73BC291A1F51907500C3EB2C /* PowercardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29191F51907500C3EB2C /* PowercardViewModel.swift */; };
 		73BC291C1F51958500C3EB2C /* GetPowerdecksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC291B1F51958500C3EB2C /* GetPowerdecksRequest.swift */; };
@@ -108,6 +110,8 @@
 		7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift"; sourceTree = "<group>"; };
 		7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift"; sourceTree = "<group>"; };
 		7398EBFA1F517DF000F70416 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		73A7DED51F51A8DB004849C2 /* GetPowercardsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPowercardsRequest.swift; sourceTree = "<group>"; };
+		73A7DED71F51A9D9004849C2 /* PowercardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowercardList.swift; sourceTree = "<group>"; };
 		73BC29171F51902800C3EB2C /* EditPowercardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowercardViewController.swift; sourceTree = "<group>"; };
 		73BC29191F51907500C3EB2C /* PowercardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowercardViewModel.swift; sourceTree = "<group>"; };
 		73BC291B1F51958500C3EB2C /* GetPowerdecksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPowerdecksRequest.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				733B244F1F51594C0070C5FE /* PowerdeckList.swift */,
+				73A7DED71F51A9D9004849C2 /* PowercardList.swift */,
 				733395301F51648A00041472 /* DeckDetailsViewModel.swift */,
 				73BC29191F51907500C3EB2C /* PowercardViewModel.swift */,
 			);
@@ -349,6 +354,7 @@
 				73C2FDFB1F519F85000AAD39 /* TargetParserRequest.swift */,
 				73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */,
 				73BC291B1F51958500C3EB2C /* GetPowerdecksRequest.swift */,
+				73A7DED51F51A8DB004849C2 /* GetPowercardsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -652,11 +658,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E1F8C41F518A6F00983C73 /* NotificationKeys.swift in Sources */,
+				73A7DED81F51A9D9004849C2 /* PowercardList.swift in Sources */,
 				7333952A1F51625500041472 /* PowerdecksSplitViewController.swift in Sources */,
 				73BC29181F51902800C3EB2C /* EditPowercardViewController.swift in Sources */,
 				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
 				733B244D1F50D19B0070C5FE /* Powercard+Hashable.swift in Sources */,
 				7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */,
+				73A7DED61F51A8DB004849C2 /* GetPowercardsRequest.swift in Sources */,
 				733B24501F51594C0070C5FE /* PowerdeckList.swift in Sources */,
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,
 				7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */,

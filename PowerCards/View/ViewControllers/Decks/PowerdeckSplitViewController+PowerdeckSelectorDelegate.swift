@@ -8,6 +8,6 @@
 
 extension PowerdecksSplitViewController: PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck) {
-        self.deckdetailsViewController.deckDetails?.deck = powerdeck
+        self.deckdetailsViewController.deckDetails = DeckDetailsViewModel(deck: powerdeck)
     }
 }

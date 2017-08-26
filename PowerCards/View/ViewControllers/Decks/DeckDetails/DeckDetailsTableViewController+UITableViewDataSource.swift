@@ -41,10 +41,10 @@ extension DeckDetailsTableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let card = self.deckDetails!.cards.item(at: indexPath.row)
-            
+            tableView.beginUpdates()
             deckDetails?.cards.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
         }
     }
 }

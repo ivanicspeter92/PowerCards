@@ -12,13 +12,23 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
+    private(set) var isUpToDate = false
+    
     var deckDetails: DeckDetailsViewModel? {
-        didSet {
-            tableView.reloadData()
+        willSet {
+            refreshControl?.endRefreshing()
+        } didSet {
+            if deckDetails != oldValue {
+                tableView.reloadData()
+            }
             self.addTitle(text: deckDetails?.deck.name)
             
             takeQuizButton.isEnabled = deckDetails != nil && deckDetails?.cards.count != 0
             addCardButton.isEnabled = deckDetails != nil
+            
+            if deckDetails?.cards.count == 0 && !isUpToDate {
+                fetchFromServer()
+            }
         }
     }
     
@@ -31,6 +41,9 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
         takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
         navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: nil)
     }
@@ -82,6 +95,20 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
         controller.delegate = self
         
         present(controller, animated: true, completion: nil)
+    }
+    
+    @objc private func fetchFromServer() {
+        guard let deckID = self.deckDetails?.deck else { return }
+        let request = GetPowercardsRequest(id: deckID.id)
+        
+        isUpToDate = false
+        refreshControl?.beginRefreshing()
+        RemoteService.shared.send(request: request) { cardlist in
+            self.deckDetails?.cards = cardlist.powercards
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+        }
+        isUpToDate = true
     }
 
     // MARK: - Navigation

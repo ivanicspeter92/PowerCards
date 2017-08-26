@@ -12,6 +12,6 @@ extension Powerdeck: Hashable {
     }
     
     static func ==(lhs: Powerdeck, rhs: Powerdeck) -> Bool {
-        return lhs.name == rhs.name && lhs.cards == rhs.cards
+        return lhs.id == rhs.id
     }
 }
