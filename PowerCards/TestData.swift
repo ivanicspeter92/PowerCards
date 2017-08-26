@@ -9,14 +9,16 @@
 struct TestData {
     static var testDeckSet: Set<Powerdeck> {
         return [
-            Powerdeck(name: "Test", cards: [
-                Powercard(id: "1", name: "bla"),
-                Powercard(id: "2", name: "blabla")
-                ]),
-            Powerdeck(name: "Test deck 2", cards: [
-                Powercard(id: "3", name: "BLA", subTitle: "My favorite deck"),
-                Powercard(id: "4", name: "BLABLA")
-                ], isShared: true)
+            Powerdeck(id: "1", name: "Test", cards: 0),
+            Powerdeck(id: "2", name: "Test deck 2", cards: 0, isShared: true)
         ]
     }
+//    [
+//    Powercard(id: "1", name: "bla"),
+//    Powercard(id: "2", name: "blabla")
+//    ]
+//    [
+//    Powercard(id: "3", name: "BLA", subTitle: "My favorite deck"),
+//    Powercard(id: "4", name: "BLABLA")
+//    ]
 }

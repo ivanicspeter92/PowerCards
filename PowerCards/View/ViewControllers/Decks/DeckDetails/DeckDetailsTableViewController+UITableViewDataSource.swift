@@ -14,13 +14,12 @@ extension DeckDetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deck?.cards.count ?? 0
+        return deckDetails?.cards.count ?? 0
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let card = self.deck!.cards.item(at: indexPath.row)
+        let card = deckDetails!.cards[indexPath.row]
         
         cell.textLabel?.text = card.name
         cell.detailTextLabel?.text = card.subTitle
@@ -42,9 +41,9 @@ extension DeckDetailsTableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let card = self.deck!.cards.item(at: indexPath.row)
+//            let card = self.deckDetails!.cards.item(at: indexPath.row)
             
-            deck?.cards.item(at: indexPath.row)
+            deckDetails?.cards.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

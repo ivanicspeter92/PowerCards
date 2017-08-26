@@ -9,12 +9,9 @@
 import Alamofire
 
 protocol Request: URLRequestConvertible {
-//    associatedtype P: Parser
-    
     var endpoint: String { get }
     var parameters: [String: Any] { get }
     var method: Alamofire.HTTPMethod { get }
-//    var parser: P { get }
     var sendParametersAsForm: Bool { get }
 }
 

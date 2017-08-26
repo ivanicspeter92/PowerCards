@@ -34,6 +34,23 @@ struct RemoteService {
         }
     }
     
+    func send<R: TargetParserRequest>(request: R, completion: ((_ parsedObject: R.Target) -> Void)?) {
+        print(#function + "Sending \(type(of: request)) to: \(request.endpoint)\n\(String(describing: request.parameters))")
+        
+        self.request(request) { response in
+            print("Response: " + response.debugDescription)
+            switch response.result {
+            case .success(let json):
+                guard let json = json as? [String: Any] else { return }
+                guard let object = R.Target(json: json) else { return }
+                
+                completion?(object)
+            default:
+                break
+            }
+        }
+    }
+    
     // MARK: Request
     private func request<R: Request>(_ request: R, encoding: URLEncoding = URLEncoding.default, callback: @escaping ((DataResponse<Any>) -> Void)) {
         if request.sendParametersAsForm {

@@ -11,10 +11,10 @@ import Foundation
 struct Powercard {
     let id: String
     let name: String
-    let subTitle: String
+    let subTitle: String?
     let creationDate: Date
     
-    init(id: String, name: String, subTitle: String = "") {
+    init(id: String, name: String, subTitle: String? = nil) {
         self.id = id
         self.name = name
         self.subTitle = subTitle

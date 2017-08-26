@@ -27,7 +27,7 @@ extension PowerdeckListTableViewController {
             cell.textLabel?.text = (cell.textLabel?.text ?? "") + " (Shared)"
         }
         
-        cell.detailTextLabel?.text = "\(deck.cards.count)"
+        cell.detailTextLabel?.text = "\(deck.cards)"
         
         return cell
     }

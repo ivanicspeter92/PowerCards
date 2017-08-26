@@ -44,7 +44,6 @@ struct PowerdeckList {
         if let index = powerdecks.index(of: deck) {
             self.delete(atIndex: index)
         }
-        
     }
     
     mutating func delete(atIndex index: Int) {

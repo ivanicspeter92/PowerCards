@@ -10,6 +10,6 @@ import TBEmptyDataSet
 
 extension DeckDetailsTableViewController: TBEmptyDataSetDelegate {
     func emptyDataSetShouldDisplay(in scrollView: UIScrollView) -> Bool {
-        return self.deck == nil
+        return self.deckDetails == nil
     }
 }

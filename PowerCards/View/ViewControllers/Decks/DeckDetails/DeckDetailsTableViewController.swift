@@ -12,13 +12,13 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
-    var deck: Powerdeck? {
+    var deckDetails: DeckDetailsViewModel? {
         didSet {
             tableView.reloadData()
-            self.addTitle(text: deck?.name)
+            self.addTitle(text: deckDetails?.deck.name)
             
-            takeQuizButton.isEnabled = deck?.cards != nil && deck?.cards.count != 0
-            addCardButton.isEnabled = deck != nil
+            takeQuizButton.isEnabled = deckDetails != nil && deckDetails?.cards.count != 0
+            addCardButton.isEnabled = deckDetails != nil
         }
     }
     
@@ -57,9 +57,9 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
     }
     
     func deckRemovedNotificationReceived(_ notification: Notification) {
-        guard let deck = notification.object as? Powerdeck, deck == self.deck else { return }
+        guard let deck = notification.object as? Powerdeck, deck == self.deckDetails?.deck else { return }
         
-        self.deck = nil
+        self.deckDetails = nil
         tableView.reloadData()
     }
     

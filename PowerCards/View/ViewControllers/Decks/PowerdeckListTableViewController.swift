@@ -10,21 +10,29 @@ import UIKit
 
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
-    
-    var decklist: PowerdeckList = PowerdeckList(powerdecks: TestData.testDeckSet,sorting: .byName)
+    var decklist: PowerdeckList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
-        let deck = Powerdeck(name: "Deck #\(decklist.count + 1)", cards: [])
+        let deck = Powerdeck(id: "\(arc4random())", name: "Deck #\(decklist.count + 1)", cards: 0)
         
         decklist.prepend(deck: deck)
         
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         tableView.endUpdates()
+    }
+    
+    private func fetchFromServer() {
+        let request = GetPowerdecksRequest()
+        
+        RemoteService.shared.send(request: request) { decks in
+            self.decklist = PowerdeckList(powerdecks: decks, sorting: .byName)
+        }
     }
     
     /*

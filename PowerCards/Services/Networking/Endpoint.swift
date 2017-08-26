@@ -7,11 +7,12 @@
 //
 
 enum Endpoint {
-    case createPowerdeck
+    case createPowerdeck, getPowerdecks
     
     var urlString: String {
         switch self {
         case .createPowerdeck: return AppSettings.hostname + "/powerdeck/"
+        case .getPowerdecks: return AppSettings.hostname + "/powerdeck/"
         }
     }
 }
