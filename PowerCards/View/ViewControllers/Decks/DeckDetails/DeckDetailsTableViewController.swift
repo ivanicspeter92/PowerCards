@@ -18,7 +18,8 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
         willSet {
             refreshControl?.endRefreshing()
         } didSet {
-            if deckDetails != oldValue {
+            if deckDetails?.deck != oldValue?.deck {
+                isUpToDate = false
                 tableView.reloadData()
             }
             self.addTitle(text: deckDetails?.deck.name)
