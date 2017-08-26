@@ -37,7 +37,14 @@
                             <outlet property="delegate" destination="5GO-3b-h7P" id="Wex-ZH-ov2"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="E8W-4w-nAZ"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="ItA-7O-LuS"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +78,21 @@
                             <outlet property="delegate" destination="sOb-UK-x5p" id="cpC-ri-LBh"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="JdU-uj-mVX"/>
+                        <barButtonItem systemItem="add" id="4Mv-oS-8EF">
+                            <connections>
+                                <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="hKB-Gw-w0Z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="New powerdeck" id="Tb3-mu-544">
+                            <connections>
+                                <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="xEz-Jl-9Zt"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Powercards" id="EIq-T4-KPA"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8g-nq-69W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,11 +120,17 @@
         <!--Navigation Controller-->
         <scene sceneID="CJQ-cF-eAV">
             <objects>
-                <navigationController id="i7b-xO-6A7" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="i7b-xO-6A7" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQ3-qz-OWY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Q86-xJ-St9">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="sOb-UK-x5p" kind="relationship" relationship="rootViewController" id="qRj-3e-vUZ"/>
                     </connections>
@@ -174,6 +201,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ry6-0W-lKH">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="5GO-3b-h7P" kind="relationship" relationship="rootViewController" id="jSR-RZ-TO1"/>
                     </connections>

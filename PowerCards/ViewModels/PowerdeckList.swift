@@ -12,7 +12,7 @@ struct PowerdeckList {
         case byNumberOfCards
     }
     
-    private let powerdecks: Set<Powerdeck>
+    private var powerdecks: [Powerdeck]
     var sorting: PowerdeckSorting
     var inverseSorting: Bool = false
     
@@ -21,12 +21,20 @@ struct PowerdeckList {
     }
     
     init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting, inverseSorting: Bool = false) {
-        self.powerdecks = powerdecks
+        self.powerdecks = Array(powerdecks)
         self.sorting = sorting
         self.inverseSorting = inverseSorting
     }
     
     func item(at index: Int) -> Powerdeck {
-        return powerdecks.item(at: index)
+        return powerdecks[index]
+    }
+    
+    mutating func append(deck: Powerdeck) {
+        powerdecks.append(deck)
+    }
+    
+    mutating func prepend(deck: Powerdeck) {
+        powerdecks.insert(deck, at: 0)
     }
 }

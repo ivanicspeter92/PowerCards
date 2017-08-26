@@ -14,7 +14,7 @@ struct TestData {
                 Powercard(id: "2", name: "blabla")
                 ]),
             Powerdeck(name: "Test deck 2", cards: [
-                Powercard(id: "3", name: "BLA", subtitle: "My favorite deck"),
+                Powercard(id: "3", name: "BLA", subTitle: "My favorite deck"),
                 Powercard(id: "4", name: "BLABLA")
                 ], isShared: true)
         ]

@@ -9,18 +9,25 @@
 import UIKit
 
 class DeckDetailsTableViewController: UITableViewController {
+    @IBOutlet weak var addCardButton: UIBarButtonItem!
+    
     var deck: Powerdeck? {
         didSet {
             tableView.reloadData()
             title = deck?.name
+            
+            addCardButton.isEnabled = deck != nil
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
+       
+        addCardButton.isEnabled = false
+        navigationItem.rightBarButtonItem = addCardButton
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,7 +51,7 @@ class DeckDetailsTableViewController: UITableViewController {
         let card = self.deck!.cards.item(at: indexPath.row)
         
         cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.subtitle
+        cell.detailTextLabel?.text = card.subTitle
         
         return cell
     }

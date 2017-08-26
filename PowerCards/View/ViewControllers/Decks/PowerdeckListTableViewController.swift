@@ -17,6 +17,16 @@ class PowerdeckListTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
+        let deck = Powerdeck(name: "Deck #\(decklist.count + 1)", cards: [])
+        
+        decklist.prepend(deck: deck)
+        
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        tableView.endUpdates()
+    }
+    
     /*
     // MARK: - Navigation
 
