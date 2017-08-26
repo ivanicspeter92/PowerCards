@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeckDetailsTableViewController: UITableViewController, UINavigationControllerDelegate {
+class DeckDetailsTableViewController: UITableViewController {
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     

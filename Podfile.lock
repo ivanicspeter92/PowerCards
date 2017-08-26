@@ -1,15 +1,38 @@
 PODS:
   - Alamofire (4.5.0)
+  - CLImageEditor/AllTools (0.2.0):
+    - CLImageEditor/Core
+    - CLImageEditor/EmoticonTool
+    - CLImageEditor/ResizeTool
+    - CLImageEditor/SplashTool
+    - CLImageEditor/StickerTool
+    - CLImageEditor/TextTool
+  - CLImageEditor/Core (0.2.0)
+  - CLImageEditor/EmoticonTool (0.2.0):
+    - CLImageEditor/Core
+  - CLImageEditor/ResizeTool (0.2.0):
+    - CLImageEditor/Core
+  - CLImageEditor/SplashTool (0.2.0):
+    - CLImageEditor/Core
+  - CLImageEditor/StickerTool (0.2.0):
+    - CLImageEditor/Core
+  - CLImageEditor/TextTool (0.2.0):
+    - CLImageEditor/Core
+  - IQKeyboardManagerSwift (4.0.11)
   - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - CLImageEditor/AllTools
+  - IQKeyboardManagerSwift
   - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  CLImageEditor: ec5ae50b3a54c9818c0bdb243b20665a1c6718e3
+  IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
   TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: 3246cebf8f4c88098432d5dcb90890b085d36a69
+PODFILE CHECKSUM: 4cc696522f8c9e2c8877cc2d36a178640bea5679
 
 COCOAPODS: 1.2.1

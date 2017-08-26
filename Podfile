@@ -8,6 +8,8 @@ target 'PowerCards' do
     # Pods for PowerCards
     pod 'Alamofire', '~> 4.4'
     pod 'TBEmptyDataSet'
+    pod 'CLImageEditor/AllTools'
+    pod 'IQKeyboardManagerSwift'
 end
 
 target 'PowerCardsTests' do

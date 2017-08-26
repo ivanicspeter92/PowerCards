@@ -1,5 +1,5 @@
 //
-//  DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift
+//  EditPowercardViewController+UIImagePickerControllerDelegate.swift
 //  PowerCards
 //
 //  Created by Peter Ivanics on 26/08/2017.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-extension DeckDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditPowercardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            toCreateCardWith(pickedImage: pickedImage)
+            self.card.image = pickedImage
+            self.cardImageView.image = pickedImage
         }
     }
 }
