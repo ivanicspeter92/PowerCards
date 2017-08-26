@@ -9,13 +9,15 @@
 import UIKit
 
 class DeckDetailsTableViewController: UITableViewController {
+    @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
     var deck: Powerdeck? {
         didSet {
             tableView.reloadData()
-            title = deck?.name
+            self.addTitle(text: deck?.name)
             
+            takeQuizButton.isEnabled = deck?.cards != nil && deck?.cards.count != 0
             addCardButton.isEnabled = deck != nil
         }
     }
@@ -26,8 +28,9 @@ class DeckDetailsTableViewController: UITableViewController {
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
        
+        takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
-        navigationItem.rightBarButtonItem = addCardButton
+        navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,61 +38,41 @@ class DeckDetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deck?.cards.count ?? 0
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let card = self.deck!.cards.item(at: indexPath.row)
+    // MARK: Event handlers
+    @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add card", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { alert in
+            self.presentImagePicker()
+        }))
+        alert.addAction(UIAlertAction(title: "Free text", style: .default, handler: { alert in
+            self.presentImagePicker()
+        }))
+        alert.addAction(UIAlertAction(title: "Create a quiz question", style: .default, handler: { alert in
+            self.presentImagePicker()
+        }))
+        alert.popoverPresentationController?.barButtonItem = addCardButton
         
-        cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.subTitle
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: Private
+    private func addTitle(text: String?) {
+        //            title = deck?.name
         
-        return cell
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        label.sizeToFit()
+        
+        let leftItem = UIBarButtonItem(customView: label)
+        navigationItem.leftBarButtonItem = leftItem
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    private func presentImagePicker() {
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

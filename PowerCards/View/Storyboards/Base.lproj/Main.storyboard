@@ -38,12 +38,18 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem systemItem="add" id="E8W-4w-nAZ"/>
+                        <barButtonItem title="New card" id="E8W-4w-nAZ">
+                            <connections>
+                                <action selector="addCardButtonTapped:" destination="5GO-3b-h7P" id="kBO-5t-mlQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Take quiz" id="mHJ-sz-2a9"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="ItA-7O-LuS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
+                        <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,7 +88,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="JdU-uj-mVX"/>
                         <barButtonItem systemItem="add" id="4Mv-oS-8EF">
                             <connections>
-                                <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="hKB-Gw-w0Z"/>
+                                <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="9wv-nn-3h7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem title="New powerdeck" id="Tb3-mu-544">
