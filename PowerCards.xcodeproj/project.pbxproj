@@ -28,6 +28,7 @@
 		734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */; };
 		734DCB031F50D10200CBE709 /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB021F50D10200CBE709 /* Powercard.swift */; };
 		734DCB051F50D12200CBE709 /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB041F50D12200CBE709 /* Powerdeck.swift */; };
+		7355D96E1F5200C700244257 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7355D96D1F51FFA300244257 /* Quiz.storyboard */; };
 		7368C33F1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368C33E1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift */; };
 		737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D11F509AAF00377EAD /* AppDelegate.swift */; };
 		737357D71F509AAF00377EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357D51F509AAF00377EAD /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckDetailsViewController.swift; sourceTree = "<group>"; };
 		734DCB021F50D10200CBE709 /* Powercard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powercard.swift; sourceTree = "<group>"; };
 		734DCB041F50D12200CBE709 /* Powerdeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powerdeck.swift; sourceTree = "<group>"; };
+		7355D96D1F51FFA300244257 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		7368C33E1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditPowercardViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		737357CE1F509AAF00377EAD /* PowerCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357D11F509AAF00377EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				737357D51F509AAF00377EAD /* Main.storyboard */,
+				7355D96D1F51FFA300244257 /* Quiz.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			files = (
 				737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */,
 				734CB1351F509F7A00059618 /* Settings.plist in Resources */,
+				7355D96E1F5200C700244257 /* Quiz.storyboard in Resources */,
 				737357D91F509AAF00377EAD /* Assets.xcassets in Resources */,
 				737357D71F509AAF00377EAD /* Main.storyboard in Resources */,
 			);

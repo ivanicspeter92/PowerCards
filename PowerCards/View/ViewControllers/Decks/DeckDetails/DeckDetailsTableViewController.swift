@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class DeckDetailsTableViewController: UITableViewController {
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
@@ -71,7 +72,7 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func takeQuizButtonTapped(_ sender: UIBarButtonItem) {
-        guard let deck = deckDetails else { print("No deck selected!"); return }
+        guard let deck = deckDetails else { HUD.show(.labeledError(title: "No deck selected!", subtitle: nil)); return }
         
         toTakeQuiz(deckDetails: deck)
     }

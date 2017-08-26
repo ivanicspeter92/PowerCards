@@ -13,7 +13,7 @@ struct Answer {
 
 extension Answer: JSONInitializable {
     init?(json: [String : Any]) {
-        guard let text = json["text"] as? String else { return nil }
+        guard let text = json["question"] as? String else { return nil }
         
         self.text = text
         self.isCorrect = json["isCorrect"] as? Bool ?? false

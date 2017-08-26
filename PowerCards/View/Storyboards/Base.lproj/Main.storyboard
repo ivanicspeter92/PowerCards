@@ -56,7 +56,7 @@
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toCreateCard" id="LZX-n6-lBX"/>
-                        <segue destination="kG2-jo-E59" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>
+                        <segue destination="wda-Yi-EAm" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,57 +345,11 @@
             </objects>
             <point key="canvasLocation" x="2024" y="210.49475262368819"/>
         </scene>
-        <!--Quiz View Controller-->
-        <scene sceneID="h7Q-2p-fCZ">
+        <!--Quiz-->
+        <scene sceneID="V67-Xq-0wq">
             <objects>
-                <viewController id="tT1-W8-Z5d" customClass="QuizViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Smd-je-Wn1"/>
-                        <viewControllerLayoutGuide type="bottom" id="aHu-Zg-kJ3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c5M-aA-EFm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-5A-CEb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.21176470820000001" green="0.83137255909999996" blue="0.58431375029999999" alpha="0.3020993098159509" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="sRX-5A-CEb" firstAttribute="top" secondItem="Smd-je-Wn1" secondAttribute="bottom" id="UK5-ou-2pk"/>
-                            <constraint firstAttribute="trailing" secondItem="sRX-5A-CEb" secondAttribute="trailing" id="e5C-Qe-BI0"/>
-                            <constraint firstItem="sRX-5A-CEb" firstAttribute="leading" secondItem="c5M-aA-EFm" secondAttribute="leading" id="w8E-ZQ-vjb"/>
-                            <constraint firstItem="aHu-Zg-kJ3" firstAttribute="top" secondItem="sRX-5A-CEb" secondAttribute="bottom" id="zsf-X4-TDT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Txl-lA-oc1">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="sf1-ZW-1N6">
-                            <connections>
-                                <action selector="backButtonTapped:" destination="tT1-W8-Z5d" id="QPd-Vi-NpZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3fA-iQ-2x8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2780" y="874"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bjN-Qi-ofW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kG2-jo-E59" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NKp-v9-ytp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tT1-W8-Z5d" kind="relationship" relationship="rootViewController" id="q1o-kQ-OEi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="keZ-fi-TXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Quiz" id="wda-Yi-EAm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbD-c8-Ed1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2022.4000000000001" y="874.36281859070471"/>
         </scene>
