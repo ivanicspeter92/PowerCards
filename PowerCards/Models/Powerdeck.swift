@@ -7,18 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 struct Powerdeck {
     let name: String
     let cards: Set<Powercard>
     var isShared: Bool
     let creationDate: Date
+    let imageSource: String?
     
-    init(name: String, cards: Set<Powercard>, isShared: Bool = false) {
+    init(name: String, cards: Set<Powercard>, isShared: Bool = false, imageSource: String? = nil) {
         self.name = name
         self.cards = cards
         self.isShared = isShared
         self.creationDate = Date()
+        self.imageSource = imageSource
     }
     
     mutating func invertSharing() {

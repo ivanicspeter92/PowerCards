@@ -50,11 +50,56 @@
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
+                        <segue destination="GZF-H1-qC8" kind="presentation" identifier="toCreateCard" id="LZX-n6-lBX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="211"/>
+            <point key="canvasLocation" x="1177" y="237"/>
+        </scene>
+        <!--Edit Powercard View Controller-->
+        <scene sceneID="2k6-RP-QI2">
+            <objects>
+                <viewController id="ISL-0v-NYF" customClass="EditPowercardViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="183-w9-x3A"/>
+                        <viewControllerLayoutGuide type="bottom" id="bgU-AP-S5o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b3j-Fo-Ajs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rfj-aT-bqV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-m5-OjX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rfj-aT-bqV" firstAttribute="leading" secondItem="b3j-Fo-Ajs" secondAttribute="leading" id="ErB-cD-DAj"/>
+                            <constraint firstAttribute="trailing" secondItem="Rfj-aT-bqV" secondAttribute="trailing" id="glW-lv-gZR"/>
+                            <constraint firstItem="bgU-AP-S5o" firstAttribute="top" secondItem="Rfj-aT-bqV" secondAttribute="bottom" id="qGZ-oi-y4P"/>
+                            <constraint firstItem="Rfj-aT-bqV" firstAttribute="top" secondItem="183-w9-x3A" secondAttribute="bottom" id="zVp-Jb-nw6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oWs-5J-Ubl">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="hgO-FZ-fqQ">
+                            <connections>
+                                <action selector="backTapped:" destination="ISL-0v-NYF" id="74N-Xi-xG5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardImageView" destination="wNY-m5-OjX" id="Oq5-yP-rn1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbx-rE-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="211"/>
         </scene>
         <!--Powercards-->
         <scene sceneID="FAx-Vk-hFf">
@@ -133,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Q86-xJ-St9">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q86-xJ-St9">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
@@ -218,6 +263,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw5-sV-daA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="225" y="211"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NS0-Kv-K2Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GZF-H1-qC8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GXz-Au-Qcd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ISL-0v-NYF" kind="relationship" relationship="rootViewController" id="KmL-Zz-bwD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vr-GL-oMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="210.49475262368819"/>
         </scene>
     </scenes>
 </document>

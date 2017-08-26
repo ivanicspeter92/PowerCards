@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeckDetailsTableViewController: UITableViewController {
+class DeckDetailsTableViewController: UITableViewController, UINavigationControllerDelegate {
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
@@ -46,11 +46,9 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { alert in
             self.presentImagePicker()
         }))
-        alert.addAction(UIAlertAction(title: "Free text", style: .default, handler: { alert in
-            self.presentImagePicker()
+        alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
         }))
         alert.addAction(UIAlertAction(title: "Create a quiz question", style: .default, handler: { alert in
-            self.presentImagePicker()
         }))
         alert.popoverPresentationController?.barButtonItem = addCardButton
         
@@ -78,17 +76,24 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     private func presentImagePicker() {
+        let controller = UIImagePickerController()
+        controller.sourceType = .camera
+        controller.delegate = self
         
+        present(controller, animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? 
+            segue.destination as? EditPowercardViewController {
+            if let pickedImage = sender as? UIImage {
+                destination.card = PowercardViewModel(image: pickedImage)
+            }
+        }
     }
-    */
 
+    func toCreateCardWith(pickedImage: UIImage) {
+        performSegue(withIdentifier: "toCreateCard", sender: pickedImage)
+    }
 }
