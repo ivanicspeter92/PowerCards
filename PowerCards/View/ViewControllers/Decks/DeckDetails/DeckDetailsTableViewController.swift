@@ -32,11 +32,11 @@ class DeckDetailsTableViewController: UITableViewController {
         addCardButton.isEnabled = false
         navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Event handlers
@@ -55,6 +55,13 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.popoverPresentationController?.barButtonItem = addCardButton
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func deckRemovedNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.deck else { return }
+        
+        self.deck = nil
+        tableView.reloadData()
     }
     
     // MARK: Private

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
+import Foundation
+
 struct PowerdeckList {
     enum PowerdeckSorting {
         case byName
@@ -36,5 +38,17 @@ struct PowerdeckList {
     
     mutating func prepend(deck: Powerdeck) {
         powerdecks.insert(deck, at: 0)
+    }
+    
+    mutating func delete(deck: Powerdeck) {
+        if let index = powerdecks.index(of: deck) {
+            self.delete(atIndex: index)
+        }
+        
+    }
+    
+    mutating func delete(atIndex index: Int) {
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: powerdecks[index], userInfo: nil))
+        powerdecks.remove(at: index)
     }
 }

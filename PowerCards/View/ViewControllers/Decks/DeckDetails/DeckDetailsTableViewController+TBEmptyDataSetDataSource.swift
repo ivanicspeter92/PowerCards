@@ -13,9 +13,9 @@ extension DeckDetailsTableViewController: TBEmptyDataSetDataSource {
         return UIImage(named: "powercards_logo_transparent")
     }
     
-    func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
-        return NSAttributedString(string: "No deck selected :(")
-    }
+//    func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+//        return NSAttributedString(string: "No deck selected :(")
+//    }
     
     func verticalOffsetForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {
         return -50.0

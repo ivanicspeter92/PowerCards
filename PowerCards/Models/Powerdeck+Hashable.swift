@@ -8,7 +8,7 @@
 
 extension Powerdeck: Hashable {
     var hashValue: Int {
-        return cards.hashValue
+        return name.hashValue
     }
     
     static func ==(lhs: Powerdeck, rhs: Powerdeck) -> Bool {
