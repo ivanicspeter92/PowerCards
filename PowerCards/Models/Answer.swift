@@ -10,3 +10,16 @@ struct Answer {
     let text: String
     let isCorrect: Bool
 }
+
+extension Answer: JSONInitializable {
+    init?(json: [String : Any]) {
+        guard let text = json["text"] as? String else { return nil }
+        
+        self.text = text
+        self.isCorrect = json["isCorrect"] as? Bool ?? false
+    }
+    
+    init?(jsonDict: [[String : Any]]) {
+        return nil
+    }
+}

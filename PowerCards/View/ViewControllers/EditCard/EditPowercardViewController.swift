@@ -75,7 +75,7 @@ class EditPowercardViewController: UIViewController {
             }
         })
         if let stickerToolInfo = editor.toolInfo.subToolInfo(withToolName: CLImageToolKeys.sticker.rawValue, recursive: true) {
-            stickerToolInfo.title = "Pigabo-o"
+            stickerToolInfo.title = "Peek-a-boo"
         }
         
         present(editor, animated: true, completion: nil)

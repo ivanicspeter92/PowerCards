@@ -7,7 +7,7 @@
 	<key>TEST_SERVER_PORT</key>
 	<string></string>
 	<key>PRODUCTION_SERVER_ADDRESS</key>
-	<string>10.112.49.111</string>
+	<string>pnie.eu</string>
 	<key>PRODUCTION_SERVER_PORT</key>
 	<string>8000</string>
 	<key>IS_PRODUCTION_VERSION</key>

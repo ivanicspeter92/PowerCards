@@ -70,6 +70,12 @@ class DeckDetailsTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func takeQuizButtonTapped(_ sender: UIBarButtonItem) {
+        guard let deck = deckDetails else { print("No deck selected!"); return }
+        
+        toTakeQuiz(deckDetails: deck)
+    }
+    
     func deckRemovedNotificationReceived(_ notification: Notification) {
         guard let deck = notification.object as? Powerdeck, deck == self.deckDetails?.deck else { return }
         
@@ -114,15 +120,20 @@ class DeckDetailsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? 
-            segue.destination as? EditPowercardViewController {
+        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? segue.destination as? EditPowercardViewController {
             if let pickedImage = sender as? UIImage {
                 destination.card = PowercardViewModel(image: pickedImage)
             }
+        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController, let deckDetails = sender as? DeckDetailsViewModel {
+            destination.deckDetails = deckDetails
         }
     }
 
     func toCreateCardWith(pickedImage: UIImage) {
         performSegue(withIdentifier: "toCreateCard", sender: pickedImage)
+    }
+    
+    func toTakeQuiz(deckDetails: DeckDetailsViewModel) {
+        performSegue(withIdentifier: "toQuiz", sender: deckDetails)
     }
 }

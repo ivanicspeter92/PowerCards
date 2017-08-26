@@ -17,11 +17,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DqD-1J-dkb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="ECJ-wX-baW">
                             <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3BC-Pb-hRy">
@@ -44,7 +44,11 @@
                                 <action selector="addCardButtonTapped:" destination="5GO-3b-h7P" id="kBO-5t-mlQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Take quiz" id="mHJ-sz-2a9"/>
+                        <barButtonItem title="Take quiz" id="mHJ-sz-2a9">
+                            <connections>
+                                <action selector="takeQuizButtonTapped:" destination="5GO-3b-h7P" id="g3p-D2-nag"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="ItA-7O-LuS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -52,11 +56,12 @@
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toCreateCard" id="LZX-n6-lBX"/>
+                        <segue destination="kG2-jo-E59" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="237"/>
+            <point key="canvasLocation" x="1177" y="211"/>
         </scene>
         <!--Edit Powercard View Controller-->
         <scene sceneID="2k6-RP-QI2">
@@ -161,7 +166,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7dR-gX-5J5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="DvD-d2-zqf">
                             <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -194,6 +199,7 @@
                                 <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="xEz-Jl-9Zt"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="g7f-az-WKP"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Powercards" id="EIq-T4-KPA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -215,7 +221,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shop" id="uo8-iE-RBO"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="icons8-Shop-50" id="uo8-iE-RBO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aal-Qh-2o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,7 +272,7 @@
         <scene sceneID="1k1-Eg-z7M">
             <objects>
                 <splitViewController id="Vas-EA-Duf" customClass="PowerdecksSplitViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Library" id="mcC-yo-mlz"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="icons8-Home Page-50" id="mcC-yo-mlz"/>
                     <connections>
                         <segue destination="i7b-xO-6A7" kind="relationship" relationship="masterViewController" id="zcN-qN-3xI"/>
                         <segue destination="ny5-RB-UhY" kind="relationship" relationship="detailViewController" id="qdi-Ik-pXg"/>
@@ -289,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Profile" id="M0x-hk-4Nt"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="icons8-User-50" id="M0x-hk-4Nt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Joh-lm-T1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,8 +345,65 @@
             </objects>
             <point key="canvasLocation" x="2024" y="210.49475262368819"/>
         </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="h7Q-2p-fCZ">
+            <objects>
+                <viewController id="tT1-W8-Z5d" customClass="QuizViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Smd-je-Wn1"/>
+                        <viewControllerLayoutGuide type="bottom" id="aHu-Zg-kJ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c5M-aA-EFm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-5A-CEb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470820000001" green="0.83137255909999996" blue="0.58431375029999999" alpha="0.3020993098159509" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sRX-5A-CEb" firstAttribute="top" secondItem="Smd-je-Wn1" secondAttribute="bottom" id="UK5-ou-2pk"/>
+                            <constraint firstAttribute="trailing" secondItem="sRX-5A-CEb" secondAttribute="trailing" id="e5C-Qe-BI0"/>
+                            <constraint firstItem="sRX-5A-CEb" firstAttribute="leading" secondItem="c5M-aA-EFm" secondAttribute="leading" id="w8E-ZQ-vjb"/>
+                            <constraint firstItem="aHu-Zg-kJ3" firstAttribute="top" secondItem="sRX-5A-CEb" secondAttribute="bottom" id="zsf-X4-TDT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Txl-lA-oc1">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="sf1-ZW-1N6">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="tT1-W8-Z5d" id="QPd-Vi-NpZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fA-iQ-2x8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="874"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bjN-Qi-ofW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kG2-jo-E59" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NKp-v9-ytp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tT1-W8-Z5d" kind="relationship" relationship="rootViewController" id="q1o-kQ-OEi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keZ-fi-TXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2022.4000000000001" y="874.36281859070471"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="600" height="600"/>
+        <image name="icons8-Home Page-50" width="30" height="30"/>
+        <image name="icons8-Shop-50" width="30" height="30"/>
+        <image name="icons8-User-50" width="30" height="30"/>
     </resources>
 </document>

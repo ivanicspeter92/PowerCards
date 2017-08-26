@@ -12,6 +12,7 @@ target 'PowerCards' do
     pod 'CLImageEditor/TextTool'
     pod 'CLImageEditor/ResizeTool'
     pod 'IQKeyboardManagerSwift'
+    pod 'PKHud'
 end
 
 target 'PowerCardsTests' do

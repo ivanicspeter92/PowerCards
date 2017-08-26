@@ -14,13 +14,17 @@ struct Powercard {
     let subTitle: String?
 //    let creationDate: Date
     let deckID: String?
+    let question: String?
+    let answers: [Answer]
     
-    init(id: String, name: String, subTitle: String? = nil, deckID: String? = nil) {
+    init(id: String, name: String, subTitle: String? = nil, deckID: String? = nil, question: String? = nil, answers: [Answer] = []) {
         self.id = id
         self.name = name
         self.subTitle = subTitle
 //        self.creationDate = Date()
         self.deckID = deckID
+        self.question = question
+        self.answers = answers
     }
 }
 
@@ -34,7 +38,12 @@ extension Powercard: JSONInitializable {
         self.name = name
         self.subTitle = json["subTitle"] as? String
         self.deckID = json["deckID"] as? String
-        
+        self.question = json["question"] as? String
+        if let answerListJSON = json["answers"] as? [[String: Any]], let answerList = AnswerList(jsonDict: answerListJSON) {
+            self.answers = answerList.answers
+        } else {
+            self.answers = []
+        }
     }
     
     init?(jsonDict: [[String : Any]]) {
