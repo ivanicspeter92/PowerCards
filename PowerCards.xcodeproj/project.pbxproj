@@ -33,6 +33,7 @@
 		737357D91F509AAF00377EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737357D81F509AAF00377EAD /* Assets.xcassets */; };
 		737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */; };
 		737357E71F509AAF00377EAD /* PowerCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357E61F509AAF00377EAD /* PowerCardsTests.swift */; };
+		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
 		73D78B031F50A7F4009116D2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B021F50A7F4009116D2 /* Endpoint.swift */; };
 		73D78B051F50A94E009116D2 /* CreatePowerDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */; };
 		73D78B061F50A9C9009116D2 /* PowercardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D78B001F50A730009116D2 /* PowercardRequest.swift */; };
@@ -92,6 +93,7 @@
 		737357E81F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737357ED1F509AAF00377EAD /* PowerCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357F31F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7398EBF41F516B5700F70416 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		73D78B001F50A730009116D2 /* PowercardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowercardRequest.swift; sourceTree = "<group>"; };
 		73D78B021F50A7F4009116D2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		73D78B041F50A94E009116D2 /* CreatePowerDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePowerDeckRequest.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */,
 				737357DD1F509AAF00377EAD /* Info.plist */,
 				734CB1341F509F7A00059618 /* Settings.plist */,
+				7398EBF41F516B5700F70416 /* TestData.swift */,
 			);
 			path = PowerCards;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				733B24561F51605B0070C5FE /* PowerdeckListTableViewController+UITableViewDataSource.swift in Sources */,
 				733B24521F5159AF0070C5FE /* Powerdeck+Hashable.swift in Sources */,
 				73D78B051F50A94E009116D2 /* CreatePowerDeckRequest.swift in Sources */,
+				7398EBF51F516B5700F70416 /* TestData.swift in Sources */,
 				734DCB031F50D10200CBE709 /* Powercard.swift in Sources */,
 				733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */,
 				734DCB051F50D12200CBE709 /* Powerdeck.swift in Sources */,

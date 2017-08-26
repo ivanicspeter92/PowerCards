@@ -11,16 +11,7 @@ import UIKit
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
     
-    var decklist: PowerdeckList = PowerdeckList(powerdecks: [
-        Powerdeck(name: "Test", cards: [
-            Powercard(id: "1", name: "bla"),
-            Powercard(id: "2", name: "blabla")
-            ]),
-        Powerdeck(name: "Test deck 2", cards: [
-            Powercard(id: "3", name: "BLA"),
-            Powercard(id: "4", name: "BLABLA")
-            ], isShared: true)
-        ],sorting: .byName)
+    var decklist: PowerdeckList = PowerdeckList(powerdecks: TestData.testDeckSet,sorting: .byName)
     
     override func viewDidLoad() {
         super.viewDidLoad()
