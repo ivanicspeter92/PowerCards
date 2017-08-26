@@ -9,4 +9,15 @@
 struct Powerdeck {
     let name: String
     let cards: Set<Powercard>
+    var isShared: Bool
+    
+    init(name: String, cards: Set<Powercard>, isShared: Bool = false) {
+        self.name = name
+        self.cards = cards
+        self.isShared = isShared
+    }
+    
+    mutating func invertSharing() {
+        self.isShared = !isShared
+    }
 }

@@ -1,27 +1,28 @@
 //
-//  PowerdeckListTableViewController.swift
+//  DeckDetailsTableViewController.swift
 //  PowerCards
 //
-//  Created by Peter Ivanics on 25/08/2017.
+//  Created by Peter Ivanics on 26/08/2017.
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
 import UIKit
 
-class PowerdeckListTableViewController: UITableViewController {
-    var decklist: PowerdeckList = PowerdeckList(powerdecks: [
-        Powerdeck(name: "Test", cards: [
-            Powercard(id: "1", name: "bla"),
-            Powercard(id: "2", name: "blabla")
-            ]),
-        Powerdeck(name: "Test deck 2", cards: [
-            Powercard(id: "3", name: "BLA"),
-            Powercard(id: "4", name: "BLABLA")
-            ])
-        ],sorting: .byName)
+class DeckDetailsTableViewController: UITableViewController {
+    var deck: Powerdeck? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -30,15 +31,16 @@ class PowerdeckListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decklist.count
+        return deck?.cards.count ?? 0
     }
 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-        let deck = decklist.item(at: indexPath.row)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let card = self.deck!.cards.item(at: indexPath.row)
         
-        cell.textLabel?.text = deck.name
-        cell.detailTextLabel?.text = "\(deck.cards.count)"
+        cell.textLabel?.text = card.name
+        cell.detailTextLabel?.text = card.subtitle
         
         return cell
     }

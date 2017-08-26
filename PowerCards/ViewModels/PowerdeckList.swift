@@ -27,6 +27,6 @@ struct PowerdeckList {
     }
     
     func item(at index: Int) -> Powerdeck {
-        return powerdecks[powerdecks.index(powerdecks.startIndex, offsetBy: index)]
+        return powerdecks.item(at: index)
     }
 }
