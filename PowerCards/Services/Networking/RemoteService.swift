@@ -41,10 +41,14 @@ struct RemoteService {
             print("Response: " + response.debugDescription)
             switch response.result {
             case .success(let json):
-                guard let json = json as? [String: Any] else { return }
-                guard let object = R.Target(json: json) else { return }
+                if let json = json as? [String: Any] {
+                    guard let object = R.Target(json: json) else { return }
+                    completion?(object)
+                } else if let json = json as? [[String: Any]] {
+                    guard let object = R.Target(jsonDict: json) else { return }
+                    completion?(object)
+                }
                 
-                completion?(object)
             default:
                 break
             }

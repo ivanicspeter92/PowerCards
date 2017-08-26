@@ -43,4 +43,8 @@ struct Powerdeck: JSONInitializable {
         }
         self.cards = json["cards"] as? Int ?? 0
     }
+    
+    init?(jsonDict: [[String : Any]]) {
+        return nil
+    }
 }

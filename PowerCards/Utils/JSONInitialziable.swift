@@ -8,4 +8,5 @@
 
 protocol JSONInitializable {
     init?(json: [String: Any])
+    init?(jsonDict: [[String: Any]])
 }

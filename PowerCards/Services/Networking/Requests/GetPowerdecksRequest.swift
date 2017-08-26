@@ -9,7 +9,7 @@
 import Alamofire
 
 struct GetPowerdecksRequest: TargetParserRequest {
-    typealias Target = Powerdeck
+    typealias Target = PowerdeckList
     
     var endpoint: String {
         return Endpoint.getPowerdecks.urlString

@@ -10,11 +10,19 @@ import UIKit
 
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
-    var decklist: PowerdeckList!
+    var decklist: PowerdeckList = PowerdeckList() {
+        didSet {
+            tableView.reloadData()
+            refreshControl?.endRefreshing()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        fetchFromServer()
         
+        refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
     }
 
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
@@ -27,11 +35,12 @@ class PowerdeckListTableViewController: UITableViewController {
         tableView.endUpdates()
     }
     
-    private func fetchFromServer() {
+    @objc private func fetchFromServer() {
         let request = GetPowerdecksRequest()
         
+        refreshControl?.beginRefreshing()
         RemoteService.shared.send(request: request) { decks in
-            self.decklist = PowerdeckList(powerdecks: decks, sorting: .byName)
+            self.decklist = decks
         }
     }
     

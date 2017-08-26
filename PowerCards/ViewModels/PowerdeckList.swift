@@ -14,7 +14,7 @@ struct PowerdeckList {
         case byNumberOfCards
     }
     
-    private var powerdecks: [Powerdeck]
+    var powerdecks: [Powerdeck]
     var sorting: PowerdeckSorting
     var inverseSorting: Bool = false
     
@@ -22,7 +22,11 @@ struct PowerdeckList {
         return powerdecks.count
     }
     
-    init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting, inverseSorting: Bool = false) {
+    init() {
+        self.init(powerdecks: [])
+    }
+    
+    init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting = .byName, inverseSorting: Bool = false) {
         self.powerdecks = Array(powerdecks)
         self.sorting = sorting
         self.inverseSorting = inverseSorting
@@ -49,5 +53,22 @@ struct PowerdeckList {
     mutating func delete(atIndex index: Int) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: powerdecks[index], userInfo: nil))
         powerdecks.remove(at: index)
+    }
+}
+
+extension PowerdeckList: JSONInitializable {
+    init?(jsonDict: [[String : Any]]) {
+        self.powerdecks = []
+        self.sorting = .byName
+        
+        jsonDict.forEach({
+            if let deck = Powerdeck(json: $0) {
+                self.powerdecks.append(deck)
+            }
+        })
+    }
+    
+    init?(json: [String : Any]) {
+        return nil
     }
 }
