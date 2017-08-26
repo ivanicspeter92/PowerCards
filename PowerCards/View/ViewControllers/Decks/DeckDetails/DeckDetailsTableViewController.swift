@@ -44,9 +44,10 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
         let alert = UIAlertController(title: "Add card", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { alert in
-            self.presentImagePicker()
+            self.presentImagePicker(source: .camera)
         }))
         alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
+            self.presentImagePicker(source: .photoLibrary)
         }))
         alert.addAction(UIAlertAction(title: "Create a quiz question", style: .default, handler: { alert in
         }))
@@ -75,9 +76,9 @@ class DeckDetailsTableViewController: UITableViewController, UINavigationControl
         navigationItem.leftBarButtonItem = leftItem
     }
     
-    private func presentImagePicker() {
+    private func presentImagePicker(source: UIImagePickerControllerSourceType) {
         let controller = UIImagePickerController()
-        controller.sourceType = .camera
+        controller.sourceType = source
         controller.delegate = self
         
         present(controller, animated: true, completion: nil)
