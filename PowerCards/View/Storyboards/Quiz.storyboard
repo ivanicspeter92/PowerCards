@@ -4,7 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,21 +28,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.21176470820000001" green="0.83137255909999996" blue="0.58431375029999999" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elsevier" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-2t-HBg">
+                                <rect key="frame" x="208.5" y="0.0" width="150.5" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9KK-2t-HBg" secondAttribute="height" multiplier="1:1" id="sYq-VF-HW9"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DBg-1b-UEa">
                                 <rect key="frame" x="30" y="0.0" width="315" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-5A-CEb">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="603"/>
+                                        <rect key="frame" x="0.0" y="226" width="315" height="151"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9KK-2t-HBg" secondAttribute="trailing" id="0zI-mc-Tu7"/>
+                            <constraint firstItem="9KK-2t-HBg" firstAttribute="height" secondItem="c5M-aA-EFm" secondAttribute="height" multiplier="0.25" id="48P-FA-vFV"/>
                             <constraint firstItem="aHu-Zg-kJ3" firstAttribute="top" secondItem="DBg-1b-UEa" secondAttribute="bottom" id="Cix-bT-uEg"/>
                             <constraint firstAttribute="trailing" secondItem="yys-PR-YpJ" secondAttribute="trailing" id="EH2-7g-BGN"/>
                             <constraint firstAttribute="trailing" secondItem="DBg-1b-UEa" secondAttribute="trailing" constant="30" id="OK1-Ay-eeU"/>
                             <constraint firstItem="aHu-Zg-kJ3" firstAttribute="top" secondItem="yys-PR-YpJ" secondAttribute="bottom" id="OmA-Kq-Rff"/>
+                            <constraint firstItem="9KK-2t-HBg" firstAttribute="top" secondItem="Smd-je-Wn1" secondAttribute="bottom" id="OnX-xs-tvj"/>
                             <constraint firstItem="DBg-1b-UEa" firstAttribute="top" secondItem="Smd-je-Wn1" secondAttribute="bottom" id="Vpe-I7-qPA"/>
                             <constraint firstItem="yys-PR-YpJ" firstAttribute="top" secondItem="Smd-je-Wn1" secondAttribute="bottom" id="Xxb-yA-iXp"/>
                             <constraint firstItem="DBg-1b-UEa" firstAttribute="leading" secondItem="c5M-aA-EFm" secondAttribute="leading" constant="30" id="kbi-DG-GC9"/>
@@ -65,7 +78,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kG2-jo-E59" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NKp-v9-ytp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NKp-v9-ytp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -79,4 +92,7 @@
             <point key="canvasLocation" x="2022.4000000000001" y="874.36281859070471"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="elsevier" width="2000" height="2199"/>
+    </resources>
 </document>
