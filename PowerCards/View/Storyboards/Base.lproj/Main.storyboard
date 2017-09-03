@@ -203,10 +203,13 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Powercards" id="EIq-T4-KPA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="ny5-RB-UhY" kind="show" identifier="toDeckDetails" id="akv-6D-Skg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8g-nq-69W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="-444"/>
+            <point key="canvasLocation" x="1177" y="-573"/>
         </scene>
         <!--Shop-->
         <scene sceneID="rLx-K3-aag">
@@ -258,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnH-nA-EPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226" y="-444"/>
+            <point key="canvasLocation" x="225" y="-572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1y3-AC-fqK">
@@ -384,4 +387,7 @@
         <image name="icons8-Shop-50" width="30" height="30"/>
         <image name="icons8-User-50" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="akv-6D-Skg"/>
+    </inferredMetricsTieBreakers>
 </document>

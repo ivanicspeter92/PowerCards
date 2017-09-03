@@ -12,14 +12,21 @@ class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
     var decklist: PowerdeckList = PowerdeckList()
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
+        splitViewController?.delegate = self
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            delegate = self
+        }
         
         fetchFromServer()
     }
 
+    // MARK: Event handlers
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
         let deck = Powerdeck(id: "\(arc4random())", name: "Deck #\(decklist.count + 1)", cards: 0)
         
@@ -37,6 +44,13 @@ class PowerdeckListTableViewController: UITableViewController {
             self.refreshControl?.endRefreshing()
             self.decklist = decks
             self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let deckDetailsVC = (segue.destination as? UINavigationController)?.topViewController as? DeckDetailsTableViewController, let powerdeck = sender as? Powerdeck {
+            deckDetailsVC.deckDetails = DeckDetailsViewModel(deck: powerdeck)
         }
     }
 }

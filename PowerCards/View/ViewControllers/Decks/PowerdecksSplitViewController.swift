@@ -12,30 +12,21 @@ class PowerdecksSplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        powerdeckListViewController.delegate = self
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            powerdeckListViewController.delegate = self
+        }
         preferredDisplayMode = .allVisible
     }
     
     var powerdeckListViewController: PowerdeckListTableViewController! {
-        let master = self.childViewControllers.first
+        let master = masterViewController
         
         return (master as! UINavigationController).topViewController as! PowerdeckListTableViewController
     }
     
     var deckdetailsViewController: DeckDetailsTableViewController! {
-        let detail = childViewControllers.last
+        let detail = detailViewController
         
-        return (detail as! UINavigationController).topViewController as! DeckDetailsTableViewController
+        return detail as! DeckDetailsTableViewController
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

@@ -6,8 +6,10 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
+import UIKit
+
 extension PowerdecksSplitViewController: PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck) {
-        self.deckdetailsViewController.deckDetails = DeckDetailsViewModel(deck: powerdeck)
+        deckdetailsViewController.deckDetails = DeckDetailsViewModel(deck: powerdeck)
     }
 }
