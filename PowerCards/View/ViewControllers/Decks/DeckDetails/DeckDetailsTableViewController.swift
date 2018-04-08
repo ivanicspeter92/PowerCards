@@ -77,7 +77,7 @@ class DeckDetailsTableViewController: UITableViewController {
         toTakeQuiz(deckDetails: deck)
     }
     
-    func deckRemovedNotificationReceived(_ notification: Notification) {
+    @objc func deckRemovedNotificationReceived(_ notification: Notification) {
         guard let deck = notification.object as? Powerdeck, deck == self.deckDetails?.deck else { return }
         
         self.deckDetails = nil
