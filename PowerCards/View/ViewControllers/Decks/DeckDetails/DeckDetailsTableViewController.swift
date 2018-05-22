@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import PowerCardsBusinessRules
 
 class DeckDetailsTableViewController: UITableViewController {
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
@@ -47,7 +48,7 @@ class DeckDetailsTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.DeckDeletedNotification), object: nil)
     }
     
     deinit {
@@ -107,15 +108,15 @@ class DeckDetailsTableViewController: UITableViewController {
     
     @objc private func fetchFromServer() {
         guard let deckID = self.deckDetails?.deck else { return }
-        let request = GetPowercardsRequest(id: deckID.id)
-        
-        isUpToDate = false
-        refreshControl?.beginRefreshing()
-        RemoteService.shared.send(request: request) { cardlist in
-            self.deckDetails?.cards = cardlist.powercards
-            self.refreshControl?.endRefreshing()
-            self.tableView.reloadData()
-        }
+//        let request = GetPowercardsRequest(id: deckID.id)
+//        
+//        isUpToDate = false
+//        refreshControl?.beginRefreshing()
+//        RemoteService.shared.send(request: request) { cardlist in
+//            self.deckDetails?.cards = cardlist.powercards
+//            self.refreshControl?.endRefreshing()
+//            self.tableView.reloadData()
+//        }
         isUpToDate = true
     }
 

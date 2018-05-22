@@ -7,7 +7,7 @@
 //
 
 struct AnswerList {
-    var answers: [Answer]
+    public var answers: [Answer]
 }
 
 extension AnswerList: JSONInitializable {

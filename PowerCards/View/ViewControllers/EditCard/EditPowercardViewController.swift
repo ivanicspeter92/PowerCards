@@ -8,6 +8,7 @@
 
 import UIKit
 import CLImageEditor
+import PowerCardsBusinessRules
 
 class EditPowercardViewController: UIViewController {
     @IBOutlet weak var cardImageView: UIImageView!

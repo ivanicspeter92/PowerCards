@@ -8,49 +8,49 @@
 
 import Foundation
 
-struct PowerdeckList {
-    enum PowerdeckSorting {
+public struct PowerdeckList {
+    public enum PowerdeckSorting {
         case byName
         case byNumberOfCards
     }
     
-    var powerdecks: [Powerdeck]
-    var sorting: PowerdeckSorting
-    var inverseSorting: Bool = false
+    public var powerdecks: [Powerdeck]
+    public var sorting: PowerdeckSorting
+    public var inverseSorting: Bool = false
     
-    var count: Int {
+    public var count: Int {
         return powerdecks.count
     }
     
-    init() {
+    public init() {
         self.init(powerdecks: [])
     }
     
-    init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting = .byName, inverseSorting: Bool = false) {
+    public init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting = .byName, inverseSorting: Bool = false) {
         self.powerdecks = Array(powerdecks)
         self.sorting = sorting
         self.inverseSorting = inverseSorting
     }
     
-    func item(at index: Int) -> Powerdeck {
+    public func item(at index: Int) -> Powerdeck {
         return powerdecks[index]
     }
     
-    mutating func append(deck: Powerdeck) {
+    mutating public func append(deck: Powerdeck) {
         powerdecks.append(deck)
     }
     
-    mutating func prepend(deck: Powerdeck) {
+    mutating public func prepend(deck: Powerdeck) {
         powerdecks.insert(deck, at: 0)
     }
     
-    mutating func delete(deck: Powerdeck) {
+    mutating public func delete(deck: Powerdeck) {
         if let index = powerdecks.index(of: deck) {
             self.delete(atIndex: index)
         }
     }
     
-    mutating func delete(atIndex index: Int) {
+    mutating public func delete(atIndex index: Int) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: powerdecks[index], userInfo: nil))
         powerdecks.remove(at: index)
     }

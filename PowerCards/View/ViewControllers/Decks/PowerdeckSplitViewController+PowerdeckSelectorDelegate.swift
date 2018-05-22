@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import PowerCardsBusinessRules
 
 extension PowerdecksSplitViewController: PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck) {
-        deckdetailsViewController.deckDetails = DeckDetailsViewModel(deck: powerdeck)
+        deckdetailsViewController?.deckDetails = DeckDetailsViewModel(deck: powerdeck)
     }
 }

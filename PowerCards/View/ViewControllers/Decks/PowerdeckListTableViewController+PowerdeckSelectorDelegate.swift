@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PowerCardsBusinessRules
 
 extension PowerdeckListTableViewController: PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck) {

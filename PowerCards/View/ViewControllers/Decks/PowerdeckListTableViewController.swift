@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PowerCardsBusinessRules
 
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
@@ -37,14 +38,14 @@ class PowerdeckListTableViewController: UITableViewController {
     }
     
     @objc private func fetchFromServer() {
-        let request = GetPowerdecksRequest()
-        
-        refreshControl?.beginRefreshing()
-        RemoteService.shared.send(request: request) { decks in
-            self.refreshControl?.endRefreshing()
-            self.decklist = decks
-            self.tableView.reloadData()
-        }
+//        let request = GetPowerdecksRequest()
+//        
+//        refreshControl?.beginRefreshing()
+//        RemoteService.shared.send(request: request) { decks in
+//            self.refreshControl?.endRefreshing()
+//            self.decklist = decks
+//            self.tableView.reloadData()
+//        }
     }
     
     // MARK: Navigation

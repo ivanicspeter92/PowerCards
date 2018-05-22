@@ -6,9 +6,9 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-struct Answer {
-    let text: String
-    let isCorrect: Bool
+public struct Answer {
+    public let text: String
+    public let isCorrect: Bool
 }
 
 extension Answer: JSONInitializable {

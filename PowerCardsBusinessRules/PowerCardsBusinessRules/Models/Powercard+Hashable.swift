@@ -7,11 +7,11 @@
 //
 
 extension Powercard: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return id.hashValue
     }
     
-    static func ==(lhs: Powercard, rhs: Powercard) -> Bool {
+    public static func ==(lhs: Powercard, rhs: Powercard) -> Bool {
         return lhs.id == rhs.id
     }
 }

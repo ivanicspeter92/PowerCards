@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Powercard {
-    let id: String
-    let name: String
-    let subTitle: String?
+public struct Powercard {
+    public let id: String
+    public let name: String
+    public let subTitle: String?
 //    let creationDate: Date
-    let deckID: String?
-    let question: String?
-    let answers: [Answer]
+    public let deckID: String?
+    public let question: String?
+    public let answers: [Answer]
     
-    init(id: String, name: String, subTitle: String? = nil, deckID: String? = nil, question: String? = nil, answers: [Answer] = []) {
+    public init(id: String, name: String, subTitle: String? = nil, deckID: String? = nil, question: String? = nil, answers: [Answer] = []) {
         self.id = id
         self.name = name
         self.subTitle = subTitle

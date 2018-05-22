@@ -309,7 +309,7 @@
 		01794AEF2CF3ED9716BD207065EA60E8 /* CLFilterBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLFilterBase.h; path = CLImageEditor/ImageTools/CLFilterTool/CLFilterBase.h; sourceTree = "<group>"; };
 		022422287A447C4372F5540683B2298A /* CLTextLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLTextLabel.m; path = OptionalImageTools/CLTextTool/CLTextLabel.m; sourceTree = "<group>"; };
 		02C3245E1F4BB7903A7C5091CB58D205 /* CLImageEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CLImageEditor-umbrella.h"; sourceTree = "<group>"; };
-		04DA7FAAAF84D2433A47D3E089475650 /* libPods-PowerCardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PowerCardsTests.a"; path = "libPods-PowerCardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DA7FAAAF84D2433A47D3E089475650 /* libPods-PowerCardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		053BEBDC00648630B11528CCDEB9D596 /* UIView+CLImageToolInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CLImageToolInfo.m"; path = "CLImageEditor/ImageTools/ToolSettings/UIView+CLImageToolInfo.m"; sourceTree = "<group>"; };
 		06A60E91C8A38B0D68F4CF5B74335B09 /* CLBloomEffect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLBloomEffect.m; path = CLImageEditor/ImageTools/CLEffectTool/CLEffect/CLBloomEffect.m; sourceTree = "<group>"; };
 		07FF53ABD37E2EB52CAB1B62CA0143BA /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDRotatingImageView.swift; path = PKHUD/PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		0DEFA693F68F10833D7A48A88EA972A0 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		10BF789816CE3588DB7A2B022C469C54 /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBoxGroup.m; path = Classes/BEMCheckBoxGroup.m; sourceTree = "<group>"; };
 		13200C708CFD9E3E688761A2E7282DB0 /* CLFilterBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLFilterBase.m; path = CLImageEditor/ImageTools/CLFilterTool/CLFilterBase.m; sourceTree = "<group>"; };
-		139FE5F2851D95053FF9A859D5D405C5 /* BEMCheckBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BEMCheckBox.framework; path = BEMCheckBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		139FE5F2851D95053FF9A859D5D405C5 /* BEMCheckBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BEMCheckBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CE950F5A7F089706093F9C5F696BAA /* CLImageEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CLImageEditor-dummy.m"; sourceTree = "<group>"; };
 		13EFF223EFAEF27A699F963C0729B235 /* BEMCheckBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-prefix.pch"; sourceTree = "<group>"; };
 		14743E3E65E613B981E3C49E7DA5C349 /* CLImageToolInfo+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CLImageToolInfo+Private.m"; path = "CLImageEditor/ImageTools/ToolSettings/CLImageToolInfo+Private.m"; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 		209FC0C76C3FE7811093992D610DE0C1 /* CLEffectTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLEffectTool.h; path = CLImageEditor/ImageTools/CLEffectTool/CLEffectTool.h; sourceTree = "<group>"; };
 		21313C83E918608AF0F78F1325D730DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228F8631C8EA83590BF6E28648F8BF24 /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDWideBaseView.swift; path = PKHUD/PKHUDWideBaseView.swift; sourceTree = "<group>"; };
-		24AFA34828EE2CEAAB0121A15E6BAE75 /* TBEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TBEmptyDataSet.framework; path = TBEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24AFA34828EE2CEAAB0121A15E6BAE75 /* TBEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TBEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D4F867BBF451D73D268A759D06817C /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		29AD1F8B83A2C8DF6216A7BB1C6F0769 /* Pods-PowerCardsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PowerCardsUITests-resources.sh"; sourceTree = "<group>"; };
 		29CB387AC5461530FEE6AFDE17AAEFC1 /* Pods-PowerCardsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PowerCardsTests-dummy.m"; sourceTree = "<group>"; };
@@ -340,14 +340,14 @@
 		2BB89106C8AACD08AE2039BC2E58D519 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PKHUD/Images.xcassets; sourceTree = "<group>"; };
 		2CC5DFC2EF5610F2C1FDBF0FF99DFDC8 /* BEMPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Classes/BEMPathManager.m; sourceTree = "<group>"; };
 		2DECB7734C5D8C5CCE66A737D2688DF9 /* TBEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
-		2EC5CA370FE918C6BA982527367C66D4 /* CLImageEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CLImageEditor.framework; path = CLImageEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EC5CA370FE918C6BA982527367C66D4 /* CLImageEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLImageEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F247AC5E85C726BEB25D1DBE16785D3 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		2FC857EA3AA0AC29D8EC6764067BA7A9 /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBoxGroup.h; path = Classes/BEMCheckBoxGroup.h; sourceTree = "<group>"; };
 		3052755C278996A5493D937471754DF6 /* CLBloomEffect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLBloomEffect.h; path = CLImageEditor/ImageTools/CLEffectTool/CLEffect/CLBloomEffect.h; sourceTree = "<group>"; };
 		30D73D5273A8BF7278FF8386B7318D7D /* CLHighlightShadowEffect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLHighlightShadowEffect.m; path = CLImageEditor/ImageTools/CLEffectTool/CLEffect/CLHighlightShadowEffect.m; sourceTree = "<group>"; };
 		328C31975BA0808DFDEA9B945CC4A9B1 /* CLToolbarMenuItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLToolbarMenuItem.m; path = CLImageEditor/ImageTools/ToolSettings/CLToolbarMenuItem.m; sourceTree = "<group>"; };
 		32DC98402B23DA2DFA48C3252227BCDF /* PKHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUD.swift; path = PKHUD/PKHUD.swift; sourceTree = "<group>"; };
-		32FC93BC829813B204A9DCC0837EABD5 /* libPods-PowerCardsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PowerCardsUITests.a"; path = "libPods-PowerCardsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32FC93BC829813B204A9DCC0837EABD5 /* libPods-PowerCardsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AA623527A8EBCCDDF0C40A4CF3BD87 /* UIDevice+SystemVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+SystemVersion.m"; path = "CLImageEditor/Utils/UIDevice+SystemVersion.m"; sourceTree = "<group>"; };
 		340B5AC325F09F3989BC54157B5C4E87 /* TBEmptyDataSet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBEmptyDataSet.xcconfig; sourceTree = "<group>"; };
 		37D18BCCE1125A687FCC2C48D1507D0B /* CLImageEditor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLImageEditor.m; path = CLImageEditor/CLImageEditor.m; sourceTree = "<group>"; };
@@ -438,7 +438,7 @@
 		8FD2B113364681E0E1826F22124663B9 /* WeakObjectContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeakObjectContainer.swift; path = TBEmptyDataSet/WeakObjectContainer.swift; sourceTree = "<group>"; };
 		916B1F9F0ED1C4F74B4669387B752147 /* CLClassList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLClassList.h; path = CLImageEditor/Utils/CLClassList.h; sourceTree = "<group>"; };
 		926EEAE8A6508DE5C0803B8310CF6F7B /* BEMCheckBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BEMCheckBox.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9569A2046DC5869AC516FE7F517B8B0E /* PKHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PKHUD.xcconfig; sourceTree = "<group>"; };
 		966FC279032F30797C70E273561B3262 /* WindowRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowRootViewController.swift; path = PKHUD/WindowRootViewController.swift; sourceTree = "<group>"; };
 		9845FB0D9148A4175601122BF8F886D2 /* UIView+CLImageToolInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CLImageToolInfo.h"; path = "CLImageEditor/ImageTools/ToolSettings/UIView+CLImageToolInfo.h"; sourceTree = "<group>"; };
@@ -469,9 +469,9 @@
 		BE5EE987132DCEFEBD8FBD55E7D2BBAB /* PKHUDErrorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDErrorView.swift; path = PKHUD/PKHUDErrorView.swift; sourceTree = "<group>"; };
 		BF034831A80E80D22123068D97466905 /* CLHighlightShadowEffect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLHighlightShadowEffect.h; path = CLImageEditor/ImageTools/CLEffectTool/CLEffect/CLHighlightShadowEffect.h; sourceTree = "<group>"; };
 		C01D31E9837AF241ECE75565D57196A0 /* BEMPathManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMPathManager.h; path = Classes/BEMPathManager.h; sourceTree = "<group>"; };
-		C1E82C7D4877A333DA8D24F1E2CBFB81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1E82C7D4877A333DA8D24F1E2CBFB81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F2E50345906B5FB205BF84B57B8753 /* Pods-PowerCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PowerCards.release.xcconfig"; sourceTree = "<group>"; };
-		C231646734CF44769C75445F0F4BB75C /* PKHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PKHUD.framework; path = PKHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C231646734CF44769C75445F0F4BB75C /* PKHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PKHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25A47F0E8D11DEBFAB423A44AC6915C /* CLRotateTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLRotateTool.h; path = CLImageEditor/ImageTools/CLRotateTool/CLRotateTool.h; sourceTree = "<group>"; };
 		C399BB1DA887F7A88676F9C5759290D8 /* PKHUDAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAssets.swift; path = PKHUD/PKHUDAssets.swift; sourceTree = "<group>"; };
 		C4A47BF32ACCB8F90FE07C216748E575 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
@@ -491,7 +491,7 @@
 		D5AAFDFB06972FB66ED486736C218A0D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D646F1C4AEC40E9476A8EAAEB9766920 /* CLStickerTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLStickerTool.h; path = OptionalImageTools/CLStickerTool/CLStickerTool.h; sourceTree = "<group>"; };
 		DA101EB6CD19AA5D76797602BA1567AF /* Pods-PowerCardsUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PowerCardsUITests-frameworks.sh"; sourceTree = "<group>"; };
-		DA46AA2382C6B73636E07C076B7432EE /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA46AA2382C6B73636E07C076B7432EE /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFD99742A2D2059C3A2CBDE8B5B6EA6 /* CLToolbarMenuItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLToolbarMenuItem.h; path = CLImageEditor/ImageTools/ToolSettings/CLToolbarMenuItem.h; sourceTree = "<group>"; };
 		DBF8C24087B93417981722C020DC7175 /* CLDrawTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLDrawTool.m; path = CLImageEditor/ImageTools/CLDrawTool/CLDrawTool.m; sourceTree = "<group>"; };
 		DC63A2A57DE87894880FCB492E045FF2 /* PKHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PKHUD-dummy.m"; sourceTree = "<group>"; };
@@ -518,7 +518,7 @@
 		F37FEE3CB05BA67581EE067E87BD91B8 /* CLStickerTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLStickerTool.m; path = OptionalImageTools/CLStickerTool/CLStickerTool.m; sourceTree = "<group>"; };
 		F40667A582315DDF702D718A53E83062 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TBEmptyDataSet/Constants.swift; sourceTree = "<group>"; };
 		F60373C21D17CF35DA8C9F6E3730A080 /* CLBlurTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLBlurTool.m; path = CLImageEditor/ImageTools/CLBlurTool/CLBlurTool.m; sourceTree = "<group>"; };
-		F6452C25EB836C47C5479975A33CC0DC /* Pods_PowerCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PowerCards.framework; path = "Pods-PowerCards.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6452C25EB836C47C5479975A33CC0DC /* Pods_PowerCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EEC9FAFD5A4EF3B7953B04BD6DAB93 /* CLFontPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLFontPickerView.h; path = OptionalImageTools/CLTextTool/CLFontPickerView.h; sourceTree = "<group>"; };
 		F8E7A718FF3175391AAF786838911D70 /* CLAdjustmentTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLAdjustmentTool.h; path = CLImageEditor/ImageTools/CLAdjustmentTool/CLAdjustmentTool.h; sourceTree = "<group>"; };
 		F902728C74F1EECB3B84A83F2B6B3F2B /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
@@ -667,7 +667,6 @@
 				41B89BD73F03063C943B744BECF1477E /* Support Files */,
 				697FB6902C26B80C9E3D444D220C682A /* TextTool */,
 			);
-			name = CLImageEditor;
 			path = CLImageEditor;
 			sourceTree = "<group>";
 		};
@@ -724,7 +723,6 @@
 				1DEE00F270AF2BB2E173034CC7BE1E6D /* Resources */,
 				C45962C06090C6EE67E181C2EDE01420 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -765,7 +763,6 @@
 				8FD2B113364681E0E1826F22124663B9 /* WeakObjectContainer.swift */,
 				0F9B6505CE5349B5666F5DA92DE839BF /* Support Files */,
 			);
-			name = TBEmptyDataSet;
 			path = TBEmptyDataSet;
 			sourceTree = "<group>";
 		};
@@ -859,7 +856,6 @@
 				3092BB64DF3E3213BDDB7E31047498B6 /* Resources */,
 				4DBC65742E2CE5BAFCB1D12B1F04FB62 /* Support Files */,
 			);
-			name = PKHUD;
 			path = PKHUD;
 			sourceTree = "<group>";
 		};
@@ -885,7 +881,6 @@
 				B4F5A564E42C4CCA30F24DE0EC22EA9C /* Validation.swift */,
 				714AD291798B2873F193DF3A9D2CC87A /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1040,7 +1035,6 @@
 				2CC5DFC2EF5610F2C1FDBF0FF99DFDC8 /* BEMPathManager.m */,
 				DD62D19D097F7E20714536D199BAB9C2 /* Support Files */,
 			);
-			name = BEMCheckBox;
 			path = BEMCheckBox;
 			sourceTree = "<group>";
 		};

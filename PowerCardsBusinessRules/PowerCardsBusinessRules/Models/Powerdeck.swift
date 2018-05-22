@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-struct Powerdeck: JSONInitializable {
-    let id: String
-    let name: String
-    let subTitle: String?
-    let cards: Int
-    let isShared: Bool
-    let creationDate: Date
+public struct Powerdeck: JSONInitializable {
+    public let id: String
+    public let name: String
+    public let subTitle: String?
+    public let cards: Int
+    public let isShared: Bool
+    public let creationDate: Date
     
-    init(id: String, name: String, subTitle: String? = nil, cards: Int = 0, isShared: Bool = false) {
+    public init(id: String, name: String, subTitle: String? = nil, cards: Int = 0, isShared: Bool = false) {
         self.id = id
         self.name = name
         self.subTitle = subTitle

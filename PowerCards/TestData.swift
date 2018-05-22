@@ -6,6 +6,8 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
+import PowerCardsBusinessRules
+
 struct TestData {
     static var testDeckSet: Set<Powerdeck> {
         return [

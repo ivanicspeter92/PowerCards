@@ -6,8 +6,8 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-struct NotificationKeys {
-    static let DeckDeletedNotification = "DeckDeletedNotification"
+public struct NotificationKeys {
+    public static let DeckDeletedNotification = "DeckDeletedNotification"
     
     private init() {
     }

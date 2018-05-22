@@ -6,10 +6,10 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-struct PowercardList {
-    var powercards: [Powercard]
+public struct PowercardList {
+    public private(set) var powercards: [Powercard]
     
-    var count: Int {
+    public var count: Int {
         return powercards.count
     }
 }

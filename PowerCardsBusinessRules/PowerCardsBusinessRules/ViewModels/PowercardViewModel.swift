@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct PowercardViewModel {
-    var image: UIImage?
-    var name: String
-    var subtitle: String
+public struct PowercardViewModel {
+    public var image: UIImage?
+    public var name: String
+    public var subtitle: String
     
-    init(image: UIImage? = nil, name: String = "", subtitle: String = "") {
+    public init(image: UIImage? = nil, name: String = "", subtitle: String = "") {
         self.image = image
         self.name = name
         self.subtitle = subtitle

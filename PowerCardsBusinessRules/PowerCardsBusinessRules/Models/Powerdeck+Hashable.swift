@@ -7,11 +7,11 @@
 //
 
 extension Powerdeck: Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         return name.hashValue
     }
     
-    static func ==(lhs: Powerdeck, rhs: Powerdeck) -> Bool {
+    public static func ==(lhs: Powerdeck, rhs: Powerdeck) -> Bool {
         return lhs.id == rhs.id
     }
 }
