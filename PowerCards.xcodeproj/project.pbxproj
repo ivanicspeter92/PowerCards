@@ -402,7 +402,7 @@
 					737357EC1F509AAF00377EAD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FCGED7Q6S2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 						TestTargetID = 737357CD1F509AAF00377EAD;
 					};

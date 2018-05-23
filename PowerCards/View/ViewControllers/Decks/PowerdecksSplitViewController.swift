@@ -25,8 +25,12 @@ class PowerdecksSplitViewController: UISplitViewController {
     }
     
     var deckdetailsViewController: DeckDetailsTableViewController? {
-        let detail = detailViewController
-        
-        return detail as? DeckDetailsTableViewController
+        if let detail = detailViewController as? DeckDetailsTableViewController {
+            return detail
+        } else if let navigation = detailViewController as? UINavigationController, let detail = navigation.topViewController as? DeckDetailsTableViewController {
+            return detail
+        } else {
+            return nil
+        }
     }
 }
