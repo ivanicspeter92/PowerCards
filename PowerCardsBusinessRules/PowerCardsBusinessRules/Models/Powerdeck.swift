@@ -16,10 +16,12 @@ public struct Powerdeck: JSONInitializable {
     public let cards: Int
     public let isShared: Bool
     public let creationDate: Date
+    public let creator: User
     
-    public init(id: String, name: String, subTitle: String? = nil, cards: Int = 0, isShared: Bool = false) {
+    public init(id: String, name: String, creator: User, subTitle: String? = nil, cards: Int = 0, isShared: Bool = false) {
         self.id = id
         self.name = name
+        self.creator = creator
         self.subTitle = subTitle
         self.cards = cards
         self.isShared = isShared
@@ -28,11 +30,14 @@ public struct Powerdeck: JSONInitializable {
     
     init?(json: [String: Any]) {
         guard let id = json["id"] as? String,
-            let name = json["name"] as? String
+            let name = json["name"] as? String,
+            let creatorJSON = json["creator"] as? [String: Any],
+            let creator = User(json: creatorJSON)
             else { return nil }
         
         self.id = id
         self.name = name
+        self.creator = creator
         self.subTitle = json["subTitle"] as? String
         self.isShared = json["isShared"] as? Bool ?? false
         if let creationDate = json["creationDate"] as? String {

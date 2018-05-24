@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import PowerCardsBusinessRules
 
 extension PowerdeckListTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return PowerdeckType.all.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decklist.count
+        switch section {
+        case 0: return decklist.count
+        default: return 0
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return "My own"
+        case 1: return "By others"
+        default: return nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

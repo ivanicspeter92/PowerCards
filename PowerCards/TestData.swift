@@ -11,9 +11,13 @@ import PowerCardsBusinessRules
 struct TestData {
     static var testDeckSet: Set<Powerdeck> {
         return [
-            Powerdeck(id: "1", name: "Test", cards: 0),
-            Powerdeck(id: "2", name: "Test deck 2", cards: 0, isShared: true)
+            Powerdeck(id: "1", name: "Test", creator: testUser, cards: 0),
+            Powerdeck(id: "2", name: "Test deck 2", creator: testUser, cards: 0, isShared: true)
         ]
+    }
+    
+    static var testUser: User {
+        return User(id: 1, name: "Peter Ivanics", email: "peter.ivanics@helsinki.fi")
     }
 //    [
 //    Powercard(id: "1", name: "bla"),

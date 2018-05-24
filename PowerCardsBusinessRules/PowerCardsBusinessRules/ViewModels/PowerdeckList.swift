@@ -14,9 +14,9 @@ public struct PowerdeckList {
         case byNumberOfCards
     }
     
-    public var powerdecks: [Powerdeck]
-    public var sorting: PowerdeckSorting
-    public var inverseSorting: Bool = false
+    public private(set) var powerdecks: [Powerdeck]
+    public private(set) var sorting: PowerdeckSorting
+    public private(set) var inverseSorting: Bool = false
     
     public var count: Int {
         return powerdecks.count

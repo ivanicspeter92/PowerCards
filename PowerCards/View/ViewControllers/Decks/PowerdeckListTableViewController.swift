@@ -29,7 +29,7 @@ class PowerdeckListTableViewController: UITableViewController {
 
     // MARK: Event handlers
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
-        let deck = Powerdeck(id: "\(arc4random())", name: "Deck #\(decklist.count + 1)", cards: 0)
+        let deck = Powerdeck(id: "\(arc4random())", name: "Deck #\(decklist.count + 1)", creator: TestData.testUser, cards: 0)
         
         tableView.beginUpdates()
         decklist.prepend(deck: deck)
@@ -38,14 +38,6 @@ class PowerdeckListTableViewController: UITableViewController {
     }
     
     @objc private func fetchFromServer() {
-//        let request = GetPowerdecksRequest()
-//        
-//        refreshControl?.beginRefreshing()
-//        RemoteService.shared.send(request: request) { decks in
-//            self.refreshControl?.endRefreshing()
-//            self.decklist = decks
-//            self.tableView.reloadData()
-//        }
     }
     
     // MARK: Navigation
