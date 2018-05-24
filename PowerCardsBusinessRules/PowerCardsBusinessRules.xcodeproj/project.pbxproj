@@ -27,13 +27,6 @@
 		738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B020AC874300D06279 /* PowerdeckList.swift */; };
 		738A76B620AC874300D06279 /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B120AC874300D06279 /* AnswerList.swift */; };
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
-		738DC36020B0792400FBDCF2 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35820B0792400FBDCF2 /* RemoteService.swift */; };
-		738DC36120B0792400FBDCF2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35A20B0792400FBDCF2 /* Request.swift */; };
-		738DC36220B0792400FBDCF2 /* TargetParserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35B20B0792400FBDCF2 /* TargetParserRequest.swift */; };
-		738DC36320B0792400FBDCF2 /* GetPowercardsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35C20B0792400FBDCF2 /* GetPowercardsRequest.swift */; };
-		738DC36420B0792400FBDCF2 /* GetPowerdecksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35D20B0792400FBDCF2 /* GetPowerdecksRequest.swift */; };
-		738DC36520B0792400FBDCF2 /* CreatePowerDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35E20B0792400FBDCF2 /* CreatePowerDeckRequest.swift */; };
-		738DC36620B0792400FBDCF2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738DC35F20B0792400FBDCF2 /* Endpoint.swift */; };
 		739E87FF2090B380005D5A03 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
 		739E88042090B380005D5A03 /* PowerCardsBusinessRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E88032090B380005D5A03 /* PowerCardsBusinessRulesTests.swift */; };
 		739E88062090B380005D5A03 /* PowerCardsBusinessRules.h in Headers */ = {isa = PBXBuildFile; fileRef = 739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -377,20 +370,13 @@
 				738A76B620AC874300D06279 /* AnswerList.swift in Sources */,
 				738A769920AC868E00D06279 /* Powercard.swift in Sources */,
 				735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */,
-				738DC36520B0792400FBDCF2 /* CreatePowerDeckRequest.swift in Sources */,
-				738DC36420B0792400FBDCF2 /* GetPowerdecksRequest.swift in Sources */,
 				738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */,
 				738A769C20AC868E00D06279 /* Powercard+Hashable.swift in Sources */,
-				738DC36320B0792400FBDCF2 /* GetPowercardsRequest.swift in Sources */,
 				738A769B20AC868E00D06279 /* Answer.swift in Sources */,
-				738DC36620B0792400FBDCF2 /* Endpoint.swift in Sources */,
 				738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */,
-				738DC36020B0792400FBDCF2 /* RemoteService.swift in Sources */,
-				738DC36120B0792400FBDCF2 /* Request.swift in Sources */,
 				7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */,
 				738A76B220AC874300D06279 /* PowercardList.swift in Sources */,
 				738A76B420AC874300D06279 /* DeckDetailsViewModel.swift in Sources */,
-				738DC36220B0792400FBDCF2 /* TargetParserRequest.swift in Sources */,
 				7364E33520B5C0E7008F94E4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
