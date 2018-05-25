@@ -11,7 +11,7 @@ import PowerCardsBusinessRules
 
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
-    var decklist: PowerdeckList = PowerdeckList()
+    var decklist: PowerdeckList = PowerdeckList(owner: TestData.testUser)
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -29,11 +29,11 @@ class PowerdeckListTableViewController: UITableViewController {
 
     // MARK: Event handlers
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
-        let deck = Powerdeck(id: "\(arc4random())", name: "Deck #\(decklist.count + 1)", creator: TestData.testUser, cards: 0)
+        let deck = Powerdeck(id: "\(arc4random())", name: "Deck", creator: TestData.testUser, cards: 0)
         
         tableView.beginUpdates()
-        decklist.prepend(deck: deck)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        let updatedIndex = decklist.addNewDeck(deck: deck)
+        tableView.insertRows(at: [IndexPath(row: 0, section: updatedIndex)], with: .automatic)
         tableView.endUpdates()
     }
     

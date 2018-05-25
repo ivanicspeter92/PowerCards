@@ -15,6 +15,7 @@
 		7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */; };
 		7364E33520B5C0E7008F94E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33420B5C0E7008F94E4 /* User.swift */; };
 		7364E33720B5C11B008F94E4 /* User+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33620B5C11B008F94E4 /* User+Hashable.swift */; };
+		73742FF220B7093000103F93 /* PowerdeckListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73742FF120B7093000103F93 /* PowerdeckListSection.swift */; };
 		738A769820AC868E00D06279 /* Powerdeck+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769320AC868E00D06279 /* Powerdeck+Hashable.swift */; };
 		738A769920AC868E00D06279 /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769420AC868E00D06279 /* Powercard.swift */; };
 		738A769A20AC868E00D06279 /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769520AC868E00D06279 /* Powerdeck.swift */; };
@@ -51,6 +52,7 @@
 		7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckType.swift; sourceTree = "<group>"; };
 		7364E33420B5C0E7008F94E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7364E33620B5C11B008F94E4 /* User+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Hashable.swift"; sourceTree = "<group>"; };
+		73742FF120B7093000103F93 /* PowerdeckListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckListSection.swift; sourceTree = "<group>"; };
 		738A769320AC868E00D06279 /* Powerdeck+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Powerdeck+Hashable.swift"; sourceTree = "<group>"; };
 		738A769420AC868E00D06279 /* Powercard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powercard.swift; sourceTree = "<group>"; };
 		738A769520AC868E00D06279 /* Powerdeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerdeck.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				738A76AD20AC874300D06279 /* PowercardList.swift */,
+				73742FF120B7093000103F93 /* PowerdeckListSection.swift */,
 				7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */,
 				738A76AE20AC874300D06279 /* PowercardViewModel.swift */,
 				738A76AF20AC874300D06279 /* DeckDetailsViewModel.swift */,
@@ -373,6 +376,7 @@
 				738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */,
 				738A769C20AC868E00D06279 /* Powercard+Hashable.swift in Sources */,
 				738A769B20AC868E00D06279 /* Answer.swift in Sources */,
+				73742FF220B7093000103F93 /* PowerdeckListSection.swift in Sources */,
 				738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */,
 				7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */,
 				738A76B220AC874300D06279 /* PowercardList.swift in Sources */,

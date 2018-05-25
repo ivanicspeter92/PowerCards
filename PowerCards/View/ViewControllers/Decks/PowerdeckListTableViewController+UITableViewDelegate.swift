@@ -10,7 +10,7 @@ import UIKit
 
 extension PowerdeckListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let deck = self.decklist.item(at: indexPath.row)
+        let deck = self.decklist.section(at: indexPath.section)!.item(at: indexPath.row)
         
         delegate?.selected(powerdeck: deck)
     }

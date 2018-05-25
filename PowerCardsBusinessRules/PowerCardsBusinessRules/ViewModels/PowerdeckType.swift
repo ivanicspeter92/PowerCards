@@ -13,4 +13,11 @@ public enum PowerdeckType {
     static public var all: [PowerdeckType] {
         return [.own, .otherUsers]
     }
+    
+    public var name: String {
+        switch self {
+        case .own: return "My own"
+        case .otherUsers: return "By others"
+        }
+    }
 }

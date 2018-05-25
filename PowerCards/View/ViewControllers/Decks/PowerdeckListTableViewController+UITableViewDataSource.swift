@@ -11,28 +11,24 @@ import PowerCardsBusinessRules
 
 extension PowerdeckListTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return PowerdeckType.all.count
+        return decklist.sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return decklist.count
-        default: return 0
-        }
+        guard let section = decklist.section(at: section) else { return 0 }
         
+        return section.powerdecks.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return "My own"
-        case 1: return "By others"
-        default: return nil
-        }
+        guard let section = decklist.section(at: section) else { return nil }
+        
+        return section.name
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-        let deck = decklist.item(at: indexPath.row)
+        let deck = decklist.section(at: indexPath.section)!.item(at: indexPath.row)
         
         cell.textLabel?.text = deck.name
         
@@ -60,7 +56,8 @@ extension PowerdeckListTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            decklist.delete(atIndex: indexPath.row)
+            var section = decklist.section(at: indexPath.section)
+            section?.delete(atIndex: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

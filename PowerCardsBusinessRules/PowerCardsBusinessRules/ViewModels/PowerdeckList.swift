@@ -8,67 +8,58 @@
 
 import Foundation
 
+protocol Sortable {
+}
+
 public struct PowerdeckList {
     public enum PowerdeckSorting {
         case byName
         case byNumberOfCards
     }
     
-    public private(set) var powerdecks: [Powerdeck]
+    public private(set) var sections: [PowerdeckListSection]
     public private(set) var sorting: PowerdeckSorting
     public private(set) var inverseSorting: Bool = false
+    public private(set) var owner: User
     
-    public var count: Int {
-        return powerdecks.count
-    }
-    
-    public init() {
-        self.init(powerdecks: [])
-    }
-    
-    public init(powerdecks: Set<Powerdeck>, sorting: PowerdeckSorting = .byName, inverseSorting: Bool = false) {
-        self.powerdecks = Array(powerdecks)
+    public init(owner: User, sorting: PowerdeckSorting = .byName, sections: [PowerdeckListSection] = PowerdeckType.all.map({ PowerdeckListSection(name: $0.name, powerdecks: [])}), inverseSorting: Bool = false) {
+        self.owner = owner
+        self.sections = sections
         self.sorting = sorting
         self.inverseSorting = inverseSorting
     }
     
-    public func item(at index: Int) -> Powerdeck {
-        return powerdecks[index]
-    }
-    
-    mutating public func append(deck: Powerdeck) {
-        powerdecks.append(deck)
-    }
-    
-    mutating public func prepend(deck: Powerdeck) {
-        powerdecks.insert(deck, at: 0)
-    }
-    
-    mutating public func delete(deck: Powerdeck) {
-        if let index = powerdecks.index(of: deck) {
-            self.delete(atIndex: index)
+    public func section(at index: Int) -> PowerdeckListSection? {
+        if index >= 0 && index < sections.count {
+            return sections[index]
         }
+        return nil
     }
     
-    mutating public func delete(atIndex index: Int) {
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: powerdecks[index], userInfo: nil))
-        powerdecks.remove(at: index)
+    public mutating func addNewDeck(deck: Powerdeck) -> Int {
+        if deck.creator == self.owner {
+            self.sections[0].append(deck: deck)
+            return 0
+        } else {
+            self.sections[1].append(deck: deck)
+            return 1
+        }
     }
 }
 
-extension PowerdeckList: JSONInitializable {
-    init?(jsonDict: [[String : Any]]) {
-        self.powerdecks = []
-        self.sorting = .byName
-        
-        jsonDict.forEach({
-            if let deck = Powerdeck(json: $0) {
-                self.powerdecks.append(deck)
-            }
-        })
-    }
-    
-    init?(json: [String : Any]) {
-        return nil
-    }
-}
+//extension PowerdeckList: JSONInitializable {
+//    init?(jsonDict: [[String : Any]]) {
+//        self.powerdecks = []
+//        self.sorting = .byName
+//
+//        jsonDict.forEach({
+//            if let deck = Powerdeck(json: $0) {
+//                self.powerdecks.append(deck)
+//            }
+//        })
+//    }
+//
+//    init?(json: [String : Any]) {
+//        return nil
+//    }
+//}

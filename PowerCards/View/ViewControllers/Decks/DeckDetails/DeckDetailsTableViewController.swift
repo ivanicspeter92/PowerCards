@@ -107,7 +107,7 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     @objc private func fetchFromServer() {
-        guard let deckID = self.deckDetails?.deck else { return }
+//        guard let deckID = self.deckDetails?.deck else { return }
 //        let request = GetPowercardsRequest(id: deckID.id)
 //        
 //        isUpToDate = false
