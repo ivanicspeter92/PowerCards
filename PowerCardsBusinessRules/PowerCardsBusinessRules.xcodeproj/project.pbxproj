@@ -11,11 +11,11 @@
 		735845F620B07BCB00428F36 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F420B07BCB00428F36 /* AppSettings.swift */; };
 		735845F920B07D6900428F36 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 735845F820B07D6900428F36 /* Cartfile */; };
 		7358460420B07DF300428F36 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 7358460320B07DF300428F36 /* Cartfile.resolved */; };
-		7358460720B07E5C00428F36 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7358460620B07E5C00428F36 /* Alamofire.framework */; };
 		7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */; };
 		7364E33520B5C0E7008F94E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33420B5C0E7008F94E4 /* User.swift */; };
 		7364E33720B5C11B008F94E4 /* User+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364E33620B5C11B008F94E4 /* User+Hashable.swift */; };
 		73742FF220B7093000103F93 /* PowerdeckListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73742FF120B7093000103F93 /* PowerdeckListSection.swift */; };
+		73746AF520BC5D1A00D2FC4E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7358460620B07E5C00428F36 /* Alamofire.framework */; };
 		738A769820AC868E00D06279 /* Powerdeck+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769320AC868E00D06279 /* Powerdeck+Hashable.swift */; };
 		738A769920AC868E00D06279 /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769420AC868E00D06279 /* Powercard.swift */; };
 		738A769A20AC868E00D06279 /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769520AC868E00D06279 /* Powerdeck.swift */; };
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7358460720B07E5C00428F36 /* Alamofire.framework in Frameworks */,
+				73746AF520BC5D1A00D2FC4E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRules;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -574,6 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRules;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
