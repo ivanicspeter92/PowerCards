@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Powercard {
+public class Powercard {
     public let id: String
     public let name: String
     public let subTitle: String?
@@ -28,25 +28,25 @@ public struct Powercard {
     }
 }
 
-extension Powercard: JSONInitializable {
-    init?(json: [String : Any]) {
-        guard let id = json["id"] as? String,
-            let name = json["name"] as? String
-            else { return nil }
-        
-        self.id = id
-        self.name = name
-        self.subTitle = json["subTitle"] as? String
-        self.deckID = json["deckID"] as? String
-        self.question = json["question"] as? String
-        if let answerListJSON = json["answers"] as? [[String: Any]], let answerList = AnswerList(jsonDict: answerListJSON) {
-            self.answers = answerList.answers
-        } else {
-            self.answers = []
-        }
-    }
-    
-    init?(jsonDict: [[String : Any]]) {
-        return nil
-    }
-}
+//extension Powercard: JSONInitializable {
+//    init?(json: [String : Any]) {
+//        guard let id = json["id"] as? String,
+//            let name = json["name"] as? String
+//            else { return nil }
+//        
+//        self.id = id
+//        self.name = name
+//        self.subTitle = json["subTitle"] as? String
+//        self.deckID = json["deckID"] as? String
+//        self.question = json["question"] as? String
+//        if let answerListJSON = json["answers"] as? [[String: Any]], let answerList = AnswerList(jsonDict: answerListJSON) {
+//            self.answers = answerList.answers
+//        } else {
+//            self.answers = []
+//        }
+//    }
+//    
+//    init?(jsonDict: [[String : Any]]) {
+//        return nil
+//    }
+//}

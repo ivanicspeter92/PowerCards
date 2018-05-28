@@ -6,28 +6,30 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-public struct PowercardList {
+public class PowercardList {
     public private(set) var powercards: [Powercard]
+    
+    public init(powercards: [Powercard]) {
+        self.powercards = powercards
+    }
     
     public var count: Int {
         return powercards.count
     }
 }
 
-extension PowercardList: JSONInitializable {
-    init?(json: [String : Any]) {
-        return nil
-    }
-    
-    init?(jsonDict: [[String : Any]]) {
-        self.powercards = []
-        
-        jsonDict.forEach({
-            if let deck = Powercard(json: $0) {
-                self.powercards.append(deck)
-            }
-        })
-    }
-    
-    
-}
+//extension PowercardList: JSONInitializable {
+//    init?(json: [String : Any]) {
+//        return nil
+//    }
+//
+//    init?(jsonDict: [[String : Any]]) {
+//        self.powercards = []
+//
+//        jsonDict.forEach({
+//            if let deck = Powercard(json: $0) {
+//                self.powercards.append(deck)
+//            }
+//        })
+//    }
+//}

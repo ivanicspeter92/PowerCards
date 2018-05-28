@@ -29,7 +29,6 @@
 		738A76B620AC874300D06279 /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B120AC874300D06279 /* AnswerList.swift */; };
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
 		739E87FF2090B380005D5A03 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
-		739E88042090B380005D5A03 /* PowerCardsBusinessRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E88032090B380005D5A03 /* PowerCardsBusinessRulesTests.swift */; };
 		739E88062090B380005D5A03 /* PowerCardsBusinessRules.h in Headers */ = {isa = PBXBuildFile; fileRef = 739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerCardsBusinessRules.h; sourceTree = "<group>"; };
 		739E87F92090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		739E87FE2090B380005D5A03 /* PowerCardsBusinessRulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsBusinessRulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		739E88032090B380005D5A03 /* PowerCardsBusinessRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardsBusinessRulesTests.swift; sourceTree = "<group>"; };
 		739E88052090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +204,6 @@
 		739E88022090B380005D5A03 /* PowerCardsBusinessRulesTests */ = {
 			isa = PBXGroup;
 			children = (
-				739E88032090B380005D5A03 /* PowerCardsBusinessRulesTests.swift */,
 				739E88052090B380005D5A03 /* Info.plist */,
 			);
 			path = PowerCardsBusinessRulesTests;
@@ -389,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				739E88042090B380005D5A03 /* PowerCardsBusinessRulesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
