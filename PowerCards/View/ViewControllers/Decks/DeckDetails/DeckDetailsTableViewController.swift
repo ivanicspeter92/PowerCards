@@ -90,7 +90,9 @@ class DeckDetailsTableViewController: UITableViewController {
     
     // MARK: Private
     private func loadDeckTitleToView() {
-        addTitle(text: (powerdeck?.name ?? "Unknown deck") + " (\(powerdeck?.cards.count ?? 0) cards)")
+        guard let powerdeck = powerdeck else { addTitle(text: nil); return }
+        
+        addTitle(text: (powerdeck.name) + " (\(powerdeck.cards.count) cards)")
     }
     
     private func addTitle(text: String?) {
