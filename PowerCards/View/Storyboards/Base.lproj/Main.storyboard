@@ -29,6 +29,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem title="Rename deck" id="oqi-t8-CDT">
+                            <connections>
+                                <action selector="renameDeckButtonTapped:" destination="5GO-3b-h7P" id="bhW-a6-Tri"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="New card" id="E8W-4w-nAZ">
                             <connections>
                                 <action selector="addCardButtonTapped:" destination="5GO-3b-h7P" id="kBO-5t-mlQ"/>
@@ -44,6 +49,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
+                        <outlet property="renameDeckButton" destination="oqi-t8-CDT" id="EbO-Fj-LZi"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toCreateCard" id="LZX-n6-lBX"/>
                         <segue destination="wda-Yi-EAm" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>

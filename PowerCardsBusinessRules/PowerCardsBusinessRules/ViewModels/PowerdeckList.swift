@@ -46,20 +46,3 @@ public struct PowerdeckList {
         }
     }
 }
-
-//extension PowerdeckList: JSONInitializable {
-//    init?(jsonDict: [[String : Any]]) {
-//        self.powerdecks = []
-//        self.sorting = .byName
-//
-//        jsonDict.forEach({
-//            if let deck = Powerdeck(json: $0) {
-//                self.powerdecks.append(deck)
-//            }
-//        })
-//    }
-//
-//    init?(json: [String : Any]) {
-//        return nil
-//    }
-//}

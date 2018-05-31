@@ -27,16 +27,8 @@ extension PowerdeckListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let deck = decklist.section(at: indexPath.section)!.item(at: indexPath.row)
-        
-        cell.textLabel?.text = deck.name
-        
-        if deck.isShared {
-            cell.textLabel?.text = (cell.textLabel?.text ?? "") + " (Shared)"
-        }
-        
-        cell.detailTextLabel?.text = "\(deck.cards)"
+        let cell = PowerDeckTableViewCell(powerdeck: deck, style: .value1, reuseIdentifier: nil)
         
         return cell
     }

@@ -13,7 +13,7 @@ import PowerCardsBusinessRules
 class QuizViewController: UIViewController {
     @IBOutlet weak var container: UIStackView!
     
-    var deckDetails: DeckDetailsViewModel!
+    var deckDetails: Powerdeck!
     
     private(set) var correctAnswers = 0
     private var currentQuestionIndex = 0
@@ -41,7 +41,7 @@ class QuizViewController: UIViewController {
     
     // MARK: Private
     private func updateTitle() {
-        title = deckDetails.deck.name + " (\(currentQuestionIndex + 1)/\(deckDetails.deck.cards))"
+        title = deckDetails.name + " (\(currentQuestionIndex + 1)/\(deckDetails.cards))"
     }
     
     private func loadNextQuestion() {

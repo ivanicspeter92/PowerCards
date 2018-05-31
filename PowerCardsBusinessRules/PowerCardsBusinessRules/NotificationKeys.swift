@@ -6,9 +6,7 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-public struct NotificationKeys {
-    public static let DeckDeletedNotification = "DeckDeletedNotification"
-    
-    private init() {
-    }
+public enum NotificationKeys: String {
+    case deckNameChanged = "DeckNameChangedNotification"
+    case deckDeleted = "DeckDeletedNotification"
 }

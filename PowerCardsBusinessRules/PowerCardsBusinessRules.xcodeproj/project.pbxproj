@@ -24,7 +24,6 @@
 		738A76A020AC86BA00D06279 /* JSONInitialziable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769F20AC86BA00D06279 /* JSONInitialziable.swift */; };
 		738A76B220AC874300D06279 /* PowercardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76AD20AC874300D06279 /* PowercardList.swift */; };
 		738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76AE20AC874300D06279 /* PowercardViewModel.swift */; };
-		738A76B420AC874300D06279 /* DeckDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76AF20AC874300D06279 /* DeckDetailsViewModel.swift */; };
 		738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B020AC874300D06279 /* PowerdeckList.swift */; };
 		738A76B620AC874300D06279 /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B120AC874300D06279 /* AnswerList.swift */; };
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
@@ -60,7 +59,6 @@
 		738A769F20AC86BA00D06279 /* JSONInitialziable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInitialziable.swift; sourceTree = "<group>"; };
 		738A76AD20AC874300D06279 /* PowercardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowercardList.swift; sourceTree = "<group>"; };
 		738A76AE20AC874300D06279 /* PowercardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowercardViewModel.swift; sourceTree = "<group>"; };
-		738A76AF20AC874300D06279 /* DeckDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckDetailsViewModel.swift; sourceTree = "<group>"; };
 		738A76B020AC874300D06279 /* PowerdeckList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerdeckList.swift; sourceTree = "<group>"; };
 		738A76B120AC874300D06279 /* AnswerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerList.swift; sourceTree = "<group>"; };
 		738A76B920AC876E00D06279 /* NotificationKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				73742FF120B7093000103F93 /* PowerdeckListSection.swift */,
 				7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */,
 				738A76AE20AC874300D06279 /* PowercardViewModel.swift */,
-				738A76AF20AC874300D06279 /* DeckDetailsViewModel.swift */,
 				738A76B020AC874300D06279 /* PowerdeckList.swift */,
 				738A76B120AC874300D06279 /* AnswerList.swift */,
 			);
@@ -377,7 +374,6 @@
 				738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */,
 				7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */,
 				738A76B220AC874300D06279 /* PowercardList.swift in Sources */,
-				738A76B420AC874300D06279 /* DeckDetailsViewModel.swift in Sources */,
 				7364E33520B5C0E7008F94E4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,12 +14,12 @@ extension DeckDetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deckDetails?.cards.count ?? 0
+        return powerdeck?.cards.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let card = deckDetails!.cards[indexPath.row]
+        let card = powerdeck!.cards[indexPath.row]
         
         cell.textLabel?.text = card.name
         cell.detailTextLabel?.text = card.subTitle
@@ -43,7 +43,7 @@ extension DeckDetailsTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            deckDetails?.cards.remove(at: indexPath.row)
+            powerdeck?.removeCard(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

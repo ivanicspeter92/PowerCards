@@ -9,16 +9,22 @@
 import Foundation
 import UIKit
 
-public struct Powerdeck: JSONInitializable {
+public class Powerdeck {
     public let id: String
-    public let name: String
+    public var name: String {
+        didSet {
+            if name != oldValue {
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.deckNameChanged.rawValue), object: self, userInfo: nil))
+            }
+        }
+    }
     public let subTitle: String?
-    public let cards: Int
+    public var cards: [Powercard]
     public let isShared: Bool
     public let creationDate: Date
     public let creator: User
     
-    public init(id: String, name: String, creator: User, subTitle: String? = nil, cards: Int = 0, isShared: Bool = false) {
+    public init(id: String, name: String, creator: User, subTitle: String? = nil, cards: [Powercard] = [], isShared: Bool = false) {
         self.id = id
         self.name = name
         self.creator = creator
@@ -28,28 +34,7 @@ public struct Powerdeck: JSONInitializable {
         self.creationDate = Date()
     }
     
-    init?(json: [String: Any]) {
-        guard let id = json["id"] as? String,
-            let name = json["name"] as? String,
-            let creatorJSON = json["creator"] as? [String: Any],
-            let creator = User(json: creatorJSON)
-            else { return nil }
-        
-        self.id = id
-        self.name = name
-        self.creator = creator
-        self.subTitle = json["subTitle"] as? String
-        self.isShared = json["isShared"] as? Bool ?? false
-        if let creationDate = json["creationDate"] as? String {
-            let formatter = DateFormatter()
-            self.creationDate = formatter.date(from: creationDate) ?? Date()
-        } else {
-            self.creationDate = Date()
-        }
-        self.cards = json["cards"] as? Int ?? 0
-    }
-    
-    init?(jsonDict: [[String : Any]]) {
-        return nil
+    public func removeCard(at index: Int) {
+        self.cards.remove(at: index)
     }
 }

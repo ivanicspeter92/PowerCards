@@ -46,7 +46,7 @@ public class PowerdeckListSection: Hashable {
     }
     
     public func delete(atIndex index: Int) {
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.DeckDeletedNotification), object: powerdecks[index], userInfo: nil))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.deckDeleted.rawValue), object: powerdecks[index], userInfo: nil))
         powerdecks.remove(at: index)
     }
 }

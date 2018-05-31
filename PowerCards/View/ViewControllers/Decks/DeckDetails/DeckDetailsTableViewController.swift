@@ -11,25 +11,27 @@ import PKHUD
 import PowerCardsBusinessRules
 
 class DeckDetailsTableViewController: UITableViewController {
+    @IBOutlet weak var renameDeckButton: UIBarButtonItem!
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
     private(set) var isUpToDate = false
     
-    var deckDetails: DeckDetailsViewModel? {
+    var powerdeck: Powerdeck? {
         willSet {
             refreshControl?.endRefreshing()
         } didSet {
-            if deckDetails?.deck != oldValue?.deck {
+            if powerdeck != oldValue {
                 isUpToDate = false
                 tableView.reloadData()
             }
-            self.addTitle(text: (deckDetails?.deck.name ?? "Unknown deck") + " (\(deckDetails?.cards.count ?? 0) cards)")
+            loadDeckTitleToView()
             
-            takeQuizButton.isEnabled = deckDetails != nil && deckDetails?.cards.count != 0
-            addCardButton.isEnabled = deckDetails != nil
+            takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
+            addCardButton.isEnabled = powerdeck != nil
+            renameDeckButton.isEnabled = powerdeck != nil
             
-            if deckDetails?.cards.count == 0 && !isUpToDate {
+            if powerdeck?.cards.count == 0 && !isUpToDate {
                 fetchFromServer()
             }
         }
@@ -41,14 +43,16 @@ class DeckDetailsTableViewController: UITableViewController {
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
        
+        renameDeckButton.isEnabled = false
         takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
-        navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
+        navigationItem.rightBarButtonItems = [addCardButton, renameDeckButton, takeQuizButton]
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.DeckDeletedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckDeleted.rawValue), object: nil)
     }
     
     deinit {
@@ -56,6 +60,10 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     // MARK: Event handlers
+    @IBAction func renameDeckButtonTapped(_ sender: UIBarButtonItem) {
+        presentRenameDialog()
+    }
+    
     @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add card", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -65,30 +73,37 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
             self.presentImagePicker(source: .photoLibrary)
         }))
-        alert.addAction(UIAlertAction(title: "Create a quiz question", style: .default, handler: { alert in
-        }))
         alert.popoverPresentationController?.barButtonItem = addCardButton
         
         present(alert, animated: true, completion: nil)
     }
     
     @IBAction func takeQuizButtonTapped(_ sender: UIBarButtonItem) {
-        guard let deck = deckDetails else { HUD.show(.labeledError(title: "No deck selected!", subtitle: nil)); return }
+        guard let deck = powerdeck else { HUD.show(.labeledError(title: "No deck selected!", subtitle: nil)); return }
         
         toTakeQuiz(deckDetails: deck)
     }
     
-    @objc func deckRemovedNotificationReceived(_ notification: Notification) {
-        guard let deck = notification.object as? Powerdeck, deck == self.deckDetails?.deck else { return }
+    // MARK: Notification listeners
+    @objc func deckNameChangedNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
-        self.deckDetails = nil
+        loadDeckTitleToView()
+    }
+    
+    @objc func deckRemovedNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
+        
+        self.powerdeck = nil
         tableView.reloadData()
     }
     
     // MARK: Private
+    private func loadDeckTitleToView() {
+        addTitle(text: (powerdeck?.name ?? "Unknown deck") + " (\(powerdeck?.cards.count ?? 0) cards)")
+    }
+    
     private func addTitle(text: String?) {
-        //            title = deck?.name
-        
         let label = UILabel()
         label.text = text
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
@@ -96,6 +111,23 @@ class DeckDetailsTableViewController: UITableViewController {
         
         let leftItem = UIBarButtonItem(customView: label)
         navigationItem.leftBarButtonItem = leftItem
+    }
+    
+    private func presentRenameDialog() {
+        let alert = UIAlertController(title: "Rename Deck", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textfield in
+            textfield.text = self.powerdeck?.name
+        }
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned alert] action in
+            if let textfield = alert.textFields?.first, let newTitle = textfield.text {
+                self.powerdeck?.name = newTitle
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     private func presentImagePicker(source: UIImagePickerControllerSourceType) {
@@ -126,8 +158,8 @@ class DeckDetailsTableViewController: UITableViewController {
             if let pickedImage = sender as? UIImage {
                 destination.card = PowercardViewModel(image: pickedImage)
             }
-        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController, let deckDetails = sender as? DeckDetailsViewModel {
-            destination.deckDetails = deckDetails
+        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController {
+            destination.deckDetails = powerdeck
         }
     }
 
@@ -135,7 +167,7 @@ class DeckDetailsTableViewController: UITableViewController {
         performSegue(withIdentifier: "toCreateCard", sender: pickedImage)
     }
     
-    func toTakeQuiz(deckDetails: DeckDetailsViewModel) {
+    func toTakeQuiz(deckDetails: Powerdeck) {
         performSegue(withIdentifier: "toQuiz", sender: deckDetails)
     }
 }
