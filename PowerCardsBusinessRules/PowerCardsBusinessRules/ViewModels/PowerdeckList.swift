@@ -8,9 +8,6 @@
 
 import Foundation
 
-protocol Sortable {
-}
-
 public struct PowerdeckList {
     public enum PowerdeckSorting {
         case byName
@@ -36,13 +33,23 @@ public struct PowerdeckList {
         return nil
     }
     
-    public mutating func addNewDeck(deck: Powerdeck) -> Int {
+    public mutating func addNewDeck(deck: Powerdeck) -> IndexPath {
         if deck.creator == self.owner {
             self.sections[0].append(deck: deck)
-            return 0
+            return IndexPath(row: self.sections[0].itemsCount - 1, section: 0)
         } else {
             self.sections[1].append(deck: deck)
-            return 1
+            return IndexPath(row: self.sections[1].itemsCount - 1, section: 1)
         }
+    }
+    
+    public func contains(deck: Powerdeck) -> Bool {
+        for section in self.sections {
+            if section.powerdecks.contains(deck) {
+                return true
+            }
+        }
+        
+        return false
     }
 }

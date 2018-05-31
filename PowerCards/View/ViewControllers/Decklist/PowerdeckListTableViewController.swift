@@ -21,6 +21,8 @@ class PowerdeckListTableViewController: UITableViewController {
         if UIDevice.current.userInterfaceIdiom == .phone {
             delegate = self
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
     }
 
     // MARK: Event handlers
@@ -29,8 +31,15 @@ class PowerdeckListTableViewController: UITableViewController {
         
         tableView.beginUpdates()
         let updatedIndex = decklist.addNewDeck(deck: deck)
-        tableView.insertRows(at: [IndexPath(row: 0, section: updatedIndex)], with: .automatic)
+        tableView.insertRows(at: [updatedIndex], with: .automatic)
         tableView.endUpdates()
+    }
+    
+    // MARK: Notification listeners
+    @objc func deckNameChangedNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, decklist.contains(deck: deck) else { return }
+        
+        tableView.reloadData()
     }
     
     // MARK: Navigation

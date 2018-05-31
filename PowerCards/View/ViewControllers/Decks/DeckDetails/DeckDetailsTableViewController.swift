@@ -15,14 +15,11 @@ class DeckDetailsTableViewController: UITableViewController {
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
-    private(set) var isUpToDate = false
-    
     var powerdeck: Powerdeck? {
         willSet {
             refreshControl?.endRefreshing()
         } didSet {
             if powerdeck != oldValue {
-                isUpToDate = false
                 tableView.reloadData()
             }
             loadDeckTitleToView()
@@ -30,10 +27,6 @@ class DeckDetailsTableViewController: UITableViewController {
             takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
             addCardButton.isEnabled = powerdeck != nil
             renameDeckButton.isEnabled = powerdeck != nil
-            
-            if powerdeck?.cards.count == 0 && !isUpToDate {
-                fetchFromServer()
-            }
         }
     }
     
@@ -47,9 +40,6 @@ class DeckDetailsTableViewController: UITableViewController {
         takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
         navigationItem.rightBarButtonItems = [addCardButton, renameDeckButton, takeQuizButton]
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(fetchFromServer), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckDeleted.rawValue), object: nil)
@@ -138,20 +128,6 @@ class DeckDetailsTableViewController: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    @objc private func fetchFromServer() {
-//        guard let deckID = self.deckDetails?.deck else { return }
-//        let request = GetPowercardsRequest(id: deckID.id)
-//        
-//        isUpToDate = false
-//        refreshControl?.beginRefreshing()
-//        RemoteService.shared.send(request: request) { cardlist in
-//            self.deckDetails?.cards = cardlist.powercards
-//            self.refreshControl?.endRefreshing()
-//            self.tableView.reloadData()
-//        }
-        isUpToDate = true
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? segue.destination as? EditPowercardViewController {
