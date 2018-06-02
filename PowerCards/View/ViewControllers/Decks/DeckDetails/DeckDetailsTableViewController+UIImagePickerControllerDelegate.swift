@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import PowerCardsBusinessRules
 
 extension DeckDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage, let card = powerdeck?.createCard(with: pickedImage) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let card = PowerFlashCard(name: "New deck", subTitle: nil, image: pickedImage)
             toCard(card: card)
         }
     }

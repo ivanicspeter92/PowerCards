@@ -45,45 +45,45 @@ class QuizViewController: UIViewController {
     }
     
     private func loadNextQuestion() {
-        updateTitle()
-        container.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-        
-        let card = self.deckDetails.cards[currentQuestionIndex]
-        
-        let questionLabel = UILabel()
-        questionLabel.text = card.question
-        questionLabel.font = UIFont.boldSystemFont(ofSize: questionLabel.font.pointSize)
-        questionLabel.numberOfLines = 0
-        questionLabel.textAlignment = .center
-        
-        container.addArrangedSubview(questionLabel)
-        
-        card.answers.forEach({
-            let horizontalStack = UIStackView()
-            horizontalStack.axis = .horizontal
-            horizontalStack.alignment = .center
-            horizontalStack.distribution = .fill
-            horizontalStack.spacing = 10
-            
-            let answerLabel = UILabel()
-            answerLabel.text = $0.text
-            answerLabel.numberOfLines = 0
-            
-            let checkbox = BEMCheckBox()
-            checkbox.boxType = .square
-            
-            checkbox.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25))
-            checkbox.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .height, relatedBy: .equal, toItem: checkbox, attribute: .width, multiplier: 1, constant: 0))
-
-            
-            horizontalStack.addArrangedSubview(checkbox)
-            horizontalStack.addArrangedSubview(answerLabel)
-            
-//            horizontalStack.addConstraint(NSLayoutConstraint(item: horizontalStack, attribute: .width, relatedBy: .equal, toItem: container, attribute: .width, multiplier: 1, constant: 0))
-            
-            container.addArrangedSubview(horizontalStack)
-        })
-        
-        currentQuestionIndex += 1
+//        updateTitle()
+//        container.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+//        
+//        let card = self.deckDetails.cards[currentQuestionIndex]
+//        
+//        let questionLabel = UILabel()
+//        questionLabel.text = card.question
+//        questionLabel.font = UIFont.boldSystemFont(ofSize: questionLabel.font.pointSize)
+//        questionLabel.numberOfLines = 0
+//        questionLabel.textAlignment = .center
+//        
+//        container.addArrangedSubview(questionLabel)
+//        
+//        card.answers.forEach({
+//            let horizontalStack = UIStackView()
+//            horizontalStack.axis = .horizontal
+//            horizontalStack.alignment = .center
+//            horizontalStack.distribution = .fill
+//            horizontalStack.spacing = 10
+//            
+//            let answerLabel = UILabel()
+//            answerLabel.text = $0.text
+//            answerLabel.numberOfLines = 0
+//            
+//            let checkbox = BEMCheckBox()
+//            checkbox.boxType = .square
+//            
+//            checkbox.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25))
+//            checkbox.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .height, relatedBy: .equal, toItem: checkbox, attribute: .width, multiplier: 1, constant: 0))
+//
+//            
+//            horizontalStack.addArrangedSubview(checkbox)
+//            horizontalStack.addArrangedSubview(answerLabel)
+//            
+////            horizontalStack.addConstraint(NSLayoutConstraint(item: horizontalStack, attribute: .width, relatedBy: .equal, toItem: container, attribute: .width, multiplier: 1, constant: 0))
+//            
+//            container.addArrangedSubview(horizontalStack)
+//        })
+//        
+//        currentQuestionIndex += 1
     }
 }

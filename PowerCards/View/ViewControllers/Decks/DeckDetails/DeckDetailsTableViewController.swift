@@ -43,6 +43,7 @@ class DeckDetailsTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckDeleted.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
     }
     
     deinit {
@@ -63,8 +64,8 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
             self.presentImagePicker(source: .photoLibrary)
         }))
-        alert.addAction(UIAlertAction(title: "Create a blank note", style: .default, handler: { alert in
-            self.presentNewBlankNote()
+        alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { alert in
+            self.createNewBlankCard()
         }))
         alert.addAction(UIAlertAction(title: "Make a note", style: .default, handler: { alert in
             self.presentNoteMaker()
@@ -92,6 +93,12 @@ class DeckDetailsTableViewController: UITableViewController {
         guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
         self.powerdeck = nil
+        tableView.reloadData()
+    }
+    
+    @objc func newCardWasAddedToDeckNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
+        
         tableView.reloadData()
     }
     
@@ -137,12 +144,9 @@ class DeckDetailsTableViewController: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    private func presentNewBlankNote() {
-        if let card = powerdeck?.createBlankCard() {
-            toCard(card: card)
-        } else {
-            // handle error
-        }
+    private func createNewBlankCard() {
+        let card = PowerFlashCard(name: "New card", subTitle: nil)
+        toCard(card: card)
     }
     
     private func presentNoteMaker() {
@@ -151,7 +155,7 @@ class DeckDetailsTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? segue.destination as? EditPowercardViewController {
-            if let card = sender as? PowercardViewModel {
+            if let card = sender as? PowerFlashCard {
                 destination.card = card
             } else {
                 // handle error
@@ -161,7 +165,7 @@ class DeckDetailsTableViewController: UITableViewController {
         }
     }
     
-    func toCard(card: PowercardViewModel) {
+    func toCard(card: Powercard) {
         performSegue(withIdentifier: "toCard", sender: card)
     }
     

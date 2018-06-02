@@ -17,19 +17,3 @@ public class PowercardList {
         return powercards.count
     }
 }
-
-//extension PowercardList: JSONInitializable {
-//    init?(json: [String : Any]) {
-//        return nil
-//    }
-//
-//    init?(jsonDict: [[String : Any]]) {
-//        self.powercards = []
-//
-//        jsonDict.forEach({
-//            if let deck = Powercard(json: $0) {
-//                self.powercards.append(deck)
-//            }
-//        })
-//    }
-//}

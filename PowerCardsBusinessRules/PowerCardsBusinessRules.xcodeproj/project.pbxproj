@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73039F6720C27E01005D3D58 /* PowerFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6620C27E01005D3D58 /* PowerFlashCard.swift */; };
+		73039F6920C27E99005D3D58 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6820C27E99005D3D58 /* Flashcard.swift */; };
+		73039F6B20C283AE005D3D58 /* IDHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6A20C283AE005D3D58 /* IDHolder.swift */; };
+		7345E61B20C28456005BD606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7345E61A20C28456005BD606 /* Assets.xcassets */; };
 		735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F320B07BCB00428F36 /* AppSettingKeys.swift */; };
 		735845F620B07BCB00428F36 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F420B07BCB00428F36 /* AppSettings.swift */; };
 		735845F920B07D6900428F36 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 735845F820B07D6900428F36 /* Cartfile */; };
@@ -20,10 +24,8 @@
 		738A769920AC868E00D06279 /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769420AC868E00D06279 /* Powercard.swift */; };
 		738A769A20AC868E00D06279 /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769520AC868E00D06279 /* Powerdeck.swift */; };
 		738A769B20AC868E00D06279 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769620AC868E00D06279 /* Answer.swift */; };
-		738A769C20AC868E00D06279 /* Powercard+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769720AC868E00D06279 /* Powercard+Hashable.swift */; };
 		738A76A020AC86BA00D06279 /* JSONInitialziable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A769F20AC86BA00D06279 /* JSONInitialziable.swift */; };
 		738A76B220AC874300D06279 /* PowercardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76AD20AC874300D06279 /* PowercardList.swift */; };
-		738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76AE20AC874300D06279 /* PowercardViewModel.swift */; };
 		738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B020AC874300D06279 /* PowerdeckList.swift */; };
 		738A76B620AC874300D06279 /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B120AC874300D06279 /* AnswerList.swift */; };
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73039F6620C27E01005D3D58 /* PowerFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCard.swift; sourceTree = "<group>"; };
+		73039F6820C27E99005D3D58 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		73039F6A20C283AE005D3D58 /* IDHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDHolder.swift; sourceTree = "<group>"; };
+		7345E61A20C28456005BD606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735845F320B07BCB00428F36 /* AppSettingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingKeys.swift; sourceTree = "<group>"; };
 		735845F420B07BCB00428F36 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		735845F820B07D6900428F36 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -56,10 +62,8 @@
 		738A769420AC868E00D06279 /* Powercard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powercard.swift; sourceTree = "<group>"; };
 		738A769520AC868E00D06279 /* Powerdeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerdeck.swift; sourceTree = "<group>"; };
 		738A769620AC868E00D06279 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		738A769720AC868E00D06279 /* Powercard+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Powercard+Hashable.swift"; sourceTree = "<group>"; };
 		738A769F20AC86BA00D06279 /* JSONInitialziable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInitialziable.swift; sourceTree = "<group>"; };
 		738A76AD20AC874300D06279 /* PowercardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowercardList.swift; sourceTree = "<group>"; };
-		738A76AE20AC874300D06279 /* PowercardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowercardViewModel.swift; sourceTree = "<group>"; };
 		738A76B020AC874300D06279 /* PowerdeckList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerdeckList.swift; sourceTree = "<group>"; };
 		738A76B120AC874300D06279 /* AnswerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerList.swift; sourceTree = "<group>"; };
 		738A76B920AC876E00D06279 /* NotificationKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
@@ -120,7 +124,8 @@
 			children = (
 				738A769620AC868E00D06279 /* Answer.swift */,
 				738A769420AC868E00D06279 /* Powercard.swift */,
-				738A769720AC868E00D06279 /* Powercard+Hashable.swift */,
+				73039F6A20C283AE005D3D58 /* IDHolder.swift */,
+				73039F6820C27E99005D3D58 /* Flashcard.swift */,
 				738A769520AC868E00D06279 /* Powerdeck.swift */,
 				738A769320AC868E00D06279 /* Powerdeck+Hashable.swift */,
 				7364E33420B5C0E7008F94E4 /* User.swift */,
@@ -135,7 +140,7 @@
 				738A76AD20AC874300D06279 /* PowercardList.swift */,
 				73742FF120B7093000103F93 /* PowerdeckListSection.swift */,
 				7364E33220B5BC5C008F94E4 /* PowerdeckType.swift */,
-				738A76AE20AC874300D06279 /* PowercardViewModel.swift */,
+				73039F6620C27E01005D3D58 /* PowerFlashCard.swift */,
 				738A76B020AC874300D06279 /* PowerdeckList.swift */,
 				738A76B120AC874300D06279 /* AnswerList.swift */,
 			);
@@ -197,6 +202,7 @@
 				738DC35720B0792400FBDCF2 /* Networking */,
 				739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */,
 				739E87F92090B380005D5A03 /* Info.plist */,
+				7345E61A20C28456005BD606 /* Assets.xcassets */,
 			);
 			path = PowerCardsBusinessRules;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				735845F920B07D6900428F36 /* Cartfile in Resources */,
+				7345E61B20C28456005BD606 /* Assets.xcassets in Resources */,
 				7358460420B07DF300428F36 /* Cartfile.resolved in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,15 +382,16 @@
 				735845F620B07BCB00428F36 /* AppSettings.swift in Sources */,
 				738A76A020AC86BA00D06279 /* JSONInitialziable.swift in Sources */,
 				73ABE34220C0553600617359 /* UIImage+InitializeWithColor.swift in Sources */,
+				73039F6920C27E99005D3D58 /* Flashcard.swift in Sources */,
 				738A769820AC868E00D06279 /* Powerdeck+Hashable.swift in Sources */,
+				73039F6B20C283AE005D3D58 /* IDHolder.swift in Sources */,
 				738A76B620AC874300D06279 /* AnswerList.swift in Sources */,
 				738A769920AC868E00D06279 /* Powercard.swift in Sources */,
 				735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */,
+				73039F6720C27E01005D3D58 /* PowerFlashCard.swift in Sources */,
 				738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */,
-				738A769C20AC868E00D06279 /* Powercard+Hashable.swift in Sources */,
 				738A769B20AC868E00D06279 /* Answer.swift in Sources */,
 				73742FF220B7093000103F93 /* PowerdeckListSection.swift in Sources */,
-				738A76B320AC874300D06279 /* PowercardViewModel.swift in Sources */,
 				7364E33320B5BC5C008F94E4 /* PowerdeckType.swift in Sources */,
 				738A76B220AC874300D06279 /* PowercardList.swift in Sources */,
 				7364E33520B5C0E7008F94E4 /* User.swift in Sources */,

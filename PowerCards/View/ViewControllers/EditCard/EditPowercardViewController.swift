@@ -13,7 +13,7 @@ import PowerCardsBusinessRules
 class EditPowercardViewController: UIViewController {
     @IBOutlet weak var cardImageView: UIImageView!
     
-    var card: PowercardViewModel!
+    var card: PowerFlashCard!
     
     private let defaultCameraIcon = UIImage(named: "camera")
     private var didAppearOnce = false
@@ -21,8 +21,13 @@ class EditPowercardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardImageView.image = card.image ?? defaultCameraIcon
+        card.delegate = self
+        loadCardImageToView()
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
+    }
+    
+    func loadCardImageToView() {
+        cardImageView.image = card.image ?? defaultCameraIcon
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,9 +72,10 @@ class EditPowercardViewController: UIViewController {
     }
     
     func showImageEditor() {
-        let editor = CLImageEditor(image: self.cardImageView.image)!
+        guard let editor = CLImageEditor(image: self.cardImageView.image) else { return } // handle error
         let disabledTools: Set<CLImageToolKeys> = [.adjustment, .blur, .effect, .filter, .toneCurve]
         
+        editor.delegate = self
         disabledTools.forEach({
             if let toolInfo = editor.toolInfo.subToolInfo(withToolName: $0.rawValue, recursive: true) {
                 toolInfo.available = false
@@ -80,5 +86,22 @@ class EditPowercardViewController: UIViewController {
         }
         
         present(editor, animated: true, completion: nil)
+    }
+}
+
+extension EditPowercardViewController: CLImageEditorDelegate {
+    func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
+        self.card.image = image
+        editor.dismiss(animated: true, completion: nil)
+    }
+    
+    func imageEditorDidCancel(_ editor: CLImageEditor!) {
+         editor.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EditPowercardViewController: PowerFlashCardEditorDelegate {
+    func flashcardImageHasChanged() {
+        loadCardImageToView()
     }
 }

@@ -9,4 +9,5 @@
 public enum NotificationKeys: String {
     case deckNameChanged = "DeckNameChangedNotification"
     case deckDeleted = "DeckDeletedNotification"
+    case newCardWasAddedToDeck = "NewCardWasAddedToDeckNotification"
 }
