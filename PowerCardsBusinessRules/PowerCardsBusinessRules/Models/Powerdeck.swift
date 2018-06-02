@@ -6,9 +6,6 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 public class Powerdeck {
     public let id: String
     public var name: String {
@@ -33,14 +30,15 @@ public class Powerdeck {
         self.isShared = isShared
         self.creationDate = Date()
     }
+}
+
+extension Powerdeck: PowercardContainer {
+    public func insertOrUpdate(card: Powercard) {
+        cards.append(card)
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: self, userInfo: nil))
+    }
     
     public func removeCard(at index: Int) {
         self.cards.remove(at: index)
-    }
-    
-    public func append(card: Powercard) {
-        cards.append(card)
-        
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: self, userInfo: nil))
     }
 }

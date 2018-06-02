@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PowerFlashCard: Powercard, Flashcard {
+public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public let id: String
     public var name: String {
         didSet {

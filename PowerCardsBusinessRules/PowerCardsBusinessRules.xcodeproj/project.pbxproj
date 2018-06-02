@@ -12,6 +12,7 @@
 		73039F6B20C283AE005D3D58 /* IDHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6A20C283AE005D3D58 /* IDHolder.swift */; };
 		7325DD2720C2ABC300C186E1 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
 		7325DD2F20C2ABF000C186E1 /* PowerFlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7325DD2E20C2ABF000C186E1 /* PowerFlashCardTests.swift */; };
+		7325DD3120C2AE5A00C186E1 /* PowercardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7325DD3020C2AE5A00C186E1 /* PowercardContainer.swift */; };
 		7345E61B20C28456005BD606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7345E61A20C28456005BD606 /* Assets.xcassets */; };
 		735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F320B07BCB00428F36 /* AppSettingKeys.swift */; };
 		735845F620B07BCB00428F36 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F420B07BCB00428F36 /* AppSettings.swift */; };
@@ -53,6 +54,7 @@
 		7325DD2620C2ABC300C186E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7325DD2D20C2ABEF00C186E1 /* PowerCardsBusinessRulesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerCardsBusinessRulesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7325DD2E20C2ABF000C186E1 /* PowerFlashCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCardTests.swift; sourceTree = "<group>"; };
+		7325DD3020C2AE5A00C186E1 /* PowercardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowercardContainer.swift; sourceTree = "<group>"; };
 		7345E61A20C28456005BD606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735845F320B07BCB00428F36 /* AppSettingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingKeys.swift; sourceTree = "<group>"; };
 		735845F420B07BCB00428F36 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				738A769420AC868E00D06279 /* Powercard.swift */,
 				73039F6A20C283AE005D3D58 /* IDHolder.swift */,
 				73039F6820C27E99005D3D58 /* Flashcard.swift */,
+				7325DD3020C2AE5A00C186E1 /* PowercardContainer.swift */,
 				738A769520AC868E00D06279 /* Powerdeck.swift */,
 				738A769320AC868E00D06279 /* Powerdeck+Hashable.swift */,
 				7364E33420B5C0E7008F94E4 /* User.swift */,
@@ -358,6 +361,7 @@
 				73039F6920C27E99005D3D58 /* Flashcard.swift in Sources */,
 				738A769820AC868E00D06279 /* Powerdeck+Hashable.swift in Sources */,
 				73039F6B20C283AE005D3D58 /* IDHolder.swift in Sources */,
+				7325DD3120C2AE5A00C186E1 /* PowercardContainer.swift in Sources */,
 				738A76B620AC874300D06279 /* AnswerList.swift in Sources */,
 				738A769920AC868E00D06279 /* Powercard.swift in Sources */,
 				735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */,

@@ -18,10 +18,11 @@ class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var subTitleTextView: UITextView!
     
     var card: PowerFlashCard!
+    var container: PowercardContainer?
     
     private let defaultCameraIcon = UIImage(named: "camera")
-    private var didAppearOnce = false
     
+    // MARK: From superclass
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +32,7 @@ class EditPowerFlashcardViewController: UIViewController {
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
     }
     
+    // MARK: Object to view loaders
     func loadCardToView() {
         loadCardTitleToView()
         loadCardSubTitleToView()
@@ -49,18 +51,16 @@ class EditPowerFlashcardViewController: UIViewController {
         subTitleTextView.text = card.subTitle
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if !didAppearOnce {
-//            showImageEditor()
-        }
-        didAppearOnce = true
-    }
-    
+    // MARK: Event handlers
     @IBAction func backTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        container?.insertOrUpdate(card: self.card)
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @objc private func imageTapped() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -90,7 +90,8 @@ class EditPowerFlashcardViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showImageEditor() {
+    // MARK: Private
+    private func showImageEditor() {
         guard let editor = CLImageEditor(image: self.cardImageView.image) else { return } // handle error
         let disabledTools: Set<CLImageToolKeys> = [.adjustment, .blur, .effect, .filter, .toneCurve]
         

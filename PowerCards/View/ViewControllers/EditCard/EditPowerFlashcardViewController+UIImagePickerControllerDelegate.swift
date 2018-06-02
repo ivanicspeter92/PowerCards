@@ -14,7 +14,6 @@ extension EditPowerFlashcardViewController: UIImagePickerControllerDelegate, UIN
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.card.image = pickedImage
             self.cardImageView.image = pickedImage
-            self.showImageEditor()
         }
     }
 }

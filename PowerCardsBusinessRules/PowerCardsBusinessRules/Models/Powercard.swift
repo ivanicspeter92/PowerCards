@@ -8,8 +8,7 @@
 
 import Foundation
 
-public protocol Powercard: IDHolder {
-    var id: String { get }
+public protocol Powercard {
     var name: String { get set }
     var subTitle: String? { get set }
     var creationDate: Date { get }

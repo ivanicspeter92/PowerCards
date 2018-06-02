@@ -157,6 +157,7 @@ class DeckDetailsTableViewController: UITableViewController {
         if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowerFlashcardViewController ?? segue.destination as? EditPowerFlashcardViewController {
             if let card = sender as? PowerFlashCard {
                 destination.card = card
+                destination.container = self.powerdeck
             } else {
                 // handle error
             }

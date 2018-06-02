@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="ECJ-wX-baW">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ECJ-wX-baW">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -157,7 +157,11 @@
                                 <action selector="backTapped:" destination="ISL-0v-NYF" id="74N-Xi-xG5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="blu-Sf-dUB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="blu-Sf-dUB">
+                            <connections>
+                                <action selector="doneTapped:" destination="ISL-0v-NYF" id="0j9-ev-dcI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -180,7 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="DvD-d2-zqf">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="DvD-d2-zqf">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
