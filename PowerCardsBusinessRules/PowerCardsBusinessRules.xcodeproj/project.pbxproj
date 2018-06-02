@@ -29,6 +29,7 @@
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
 		739E87FF2090B380005D5A03 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
 		739E88062090B380005D5A03 /* PowerCardsBusinessRules.h in Headers */ = {isa = PBXBuildFile; fileRef = 739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73ABE34220C0553600617359 /* UIImage+InitializeWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABE34120C0553600617359 /* UIImage+InitializeWithColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		739E87F92090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		739E87FE2090B380005D5A03 /* PowerCardsBusinessRulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsBusinessRulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		739E88052090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73ABE34120C0553600617359 /* UIImage+InitializeWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+InitializeWithColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		739E87F72090B380005D5A03 /* PowerCardsBusinessRules */ = {
 			isa = PBXGroup;
 			children = (
+				73ABE34020C0551D00617359 /* Extensions */,
 				735845EE20B07B9C00428F36 /* Services */,
 				738A769F20AC86BA00D06279 /* JSONInitialziable.swift */,
 				738A76B920AC876E00D06279 /* NotificationKeys.swift */,
@@ -204,6 +207,14 @@
 				739E88052090B380005D5A03 /* Info.plist */,
 			);
 			path = PowerCardsBusinessRulesTests;
+			sourceTree = "<group>";
+		};
+		73ABE34020C0551D00617359 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73ABE34120C0553600617359 /* UIImage+InitializeWithColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				738A769A20AC868E00D06279 /* Powerdeck.swift in Sources */,
 				735845F620B07BCB00428F36 /* AppSettings.swift in Sources */,
 				738A76A020AC86BA00D06279 /* JSONInitialziable.swift in Sources */,
+				73ABE34220C0553600617359 /* UIImage+InitializeWithColor.swift in Sources */,
 				738A769820AC868E00D06279 /* Powerdeck+Hashable.swift in Sources */,
 				738A76B620AC874300D06279 /* AnswerList.swift in Sources */,
 				738A769920AC868E00D06279 /* Powercard.swift in Sources */,
@@ -533,7 +545,7 @@
 				);
 				INFOPLIST_FILE = PowerCardsBusinessRules/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,7 +578,7 @@
 				);
 				INFOPLIST_FILE = PowerCardsBusinessRules/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
