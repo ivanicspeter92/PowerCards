@@ -11,5 +11,6 @@ import Foundation
 public protocol Powercard {
     var name: String { get set }
     var subTitle: String? { get set }
+    var image: UIImage? { get set } 
     var creationDate: Date { get }
 }

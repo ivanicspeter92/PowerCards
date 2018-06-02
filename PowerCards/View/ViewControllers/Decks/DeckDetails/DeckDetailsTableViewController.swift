@@ -99,6 +99,7 @@ class DeckDetailsTableViewController: UITableViewController {
     @objc func newCardWasAddedToDeckNotificationReceived(_ notification: Notification) {
         guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
+        loadDeckTitleToView()
         tableView.reloadData()
     }
     
