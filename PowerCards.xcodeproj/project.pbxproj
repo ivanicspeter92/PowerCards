@@ -23,7 +23,7 @@
 		7355D96E1F5200C700244257 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7355D96D1F51FFA300244257 /* Quiz.storyboard */; };
 		7358460920B07EE900428F36 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7358460820B07EE900428F36 /* PowerCardsBusinessRules.framework */; };
 		73649FD51F5BEC6900ED6192 /* PowerdeckListTableViewController+PowerdeckSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73649FD41F5BEC6900ED6192 /* PowerdeckListTableViewController+PowerdeckSelectorDelegate.swift */; };
-		7368C33F1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368C33E1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift */; };
+		7368C33F1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368C33E1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift */; };
 		737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737357D11F509AAF00377EAD /* AppDelegate.swift */; };
 		737357D71F509AAF00377EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357D51F509AAF00377EAD /* Main.storyboard */; };
 		737357D91F509AAF00377EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737357D81F509AAF00377EAD /* Assets.xcassets */; };
@@ -36,7 +36,7 @@
 		7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */; };
 		7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */; };
 		73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3FD441F51E10900E95727 /* QuizViewController.swift */; };
-		73BC29181F51902800C3EB2C /* EditPowercardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowercardViewController.swift */; };
+		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
 		73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */; };
 		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
@@ -90,7 +90,7 @@
 		7355D96D1F51FFA300244257 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		7358460820B07EE900428F36 /* PowerCardsBusinessRules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PowerCardsBusinessRules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73649FD41F5BEC6900ED6192 /* PowerdeckListTableViewController+PowerdeckSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PowerdeckListTableViewController+PowerdeckSelectorDelegate.swift"; sourceTree = "<group>"; };
-		7368C33E1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditPowercardViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		7368C33E1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		737357CE1F509AAF00377EAD /* PowerCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737357D11F509AAF00377EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737357D61F509AAF00377EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift"; sourceTree = "<group>"; };
 		7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift"; sourceTree = "<group>"; };
 		73B3FD441F51E10900E95727 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		73BC29171F51902800C3EB2C /* EditPowercardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowercardViewController.swift; sourceTree = "<group>"; };
+		73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerFlashcardViewController.swift; sourceTree = "<group>"; };
 		73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 		73BC29161F51901400C3EB2C /* EditCard */ = {
 			isa = PBXGroup;
 			children = (
-				73BC29171F51902800C3EB2C /* EditPowercardViewController.swift */,
-				7368C33E1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift */,
+				73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */,
+				7368C33E1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift */,
 			);
 			path = EditCard;
 			sourceTree = "<group>";
@@ -550,9 +550,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7368C33F1F51C52D00082516 /* EditPowercardViewController+UIImagePickerControllerDelegate.swift in Sources */,
+				7368C33F1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				7333952A1F51625500041472 /* PowerdecksSplitViewController.swift in Sources */,
-				73BC29181F51902800C3EB2C /* EditPowercardViewController.swift in Sources */,
+				73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */,
 				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
 				7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */,
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,

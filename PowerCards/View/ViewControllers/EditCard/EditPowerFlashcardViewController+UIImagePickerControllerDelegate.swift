@@ -1,5 +1,5 @@
 //
-//  EditPowercardViewController+UIImagePickerControllerDelegate.swift
+//  EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift
 //  PowerCards
 //
 //  Created by Peter Ivanics on 26/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension EditPowercardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditPowerFlashcardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {

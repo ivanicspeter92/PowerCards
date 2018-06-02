@@ -154,7 +154,7 @@ class DeckDetailsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? segue.destination as? EditPowercardViewController {
+        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowerFlashcardViewController ?? segue.destination as? EditPowerFlashcardViewController {
             if let card = sender as? PowerFlashCard {
                 destination.card = card
             } else {
@@ -166,7 +166,9 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     func toCard(card: Powercard) {
-        performSegue(withIdentifier: "toCard", sender: card)
+        if let card = card as? PowerFlashCard {
+            performSegue(withIdentifier: "toEditFlashcard", sender: card)
+        }
     }
     
     func toTakeQuiz(deckDetails: Powerdeck) {

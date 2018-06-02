@@ -1,5 +1,5 @@
 //
-//  EditPowercardViewController.swift
+//  EditPowerFlashcardViewController.swift
 //  PowerCards
 //
 //  Created by Peter Ivanics on 26/08/2017.
@@ -10,8 +10,12 @@ import UIKit
 import CLImageEditor
 import PowerCardsBusinessRules
 
-class EditPowercardViewController: UIViewController {
+class EditPowerFlashcardViewController: UIViewController {
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var subTitleTextView: UITextView!
     
     var card: PowerFlashCard!
     
@@ -22,19 +26,34 @@ class EditPowercardViewController: UIViewController {
         super.viewDidLoad()
         
         card.delegate = self
-        loadCardImageToView()
+        
+        loadCardToView()
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
+    }
+    
+    func loadCardToView() {
+        loadCardTitleToView()
+        loadCardSubTitleToView()
+        loadCardImageToView()
     }
     
     func loadCardImageToView() {
         cardImageView.image = card.image ?? defaultCameraIcon
     }
     
+    func loadCardTitleToView() {
+        titleTextView.text = card.name
+    }
+    
+    func loadCardSubTitleToView() {
+        subTitleTextView.text = card.subTitle
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if !didAppearOnce {
-            showImageEditor()
+//            showImageEditor()
         }
         didAppearOnce = true
     }
@@ -89,7 +108,7 @@ class EditPowercardViewController: UIViewController {
     }
 }
 
-extension EditPowercardViewController: CLImageEditorDelegate {
+extension EditPowerFlashcardViewController: CLImageEditorDelegate {
     func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
         self.card.image = image
         editor.dismiss(animated: true, completion: nil)
@@ -100,8 +119,34 @@ extension EditPowercardViewController: CLImageEditorDelegate {
     }
 }
 
-extension EditPowercardViewController: PowerFlashCardEditorDelegate {
+extension EditPowerFlashcardViewController: PowerFlashCardEditorDelegate {
+    func flashcardNameHasChanged() {
+        loadCardTitleToView()
+    }
+    
+    func flashcardSubtitleHasChanged() {
+        loadCardSubTitleToView()
+    }
+    
     func flashcardImageHasChanged() {
         loadCardImageToView()
+    }
+}
+
+extension EditPowerFlashcardViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView == titleTextView {
+            self.card.name = textView.text
+        } else if textView == subTitleTextView {
+            self.card.subTitle = textView.text
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == titleTextView && text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }

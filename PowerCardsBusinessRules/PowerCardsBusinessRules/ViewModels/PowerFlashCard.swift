@@ -10,8 +10,20 @@ import Foundation
 
 public class PowerFlashCard: Powercard, Flashcard {
     public let id: String
-    public let name: String
-    public let subTitle: String?
+    public var name: String {
+        didSet {
+            if name != oldValue {
+                delegate?.flashcardNameHasChanged()
+            }
+        }
+    }
+    public var subTitle: String? {
+        didSet {
+            if subTitle != oldValue {
+                delegate?.flashcardSubtitleHasChanged()
+            }
+        }
+    }
     public let creationDate: Date
     public var image: UIImage? {
         didSet {
@@ -43,5 +55,7 @@ public class PowerFlashCard: Powercard, Flashcard {
 }
 
 public protocol PowerFlashCardEditorDelegate {
+    func flashcardNameHasChanged()
+    func flashcardSubtitleHasChanged()
     func flashcardImageHasChanged()
 }

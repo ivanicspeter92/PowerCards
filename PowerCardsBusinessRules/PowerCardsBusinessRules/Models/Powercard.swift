@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Powercard: IDHolder {
     var id: String { get }
-    var name: String { get }
-    var subTitle: String? { get }
+    var name: String { get set }
+    var subTitle: String? { get set }
     var creationDate: Date { get }
 }
