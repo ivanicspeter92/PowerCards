@@ -10,6 +10,8 @@
 		73039F6720C27E01005D3D58 /* PowerFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6620C27E01005D3D58 /* PowerFlashCard.swift */; };
 		73039F6920C27E99005D3D58 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6820C27E99005D3D58 /* Flashcard.swift */; };
 		73039F6B20C283AE005D3D58 /* IDHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73039F6A20C283AE005D3D58 /* IDHolder.swift */; };
+		7325DD2720C2ABC300C186E1 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
+		7325DD2F20C2ABF000C186E1 /* PowerFlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7325DD2E20C2ABF000C186E1 /* PowerFlashCardTests.swift */; };
 		7345E61B20C28456005BD606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7345E61A20C28456005BD606 /* Assets.xcassets */; };
 		735845F520B07BCB00428F36 /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F320B07BCB00428F36 /* AppSettingKeys.swift */; };
 		735845F620B07BCB00428F36 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735845F420B07BCB00428F36 /* AppSettings.swift */; };
@@ -29,13 +31,12 @@
 		738A76B520AC874300D06279 /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B020AC874300D06279 /* PowerdeckList.swift */; };
 		738A76B620AC874300D06279 /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B120AC874300D06279 /* AnswerList.swift */; };
 		738A76BA20AC876E00D06279 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A76B920AC876E00D06279 /* NotificationKeys.swift */; };
-		739E87FF2090B380005D5A03 /* PowerCardsBusinessRules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */; };
 		739E88062090B380005D5A03 /* PowerCardsBusinessRules.h in Headers */ = {isa = PBXBuildFile; fileRef = 739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73ABE34220C0553600617359 /* UIImage+InitializeWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABE34120C0553600617359 /* UIImage+InitializeWithColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		739E88002090B380005D5A03 /* PBXContainerItemProxy */ = {
+		7325DD2820C2ABC300C186E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 739E87EC2090B380005D5A03 /* Project object */;
 			proxyType = 1;
@@ -48,6 +49,10 @@
 		73039F6620C27E01005D3D58 /* PowerFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCard.swift; sourceTree = "<group>"; };
 		73039F6820C27E99005D3D58 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		73039F6A20C283AE005D3D58 /* IDHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDHolder.swift; sourceTree = "<group>"; };
+		7325DD2220C2ABC300C186E1 /* PowerCardsBusinessRulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsBusinessRulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7325DD2620C2ABC300C186E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7325DD2D20C2ABEF00C186E1 /* PowerCardsBusinessRulesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PowerCardsBusinessRulesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7325DD2E20C2ABF000C186E1 /* PowerFlashCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCardTests.swift; sourceTree = "<group>"; };
 		7345E61A20C28456005BD606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735845F320B07BCB00428F36 /* AppSettingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingKeys.swift; sourceTree = "<group>"; };
 		735845F420B07BCB00428F36 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -77,12 +82,18 @@
 		739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PowerCardsBusinessRules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739E87F82090B380005D5A03 /* PowerCardsBusinessRules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerCardsBusinessRules.h; sourceTree = "<group>"; };
 		739E87F92090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		739E87FE2090B380005D5A03 /* PowerCardsBusinessRulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerCardsBusinessRulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		739E88052090B380005D5A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73ABE34120C0553600617359 /* UIImage+InitializeWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+InitializeWithColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7325DD1F20C2ABC300C186E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7325DD2720C2ABC300C186E1 /* PowerCardsBusinessRules.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		739E87F12090B380005D5A03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,17 +102,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		739E87FB2090B380005D5A03 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				739E87FF2090B380005D5A03 /* PowerCardsBusinessRules.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7325DD2320C2ABC300C186E1 /* PowerCardsBusinessRulesTests */ = {
+			isa = PBXGroup;
+			children = (
+				7325DD2620C2ABC300C186E1 /* Info.plist */,
+				7325DD2E20C2ABF000C186E1 /* PowerFlashCardTests.swift */,
+				7325DD2D20C2ABEF00C186E1 /* PowerCardsBusinessRulesTests-Bridging-Header.h */,
+			);
+			path = PowerCardsBusinessRulesTests;
+			sourceTree = "<group>";
+		};
 		735845EE20B07B9C00428F36 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +188,7 @@
 				7358460320B07DF300428F36 /* Cartfile.resolved */,
 				735845F820B07D6900428F36 /* Cartfile */,
 				739E87F72090B380005D5A03 /* PowerCardsBusinessRules */,
-				739E88022090B380005D5A03 /* PowerCardsBusinessRulesTests */,
+				7325DD2320C2ABC300C186E1 /* PowerCardsBusinessRulesTests */,
 				739E87F62090B380005D5A03 /* Products */,
 				7358460520B07E5C00428F36 /* Frameworks */,
 			);
@@ -185,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */,
-				739E87FE2090B380005D5A03 /* PowerCardsBusinessRulesTests.xctest */,
+				7325DD2220C2ABC300C186E1 /* PowerCardsBusinessRulesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,14 +218,6 @@
 				7345E61A20C28456005BD606 /* Assets.xcassets */,
 			);
 			path = PowerCardsBusinessRules;
-			sourceTree = "<group>";
-		};
-		739E88022090B380005D5A03 /* PowerCardsBusinessRulesTests */ = {
-			isa = PBXGroup;
-			children = (
-				739E88052090B380005D5A03 /* Info.plist */,
-			);
-			path = PowerCardsBusinessRulesTests;
 			sourceTree = "<group>";
 		};
 		73ABE34020C0551D00617359 /* Extensions */ = {
@@ -237,6 +242,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7325DD2120C2ABC300C186E1 /* PowerCardsBusinessRulesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7325DD2A20C2ABC300C186E1 /* Build configuration list for PBXNativeTarget "PowerCardsBusinessRulesTests" */;
+			buildPhases = (
+				7325DD1E20C2ABC300C186E1 /* Sources */,
+				7325DD1F20C2ABC300C186E1 /* Frameworks */,
+				7325DD2020C2ABC300C186E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7325DD2920C2ABC300C186E1 /* PBXTargetDependency */,
+			);
+			name = PowerCardsBusinessRulesTests;
+			productName = PowerCardsBusinessRulesTests;
+			productReference = 7325DD2220C2ABC300C186E1 /* PowerCardsBusinessRulesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		739E87F42090B380005D5A03 /* PowerCardsBusinessRules */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 739E88092090B380005D5A03 /* Build configuration list for PBXNativeTarget "PowerCardsBusinessRules" */;
@@ -255,42 +278,23 @@
 			productReference = 739E87F52090B380005D5A03 /* PowerCardsBusinessRules.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		739E87FD2090B380005D5A03 /* PowerCardsBusinessRulesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 739E880C2090B380005D5A03 /* Build configuration list for PBXNativeTarget "PowerCardsBusinessRulesTests" */;
-			buildPhases = (
-				64DCA11CF72F7C92EB3826C2 /* [CP] Check Pods Manifest.lock */,
-				739E87FA2090B380005D5A03 /* Sources */,
-				739E87FB2090B380005D5A03 /* Frameworks */,
-				739E87FC2090B380005D5A03 /* Resources */,
-				BD0481E4058EF254D4629587 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				739E88012090B380005D5A03 /* PBXTargetDependency */,
-			);
-			name = PowerCardsBusinessRulesTests;
-			productName = PowerCardsBusinessRulesTests;
-			productReference = 739E87FE2090B380005D5A03 /* PowerCardsBusinessRulesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		739E87EC2090B380005D5A03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lovented Oy";
 				TargetAttributes = {
+					7325DD2120C2ABC300C186E1 = {
+						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
+					};
 					739E87F42090B380005D5A03 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
-					};
-					739E87FD2090B380005D5A03 = {
-						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
@@ -307,12 +311,19 @@
 			projectRoot = "";
 			targets = (
 				739E87F42090B380005D5A03 /* PowerCardsBusinessRules */,
-				739E87FD2090B380005D5A03 /* PowerCardsBusinessRulesTests */,
+				7325DD2120C2ABC300C186E1 /* PowerCardsBusinessRulesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7325DD2020C2ABC300C186E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		739E87F32090B380005D5A03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,55 +334,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		739E87FC2090B380005D5A03 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		64DCA11CF72F7C92EB3826C2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PowerCardsBusinessRulesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD0481E4058EF254D4629587 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PowerCardsBusinessRulesTests/Pods-PowerCardsBusinessRulesTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerCardsBusinessRulesTests/Pods-PowerCardsBusinessRulesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
+		7325DD1E20C2ABC300C186E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7325DD2F20C2ABF000C186E1 /* PowerFlashCardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		739E87F02090B380005D5A03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,24 +371,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		739E87FA2090B380005D5A03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		739E88012090B380005D5A03 /* PBXTargetDependency */ = {
+		7325DD2920C2ABC300C186E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 739E87F42090B380005D5A03 /* PowerCardsBusinessRules */;
-			targetProxy = 739E88002090B380005D5A03 /* PBXContainerItemProxy */;
+			targetProxy = 7325DD2820C2ABC300C186E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		7325DD2B20C2ABC300C186E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H738Y83TGY;
+				INFOPLIST_FILE = PowerCardsBusinessRulesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PowerCardsBusinessRulesTests/PowerCardsBusinessRulesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7325DD2C20C2ABC300C186E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H738Y83TGY;
+				INFOPLIST_FILE = PowerCardsBusinessRulesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PowerCardsBusinessRulesTests/PowerCardsBusinessRulesTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		739E88072090B380005D5A03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -601,47 +610,18 @@
 			};
 			name = Release;
 		};
-		739E880D2090B380005D5A03 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H738Y83TGY;
-				INFOPLIST_FILE = PowerCardsBusinessRulesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRulesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		739E880E2090B380005D5A03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H738Y83TGY;
-				INFOPLIST_FILE = PowerCardsBusinessRulesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovented.PowerCardsBusinessRulesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7325DD2A20C2ABC300C186E1 /* Build configuration list for PBXNativeTarget "PowerCardsBusinessRulesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7325DD2B20C2ABC300C186E1 /* Debug */,
+				7325DD2C20C2ABC300C186E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		739E87EF2090B380005D5A03 /* Build configuration list for PBXProject "PowerCardsBusinessRules" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -656,15 +636,6 @@
 			buildConfigurations = (
 				739E880A2090B380005D5A03 /* Debug */,
 				739E880B2090B380005D5A03 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		739E880C2090B380005D5A03 /* Build configuration list for PBXNativeTarget "PowerCardsBusinessRulesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				739E880D2090B380005D5A03 /* Debug */,
-				739E880E2090B380005D5A03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
