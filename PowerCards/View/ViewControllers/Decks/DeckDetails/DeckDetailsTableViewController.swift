@@ -63,6 +63,13 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
             self.presentImagePicker(source: .photoLibrary)
         }))
+        alert.addAction(UIAlertAction(title: "Create a blank note", style: .default, handler: { alert in
+            self.presentNewBlankNote()
+        }))
+        alert.addAction(UIAlertAction(title: "Make a note", style: .default, handler: { alert in
+            self.presentNoteMaker()
+        }))
+        
         alert.popoverPresentationController?.barButtonItem = addCardButton
         
         present(alert, animated: true, completion: nil)
@@ -130,19 +137,32 @@ class DeckDetailsTableViewController: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    private func presentNewBlankNote() {
+        if let card = powerdeck?.createBlankCard() {
+            toCard(card: card)
+        } else {
+            // handle error
+        }
+    }
+    
+    private func presentNoteMaker() {
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowercardViewController ?? segue.destination as? EditPowercardViewController {
-            if let pickedImage = sender as? UIImage {
-                destination.card = PowercardViewModel(image: pickedImage)
+            if let card = sender as? PowercardViewModel {
+                destination.card = card
+            } else {
+                // handle error
             }
         } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController {
             destination.deckDetails = powerdeck
         }
     }
-
-    func toCreateCardWith(pickedImage: UIImage) {
-        performSegue(withIdentifier: "toCreateCard", sender: pickedImage)
+    
+    func toCard(card: PowercardViewModel) {
+        performSegue(withIdentifier: "toCard", sender: card)
     }
     
     func toTakeQuiz(deckDetails: Powerdeck) {

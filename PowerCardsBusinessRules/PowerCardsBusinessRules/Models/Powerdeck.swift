@@ -37,4 +37,19 @@ public class Powerdeck {
     public func removeCard(at index: Int) {
         self.cards.remove(at: index)
     }
+    
+    public func createBlankCard(backgroundColor: UIColor, size: CGSize = UIScreen.main.bounds.size) -> PowercardViewModel? {
+        if let image = UIImage(color: backgroundColor, size: size) {
+            return createCard(with: image)
+        }
+        return nil
+    }
+    
+    public func createBlankCard() -> PowercardViewModel? {
+        return createBlankCard(backgroundColor: UIColor(named: "PaperColor") ?? UIColor.white)
+    }
+    
+    public func createCard(with image: UIImage) -> PowercardViewModel? {
+        return PowercardViewModel(image: image, name: "Card", subtitle: "")
+    }
 }
