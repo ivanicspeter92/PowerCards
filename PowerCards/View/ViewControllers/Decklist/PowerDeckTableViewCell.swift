@@ -23,9 +23,10 @@ class PowerDeckTableViewCell: UITableViewCell {
             textLabel?.text = (textLabel?.text ?? "") + " (Shared)"
         }
         
-        detailTextLabel?.text = "\(powerdeck.cards.count)"
+        loadCardCountToView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,10 +37,20 @@ class PowerDeckTableViewCell: UITableViewCell {
         NotificationCenter.default.removeObserver(self)
     }
     
+    func loadCardCountToView() {
+        detailTextLabel?.text = "\(powerdeck.cards.count)"
+    }
+    
     // MARK: Notification listeners
     @objc func newCardWasAddedToDeckNotificationReceived(_ notification: Notification) {
         guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
-        detailTextLabel?.text = "\(powerdeck.cards.count)"
+        loadCardCountToView()
+    }
+    
+    @objc func cardWasRemovedFromDeckNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
+        
+        loadCardCountToView()
     }
 }

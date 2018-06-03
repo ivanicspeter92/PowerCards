@@ -44,6 +44,7 @@ class DeckDetailsTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckDeleted.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
     }
     
     deinit {
@@ -101,6 +102,12 @@ class DeckDetailsTableViewController: UITableViewController {
         
         loadDeckTitleToView()
         tableView.reloadData()
+    }
+    
+    @objc func cardWasRemovedFromDeckNotificationReceived(_ notification: Notification) {
+        guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
+        
+        loadDeckTitleToView()
     }
     
     // MARK: Private

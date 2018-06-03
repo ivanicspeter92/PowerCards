@@ -36,7 +36,7 @@ extension DeckDetailsTableViewController {
      }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.delete
+        return .delete
     }
     
     // Override to support editing the table view.

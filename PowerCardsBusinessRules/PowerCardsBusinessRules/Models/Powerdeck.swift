@@ -40,5 +40,6 @@ extension Powerdeck: PowercardContainer {
     
     public func removeCard(at index: Int) {
         self.cards.remove(at: index)
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.cardWasRemovedFromDeck.rawValue), object: self, userInfo: nil))
     }
 }
