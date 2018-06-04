@@ -34,6 +34,9 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
         }
     }
     public var delegate: PowerFlashCardEditorDelegate?
+    public var hasImage: Bool {
+        return self.image != nil
+    }
     
     public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date(), delegate: PowerFlashCardEditorDelegate? = nil) {
         self.id = UUID.init().uuidString
@@ -49,8 +52,11 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     }
     
     public convenience init(name: String, subTitle: String?, size: CGSize = UIScreen.main.bounds.size, creationDate: Date = Date()) {
-        let color = UIColor(named: "PaperColor", in: Bundle(for: PowerFlashCard.self), compatibleWith: nil) ?? UIColor.white
-        self.init(name: name, subTitle: subTitle, backgroundColor: color, size: size, creationDate: creationDate)
+        self.init(name: name, subTitle: subTitle, backgroundColor: AppSettings.powerFlashCardColor, size: size, creationDate: creationDate)
+    }
+    
+    public func setImageToBlank(withBackground backgroundColor: UIColor = AppSettings.powerFlashCardColor, size: CGSize = UIScreen.main.bounds.size) {
+        self.image = UIImage(color: backgroundColor, size: size)
     }
 }
 

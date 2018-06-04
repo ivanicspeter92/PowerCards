@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppSettings {
+public class AppSettings {
     private static let settingsPlistFileName = "Settings"
     private static var settingsDicionary: [String: Any] = {
         let path = Bundle.main.path(forResource: settingsPlistFileName, ofType: "plist")!
@@ -50,5 +50,9 @@ struct AppSettings {
     
     static var ´protocol´: String {
         return "http"
+    }
+    
+    public static var powerFlashCardColor: UIColor {
+        return UIColor(named: "PaperColor", in: Bundle(for: PowerFlashCard.self), compatibleWith: nil) ?? UIColor.white
     }
 }

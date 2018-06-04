@@ -150,6 +150,16 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ziu-oW-eSV"/>
+                        <barButtonItem enabled="NO" systemItem="edit" id="J2f-Eq-KC0">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="ISL-0v-NYF" id="pyl-1P-7F9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" systemItem="trash" id="uP7-4B-ttS">
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="ISL-0v-NYF" id="b5q-Wr-uoT"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oWs-5J-Ubl">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="hgO-FZ-fqQ">
@@ -167,7 +177,9 @@
                     <connections>
                         <outlet property="cancelButton" destination="hgO-FZ-fqQ" id="IX9-T6-6Xq"/>
                         <outlet property="cardImageView" destination="wNY-m5-OjX" id="Oq5-yP-rn1"/>
+                        <outlet property="deleteButton" destination="uP7-4B-ttS" id="DRP-Gm-aHn"/>
                         <outlet property="doneButton" destination="blu-Sf-dUB" id="bbz-44-mri"/>
+                        <outlet property="editButton" destination="J2f-Eq-KC0" id="e7h-Yq-uLj"/>
                         <outlet property="subTitleTextView" destination="t3F-q9-Y9F" id="4ON-B3-zO5"/>
                         <outlet property="titleTextView" destination="n7g-cy-tHR" id="peg-0Q-Nji"/>
                     </connections>

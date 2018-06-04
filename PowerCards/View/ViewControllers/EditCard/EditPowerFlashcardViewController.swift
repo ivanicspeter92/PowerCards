@@ -16,6 +16,8 @@ class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var subTitleTextView: UITextView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     var card: PowerFlashCard!
     var container: PowercardContainer?
@@ -37,6 +39,7 @@ class EditPowerFlashcardViewController: UIViewController {
         loadCardTitleToView()
         loadCardSubTitleToView()
         loadCardImageToView()
+        enableToolbarButtonsIfCardImageIsNotNil()
     }
     
     func loadCardImageToView() {
@@ -61,24 +64,37 @@ class EditPowerFlashcardViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
+        presentDeletePhotoAlert()
+    }
     
-    @objc private func imageTapped() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        self.showImageEditor()
+    }
+    
+    @objc func imageTapped() {
+        let alert = UIAlertController(title: "Image Tools", message: nil, preferredStyle: .actionSheet)
         
-        if card.image != nil {
-            alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (action) in
-                self.showImageEditor()
-            }))
-            alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { action in
-                self.cardImageView.image = self.defaultCameraIcon
-                self.card.image = nil
-            }))
-        } else {
-            alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (action) in
-                let picker = UIImagePickerController()
-                picker.delegate = self
-                
-                self.present(picker, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { [weak self] action in
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            
+            self?.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { [weak self] action in
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            
+            self?.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { [weak self] action in
+            self?.card.setImageToBlank()
+        }))
+        if self.card.hasImage {
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
+                self?.presentDeletePhotoAlert()
             }))
         }
         
@@ -91,6 +107,22 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     // MARK: Private
+    private func presentDeletePhotoAlert() {
+        let alert = UIAlertController(title: "Delete Photo", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
+            self?.card.image = nil
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func enableToolbarButtonsIfCardImageIsNotNil() {
+        editButton.isEnabled = self.card.image != nil
+        deleteButton.isEnabled = self.card.image != nil
+    }
+    
     private func showImageEditor() {
         guard let editor = CLImageEditor(image: self.cardImageView.image) else { return } // handle error
         let disabledTools: Set<CLImageToolKeys> = [.adjustment, .blur, .effect, .filter, .toneCurve]
@@ -131,6 +163,7 @@ extension EditPowerFlashcardViewController: PowerFlashCardEditorDelegate {
     
     func flashcardImageHasChanged() {
         loadCardImageToView()
+        enableToolbarButtonsIfCardImageIsNotNil()
     }
 }
 
