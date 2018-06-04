@@ -48,7 +48,7 @@ extension PowerdeckListTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            var section = decklist.section(at: indexPath.section)
+            let section = decklist.section(at: indexPath.section)
             section?.delete(atIndex: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
