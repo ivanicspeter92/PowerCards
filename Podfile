@@ -11,7 +11,6 @@ target 'PowerCards' do
     pod 'CLImageEditor/TextTool'
     pod 'CLImageEditor/ResizeTool'
     pod 'IQKeyboardManagerSwift'
-    pod 'PKHUD'
     pod 'BEMCheckBox'
 end
 

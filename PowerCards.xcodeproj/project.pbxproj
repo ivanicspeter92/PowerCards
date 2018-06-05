@@ -16,6 +16,9 @@
 		7333952C1F51626900041472 /* PowerdeckSplitViewController+PowerdeckSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333952B1F51626900041472 /* PowerdeckSplitViewController+PowerdeckSelectorDelegate.swift */; };
 		7333952F1F5163D700041472 /* DeckDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333952E1F5163D700041472 /* DeckDetailsTableViewController.swift */; };
 		733395341F51679F00041472 /* Set+ItemAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395331F51679F00041472 /* Set+ItemAt.swift */; };
+		7337F64220C6C38B00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */; };
+		7337F64320C6C38E00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */; };
+		7337F64420C6C3DD00887FC9 /* PowerCardsBusinessRules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7358460820B07EE900428F36 /* PowerCardsBusinessRules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		733B24541F51602A0070C5FE /* PowerdeckListTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B24531F51602A0070C5FE /* PowerdeckListTableViewController+UITableViewDelegate.swift */; };
 		733B24561F51605B0070C5FE /* PowerdeckListTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733B24551F51605B0070C5FE /* PowerdeckListTableViewController+UITableViewDataSource.swift */; };
 		734CB1351F509F7A00059618 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734CB1341F509F7A00059618 /* Settings.plist */; };
@@ -33,8 +36,6 @@
 		737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */; };
 		737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */; };
 		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
-		7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */; };
-		7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */; };
 		73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3FD441F51E10900E95727 /* QuizViewController.swift */; };
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
@@ -62,10 +63,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		738A767E20AC857E00D06279 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7337F64420C6C3DD00887FC9 /* PowerCardsBusinessRules.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +529,6 @@
 				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/CLImageEditor/CLImageEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TBEmptyDataSet/TBEmptyDataSet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -535,7 +536,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLImageEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBEmptyDataSet.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,12 +553,11 @@
 				7368C33F1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				7333952A1F51625500041472 /* PowerdecksSplitViewController.swift in Sources */,
 				73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */,
+				7337F64320C6C38E00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */,
 				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
-				7398EBF71F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */,
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,
 				73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */,
 				73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */,
-				7398EBF91F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */,
 				737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */,
 				73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				733395281F51620600041472 /* PowerDeckSelectorDelegate.swift in Sources */,
@@ -571,6 +570,7 @@
 				733B24541F51602A0070C5FE /* PowerdeckListTableViewController+UITableViewDelegate.swift in Sources */,
 				737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */,
 				7333952F1F5163D700041472 /* DeckDetailsTableViewController.swift in Sources */,
+				7337F64220C6C38B00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */,
 				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */,

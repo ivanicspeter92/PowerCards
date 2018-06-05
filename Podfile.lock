@@ -8,7 +8,6 @@ PODS:
   - CLImageEditor/TextTool (0.2.2):
     - CLImageEditor/Core
   - IQKeyboardManagerSwift (5.0.8)
-  - PKHUD (5.0.0)
   - TBEmptyDataSet (2.6)
 
 DEPENDENCIES:
@@ -17,7 +16,6 @@ DEPENDENCIES:
   - CLImageEditor/StickerTool
   - CLImageEditor/TextTool
   - IQKeyboardManagerSwift
-  - PKHUD
   - TBEmptyDataSet
 
 SPEC REPOS:
@@ -25,16 +23,14 @@ SPEC REPOS:
     - BEMCheckBox
     - CLImageEditor
     - IQKeyboardManagerSwift
-    - PKHUD
     - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   CLImageEditor: 34199b39c994af44f3f3aae6f6dcccb7ef8b75aa
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
-  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   TBEmptyDataSet: 7383c353092f33dc572084cfa9182678a132dac7
 
-PODFILE CHECKSUM: dc5acdc0c4d09d64e5e9b7e14402ab7b0564dddc
+PODFILE CHECKSUM: 8deb954d5b526ddd51237df750b639d133cc8b6b
 
 COCOAPODS: 1.5.0

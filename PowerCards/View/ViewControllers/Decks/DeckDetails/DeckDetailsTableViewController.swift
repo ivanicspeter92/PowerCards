@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 import PowerCardsBusinessRules
 
 class DeckDetailsTableViewController: UITableViewController {
@@ -78,8 +77,8 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func takeQuizButtonTapped(_ sender: UIBarButtonItem) {
-        guard let deck = powerdeck else { HUD.show(.labeledError(title: "No deck selected!", subtitle: nil)); return }
-        
+        guard let deck = powerdeck else { return }
+
         toTakeQuiz(deckDetails: deck)
     }
     
