@@ -14,8 +14,8 @@ class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var cardImageView: UIImageView!
-    @IBOutlet weak var titleTextView: UITextView!
-    @IBOutlet weak var subTitleTextView: UITextView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var subTitleTextField: UITextField!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
@@ -47,11 +47,11 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     func loadCardTitleToView() {
-        titleTextView.text = card.name
+        titleTextField.text = card.name
     }
     
     func loadCardSubTitleToView() {
-        subTitleTextView.text = card.subTitle
+        subTitleTextField.text = card.subTitle
     }
     
     // MARK: Event handlers
@@ -167,20 +167,12 @@ extension EditPowerFlashcardViewController: PowerFlashCardEditorDelegate {
     }
 }
 
-extension EditPowerFlashcardViewController: UITextViewDelegate {
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView == titleTextView {
-            self.card.name = textView.text
-        } else if textView == subTitleTextView {
-            self.card.subTitle = textView.text
+extension EditPowerFlashcardViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == titleTextField {
+            self.card.name = textField.text ?? ""
+        } else if textField == subTitleTextField {
+            self.card.subTitle = textField.text
         }
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if textView == titleTextView && text == "\n" {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
     }
 }
