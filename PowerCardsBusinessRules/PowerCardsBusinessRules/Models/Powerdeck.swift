@@ -33,6 +33,13 @@ public class Powerdeck {
 }
 
 extension Powerdeck: PowercardContainer {
+    public func card(at index: Int) -> Powercard? {
+        if index >= 0 && index < cards.count {
+            return self.cards[index]
+        }
+        return nil
+    }
+    
     public func insertOrUpdate(card: Powercard) {
         cards.append(card)
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: self, userInfo: nil))

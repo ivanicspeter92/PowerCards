@@ -21,6 +21,9 @@ class PowerdeckListTableViewController: UITableViewController {
         if UIDevice.current.userInterfaceIdiom == .phone {
             delegate = self
         }
+        TestData.testDeckSet.forEach({
+            _ = self.decklist.addNewDeck(deck: $0)
+        })
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
     }
