@@ -33,6 +33,7 @@
 		737357DC1F509AAF00377EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737357DA1F509AAF00377EAD /* LaunchScreen.storyboard */; };
 		73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73745B141F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift */; };
 		73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73745B161F51DCA00065D968 /* CLImageToolKeys.swift */; };
+		737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */; };
 		737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */; };
 		737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */; };
 		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
@@ -105,6 +106,7 @@
 		737357F31F509AAF00377EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73745B141F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+isPresentingForFirstTime.swift"; sourceTree = "<group>"; };
 		73745B161F51DCA00065D968 /* CLImageToolKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLImageToolKeys.swift; sourceTree = "<group>"; };
+		737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISplitViewController+MasterDetailViewController.swift"; sourceTree = "<group>"; };
 		737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PowerdeckListTableViewController+UISplitViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		7398EBF41F516B5700F70416 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				7333952E1F5163D700041472 /* DeckDetailsTableViewController.swift */,
 				73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */,
 				73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */,
+				737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */,
 				7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */,
 				7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */,
 			);
@@ -571,6 +574,7 @@
 				737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */,
 				7333952F1F5163D700041472 /* DeckDetailsTableViewController.swift in Sources */,
 				7337F64220C6C38B00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */,
+				737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */,
 				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				737357D21F509AAF00377EAD /* AppDelegate.swift in Sources */,
