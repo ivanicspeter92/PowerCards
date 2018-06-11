@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol Powercard {
+public protocol Powercard: class {
     var name: String { get set }
     var subTitle: String? { get set }
     var image: UIImage? { get set } 
