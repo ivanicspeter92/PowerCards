@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import PowerCardsBusinessRules
 
 struct GetPowercardsRequest: TargetParserRequest {
     typealias Target = PowercardList

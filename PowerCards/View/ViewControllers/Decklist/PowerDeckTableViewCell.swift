@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PowerCardsBusinessRules
+import Foundation
 
 class PowerDeckTableViewCell: UITableViewCell {
     var powerdeck: Powerdeck!
@@ -25,8 +25,8 @@ class PowerDeckTableViewCell: UITableViewCell {
         
         loadCardCountToView()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

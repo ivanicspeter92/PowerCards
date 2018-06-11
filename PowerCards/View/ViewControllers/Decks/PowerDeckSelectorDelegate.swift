@@ -6,7 +6,7 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-import PowerCardsBusinessRules
+import Foundation
 
 protocol PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck)

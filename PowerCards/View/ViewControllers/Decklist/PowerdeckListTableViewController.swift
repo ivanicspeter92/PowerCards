@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PowerCardsBusinessRules
+import Foundation
 
 class PowerdeckListTableViewController: UITableViewController {
     var delegate: PowerdeckSelectorDelegate?
@@ -25,7 +25,7 @@ class PowerdeckListTableViewController: UITableViewController {
             _ = self.decklist.addNewDeck(deck: $0)
         })
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckNameChanged.rawValue), object: nil)
     }
 
     // MARK: Event handlers
@@ -50,5 +50,23 @@ class PowerdeckListTableViewController: UITableViewController {
         if let deckDetailsVC = (segue.destination as? UINavigationController)?.topViewController as? DeckDetailsTableViewController, let powerdeck = sender as? Powerdeck {
             deckDetailsVC.powerdeck = powerdeck
         }
+    }
+    
+    // Other methods
+    func presentRenameDeckDialog(for deck: Powerdeck) {
+        let alert = UIAlertController(title: "Rename Deck", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textfield in
+            textfield.text = deck.name
+        }
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned alert] action in
+            if let textfield = alert.textFields?.first, let newTitle = textfield.text {
+                deck.name = newTitle
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
 }

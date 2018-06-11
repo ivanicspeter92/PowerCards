@@ -6,12 +6,18 @@
 //  Copyright © 2018 Lovented Oy. All rights reserved.
 //
 
+import Foundation
+
 public class PowerdeckListSection: Hashable {
-    public let name: String
+    public let type: PowerdeckType
     public private(set) var powerdecks: [Powerdeck]
     
-    public init(name: String, powerdecks: [Powerdeck]) {
-        self.name = name
+    public var name: String {
+        return self.type.name
+    }
+    
+    public init(type: PowerdeckType, powerdecks: [Powerdeck]) {
+        self.type = type
         self.powerdecks = powerdecks
     }
     

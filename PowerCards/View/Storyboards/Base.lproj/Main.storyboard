@@ -28,11 +28,6 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Rename deck" id="oqi-t8-CDT">
-                            <connections>
-                                <action selector="renameDeckButtonTapped:" destination="5GO-3b-h7P" id="bhW-a6-Tri"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem title="New card" id="E8W-4w-nAZ">
                             <connections>
                                 <action selector="addCardButtonTapped:" destination="5GO-3b-h7P" id="kBO-5t-mlQ"/>
@@ -48,7 +43,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
-                        <outlet property="renameDeckButton" destination="oqi-t8-CDT" id="EbO-Fj-LZi"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toEditFlashcard" id="LZX-n6-lBX"/>
                         <segue destination="wda-Yi-EAm" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>
@@ -181,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="2751" y="211"/>
         </scene>
-        <!--Powercards-->
+        <!--PowerDecks-->
         <scene sceneID="FAx-Vk-hFf">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="sOb-UK-x5p" customClass="PowerdeckListTableViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,14 +200,14 @@
                                 <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="9wv-nn-3h7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="New powerdeck" id="Tb3-mu-544">
+                        <barButtonItem title="New PowerDeck" id="Tb3-mu-544">
                             <connections>
                                 <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="xEz-Jl-9Zt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="g7f-az-WKP"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Powercards" id="EIq-T4-KPA"/>
+                    <navigationItem key="navigationItem" title="PowerDecks" id="EIq-T4-KPA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="ny5-RB-UhY" kind="show" identifier="toDeckDetails" id="akv-6D-Skg"/>

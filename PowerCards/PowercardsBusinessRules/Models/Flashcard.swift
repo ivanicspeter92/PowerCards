@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol Flashcard {
     var image: UIImage? { get }

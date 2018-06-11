@@ -6,7 +6,8 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
-import PowerCardsBusinessRules
+import Foundation
+import UIKit
 
 struct TestData {
     static var endocrineCards: [Powercard] {

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Powercards. All rights reserved.
 //
 
+import UIKit
+
 public class Powerdeck {
     public let id: String
     public var name: String {

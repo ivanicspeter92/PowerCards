@@ -19,7 +19,7 @@ public struct PowerdeckList {
     public private(set) var inverseSorting: Bool = false
     public private(set) var owner: User
     
-    public init(owner: User, sorting: PowerdeckSorting = .byName, sections: [PowerdeckListSection] = PowerdeckType.all.map({ PowerdeckListSection(name: $0.name, powerdecks: [])}), inverseSorting: Bool = false) {
+    public init(owner: User, sorting: PowerdeckSorting = .byName, sections: [PowerdeckListSection] = PowerdeckType.all.map({ PowerdeckListSection(type: $0, powerdecks: [])}), inverseSorting: Bool = false) {
         self.owner = owner
         self.sections = sections
         self.sorting = sorting

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class AppSettings {
     private static let settingsPlistFileName = "Settings"
@@ -53,6 +54,10 @@ public class AppSettings {
     }
     
     public static var powerFlashCardColor: UIColor {
-        return UIColor(named: "PaperColor", in: Bundle(for: PowerFlashCard.self), compatibleWith: nil) ?? UIColor.white
+        if #available(iOS 11.0, *) {
+            return UIColor(named: "PaperColor", in: Bundle(for: PowerFlashCard.self), compatibleWith: nil) ?? UIColor.white
+        } else {
+            return UIColor.white
+        }
     }
 }

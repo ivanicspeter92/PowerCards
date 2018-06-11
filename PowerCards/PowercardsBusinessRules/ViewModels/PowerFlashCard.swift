@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public let id: String

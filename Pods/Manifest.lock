@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.2)
   - BEMCheckBox (1.4.1)
   - CLImageEditor/Core (0.2.2)
   - CLImageEditor/ResizeTool (0.2.2):
@@ -7,10 +8,11 @@ PODS:
     - CLImageEditor/Core
   - CLImageEditor/TextTool (0.2.2):
     - CLImageEditor/Core
-  - IQKeyboardManagerSwift (5.0.8)
-  - TBEmptyDataSet (2.6)
+  - IQKeyboardManagerSwift (6.0.3)
+  - TBEmptyDataSet (2.7)
 
 DEPENDENCIES:
+  - Alamofire
   - BEMCheckBox
   - CLImageEditor/ResizeTool
   - CLImageEditor/StickerTool
@@ -19,18 +21,20 @@ DEPENDENCIES:
   - TBEmptyDataSet
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
     - BEMCheckBox
     - CLImageEditor
     - IQKeyboardManagerSwift
     - TBEmptyDataSet
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   CLImageEditor: 34199b39c994af44f3f3aae6f6dcccb7ef8b75aa
-  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
-  TBEmptyDataSet: 7383c353092f33dc572084cfa9182678a132dac7
+  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  TBEmptyDataSet: 1da712a3e0c324179253960165202d30009cba26
 
-PODFILE CHECKSUM: 8deb954d5b526ddd51237df750b639d133cc8b6b
+PODFILE CHECKSUM: 7826e4b4cf3b8e5794dfb24127ea7d64ab9f1b34
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import PowerCardsBusinessRules
+import Foundation
 
 class DeckDetailsTableViewController: UITableViewController {
-    @IBOutlet weak var renameDeckButton: UIBarButtonItem!
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
@@ -25,7 +24,6 @@ class DeckDetailsTableViewController: UITableViewController {
             
             takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
             addCardButton.isEnabled = powerdeck != nil
-            renameDeckButton.isEnabled = powerdeck != nil
         }
     }
     
@@ -35,15 +33,14 @@ class DeckDetailsTableViewController: UITableViewController {
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
        
-        renameDeckButton.isEnabled = false
         takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
-        navigationItem.rightBarButtonItems = [addCardButton, renameDeckButton, takeQuizButton]
+        navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckNameChanged.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.deckDeleted.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: PowerCardsBusinessRules.NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckNameChanged.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckDeleted.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(newCardWasAddedToDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardWasRemovedFromDeckNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.cardWasRemovedFromDeck.rawValue), object: nil)
     }
     
     deinit {
@@ -51,10 +48,6 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     // MARK: Event handlers
-    @IBAction func renameDeckButtonTapped(_ sender: UIBarButtonItem) {
-        presentRenameDialog()
-    }
-    
     @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add card", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -67,7 +60,7 @@ class DeckDetailsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { alert in
             self.createNewBlankCard()
         }))
-        alert.addAction(UIAlertAction(title: "Make a note", style: .default, handler: { alert in
+        alert.addAction(UIAlertAction(title: "Type text", style: .default, handler: { alert in
             self.presentNoteMaker()
         }))
         
@@ -124,23 +117,6 @@ class DeckDetailsTableViewController: UITableViewController {
         
         let leftItem = UIBarButtonItem(customView: label)
         navigationItem.leftBarButtonItem = leftItem
-    }
-    
-    private func presentRenameDialog() {
-        let alert = UIAlertController(title: "Rename Deck", message: nil, preferredStyle: .alert)
-        
-        alert.addTextField { textfield in
-            textfield.text = self.powerdeck?.name
-        }
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned alert] action in
-            if let textfield = alert.textFields?.first, let newTitle = textfield.text {
-                self.powerdeck?.name = newTitle
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
     }
     
     private func presentImagePicker(source: UIImagePickerControllerSourceType) {

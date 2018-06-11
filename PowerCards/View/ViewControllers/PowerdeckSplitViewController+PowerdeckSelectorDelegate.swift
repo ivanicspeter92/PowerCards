@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PowerCardsBusinessRules
+import Foundation
 
 extension PowerdecksSplitViewController: PowerdeckSelectorDelegate {
     func selected(powerdeck: Powerdeck) {

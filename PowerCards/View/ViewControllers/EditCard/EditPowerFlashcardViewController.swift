@@ -8,7 +8,7 @@
 
 import UIKit
 import CLImageEditor
-import PowerCardsBusinessRules
+import Foundation
 
 class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PowerCardsBusinessRules
+import Foundation
 
 extension DeckDetailsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
