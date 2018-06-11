@@ -14,14 +14,14 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public var name: String {
         didSet {
             if name != oldValue {
-                delegate?.flashcardNameHasChanged()
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.cardNameChanged.rawValue), object: self, userInfo: nil))
             }
         }
     }
     public var subTitle: String? {
         didSet {
             if subTitle != oldValue {
-                delegate?.flashcardSubtitleHasChanged()
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.cardSubtitleChanged.rawValue), object: self, userInfo: nil))
             }
         }
     }
@@ -29,23 +29,20 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public var image: UIImage? {
         didSet {
             if image != oldValue {
-                delegate?.flashcardImageHasChanged()
-                // notify delegate or push notification
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.cardImageChanged.rawValue), object: self, userInfo: nil))
             }
         }
     }
-    public var delegate: PowerFlashCardEditorDelegate?
     public var hasImage: Bool {
         return self.image != nil
     }
     
-    public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date(), delegate: PowerFlashCardEditorDelegate? = nil) {
+    public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date()) {
         self.id = UUID.init().uuidString
         self.name = name
         self.subTitle = subTitle
         self.image = image
         self.creationDate = creationDate
-        self.delegate = delegate
     }
     
     public convenience init(name: String, subTitle: String?, backgroundColor: UIColor, size: CGSize = UIScreen.main.bounds.size, creationDate: Date = Date()) {
@@ -59,10 +56,4 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public func setImageToBlank(withBackground backgroundColor: UIColor = AppSettings.powerFlashCardColor, size: CGSize = UIScreen.main.bounds.size) {
         self.image = UIImage(color: backgroundColor, size: size)
     }
-}
-
-public protocol PowerFlashCardEditorDelegate {
-    func flashcardNameHasChanged()
-    func flashcardSubtitleHasChanged()
-    func flashcardImageHasChanged()
 }

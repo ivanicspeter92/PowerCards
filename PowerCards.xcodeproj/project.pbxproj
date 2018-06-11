@@ -64,6 +64,7 @@
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
 		73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */; };
+		73E6846920CF02B500964B1D /* PowerFlashCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */; };
 		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +168,7 @@
 		73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerFlashcardViewController.swift; sourceTree = "<group>"; };
 		73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCardTableViewCell.swift; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C73EE349D635CEC5CC142560 /* Pods-PowerCardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */,
 				7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */,
 				7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */,
+				73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */,
 			);
 			path = DeckDetails;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				734AA9CE20C94E150049E37E /* PowerFlashCard.swift in Sources */,
 				734AA9CF20C94E150049E37E /* PowercardList.swift in Sources */,
 				734AA9F820C94E150049E37E /* PowercardContainer.swift in Sources */,
+				73E6846920CF02B500964B1D /* PowerFlashCardTableViewCell.swift in Sources */,
 				7368C33F1F51C52D00082516 /* EditPowerFlashcardViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				7333952A1F51625500041472 /* PowerdecksSplitViewController.swift in Sources */,
 				734AAA0320C94E150049E37E /* JSONInitialziable.swift in Sources */,

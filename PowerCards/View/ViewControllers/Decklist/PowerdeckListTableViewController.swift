@@ -52,7 +52,7 @@ class PowerdeckListTableViewController: UITableViewController {
         }
     }
     
-    // Other methods
+    // MARK: Other methods
     func presentRenameDeckDialog(for deck: Powerdeck) {
         let alert = UIAlertController(title: "Rename Deck", message: nil, preferredStyle: .alert)
         

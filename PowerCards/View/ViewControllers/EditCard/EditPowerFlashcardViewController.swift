@@ -28,10 +28,12 @@ class EditPowerFlashcardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        card.delegate = self
-        
         loadCardToView()
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Object to view loaders
@@ -106,6 +108,26 @@ class EditPowerFlashcardViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: Notification listeners
+    @objc func cardNameChangedToDeckNotificationReceived(_ notification: Notification) {
+        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
+        
+        loadCardTitleToView()
+    }
+    
+    @objc func cardSubtitleChangedFromDeckNotificationReceived(_ notification: Notification) {
+        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
+        
+        loadCardSubTitleToView()
+    }
+    
+    @objc func cardImageChangedNotificationReceived(_ notification: Notification) {
+        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
+        
+        loadCardImageToView()
+        enableToolbarButtonsIfCardImageIsNotNil()
+    }
+    
     // MARK: Private
     private func presentDeletePhotoAlert() {
         let alert = UIAlertController(title: "Delete Photo", message: nil, preferredStyle: .alert)
@@ -149,21 +171,6 @@ extension EditPowerFlashcardViewController: CLImageEditorDelegate {
     
     func imageEditorDidCancel(_ editor: CLImageEditor!) {
          editor.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension EditPowerFlashcardViewController: PowerFlashCardEditorDelegate {
-    func flashcardNameHasChanged() {
-        loadCardTitleToView()
-    }
-    
-    func flashcardSubtitleHasChanged() {
-        loadCardSubTitleToView()
-    }
-    
-    func flashcardImageHasChanged() {
-        loadCardImageToView()
-        enableToolbarButtonsIfCardImageIsNotNil()
     }
 }
 

@@ -102,6 +102,48 @@ class DeckDetailsTableViewController: UITableViewController {
         loadDeckTitleToView()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowerFlashcardViewController ?? segue.destination as? EditPowerFlashcardViewController {
+            if let card = sender as? PowerFlashCard {
+                destination.card = card
+                destination.container = self.powerdeck
+            } else {
+                // handle error
+            }
+        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController {
+            destination.deckDetails = powerdeck
+        }
+    }
+    
+    func toCard(card: Powercard) {
+        if let card = card as? PowerFlashCard {
+            performSegue(withIdentifier: "toEditFlashcard", sender: card)
+        }
+    }
+    
+    func toTakeQuiz(deckDetails: Powerdeck) {
+        performSegue(withIdentifier: "toQuiz", sender: deckDetails)
+    }
+    
+    // MARK: Other methods
+    func presentRenameDeckDialog(for card: Powercard) {
+        let alert = UIAlertController(title: "Rename Card", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textfield in
+            textfield.text = card.name
+        }
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned alert] action in
+            if let textfield = alert.textFields?.first, let newTitle = textfield.text {
+                card.name = newTitle
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: Private
     private func loadDeckTitleToView() {
         guard let powerdeck = powerdeck else { addTitle(text: nil); return }
@@ -133,29 +175,5 @@ class DeckDetailsTableViewController: UITableViewController {
     }
     
     private func presentNoteMaker() {
-    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = (segue.destination as? UINavigationController)?.topViewController as? EditPowerFlashcardViewController ?? segue.destination as? EditPowerFlashcardViewController {
-            if let card = sender as? PowerFlashCard {
-                destination.card = card
-                destination.container = self.powerdeck
-            } else {
-                // handle error
-            }
-        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController {
-            destination.deckDetails = powerdeck
-        }
-    }
-    
-    func toCard(card: Powercard) {
-        if let card = card as? PowerFlashCard {
-            performSegue(withIdentifier: "toEditFlashcard", sender: card)
-        }
-    }
-    
-    func toTakeQuiz(deckDetails: Powerdeck) {
-        performSegue(withIdentifier: "toQuiz", sender: deckDetails)
     }
 }

@@ -18,12 +18,7 @@ extension DeckDetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let card = powerdeck!.cards[indexPath.row]
-        
-        cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.subTitle
-        cell.imageView?.image = card.image ?? #imageLiteral(resourceName: "camera")
+        let cell = PowerFlashCardTableViewCell(powercard: powerdeck!.cards[indexPath.row] as! PowerFlashCard, style: .subtitle, reuseIdentifier: nil)
         
         return cell
     }
@@ -35,16 +30,31 @@ extension DeckDetailsTableViewController {
         return false
      }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .delete
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let renameAction = UITableViewRowAction(style: .normal, title: "Rename", handler: { [weak self] action, indexPath in
+            self?.handleRenameAction(at: indexPath)
+        })
+        renameAction.backgroundColor = .gray
+        
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete", handler: { [weak self] action, indexPath in
+            self?.handleDeleteAction(at: indexPath)
+        })
+        deleteAction.backgroundColor = .red
+        
+        return [deleteAction, renameAction]
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            powerdeck?.removeCard(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
+    // MARK: Private
+    private func handleRenameAction(at indexPath: IndexPath) {
+        if let card = powerdeck?.card(at: indexPath.row) {
+            presentRenameDeckDialog(for: card)
         }
+    }
+    
+    private func handleDeleteAction(at indexPath: IndexPath) {
+        tableView.beginUpdates()
+        powerdeck?.removeCard(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
     }
 }
