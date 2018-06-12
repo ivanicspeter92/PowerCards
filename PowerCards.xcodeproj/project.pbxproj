@@ -59,6 +59,9 @@
 		737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */; };
 		737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */; };
 		737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */; };
+		739463B520D003A4007C5550 /* ToolbarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B420D003A4007C5550 /* ToolbarUIView.swift */; };
+		739463B820D0256E007C5550 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B720D0256E007C5550 /* ThemeManager.swift */; };
+		739463BA20D0259F007C5550 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B920D0259F007C5550 /* Theme.swift */; };
 		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
 		73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3FD441F51E10900E95727 /* QuizViewController.swift */; };
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
@@ -161,6 +164,9 @@
 		737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISplitViewController+MasterDetailViewController.swift"; sourceTree = "<group>"; };
 		737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PowerdeckListTableViewController+UISplitViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		739463B420D003A4007C5550 /* ToolbarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarUIView.swift; sourceTree = "<group>"; };
+		739463B720D0256E007C5550 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		739463B920D0259F007C5550 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7398EBF41F516B5700F70416 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		7398EBF61F516EDF00F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift"; sourceTree = "<group>"; };
 		7398EBF81F516FC400F70416 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift"; sourceTree = "<group>"; };
@@ -351,8 +357,10 @@
 		734CB1291F509DC900059618 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				739463B620D02563007C5550 /* Theme */,
 				734CB12D1F509DF600059618 /* Storyboards */,
 				734CB12C1F509DEF00059618 /* ViewControllers */,
+				739463B320D0038A007C5550 /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +439,23 @@
 				737357F31F509AAF00377EAD /* Info.plist */,
 			);
 			path = PowerCardsUITests;
+			sourceTree = "<group>";
+		};
+		739463B320D0038A007C5550 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				739463B420D003A4007C5550 /* ToolbarUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		739463B620D02563007C5550 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				739463B720D0256E007C5550 /* ThemeManager.swift */,
+				739463B920D0259F007C5550 /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		73B3FD431F51E0A300E95727 /* Quiz */ = {
@@ -718,7 +743,9 @@
 				733B24561F51605B0070C5FE /* PowerdeckListTableViewController+UITableViewDataSource.swift in Sources */,
 				73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */,
 				734AA9FF20C94E150049E37E /* Answer.swift in Sources */,
+				739463B820D0256E007C5550 /* ThemeManager.swift in Sources */,
 				7398EBF51F516B5700F70416 /* TestData.swift in Sources */,
+				739463BA20D0259F007C5550 /* Theme.swift in Sources */,
 				734AAA0120C94E150049E37E /* UIImage+InitializeWithColor.swift in Sources */,
 				733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */,
 				734AA9F220C94E150049E37E /* Request.swift in Sources */,
@@ -727,6 +754,7 @@
 				7333952C1F51626900041472 /* PowerdeckSplitViewController+PowerdeckSelectorDelegate.swift in Sources */,
 				734AA9D120C94E150049E37E /* PowerdeckType.swift in Sources */,
 				734AAA0020C94E150049E37E /* Powerdeck+Hashable.swift in Sources */,
+				739463B520D003A4007C5550 /* ToolbarUIView.swift in Sources */,
 				734AA9FC20C94E150049E37E /* User.swift in Sources */,
 				733B24541F51602A0070C5FE /* PowerdeckListTableViewController+UITableViewDelegate.swift in Sources */,
 				737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */,
