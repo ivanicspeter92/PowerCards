@@ -41,7 +41,6 @@ class EditPowerFlashcardViewController: UIViewController {
         loadCardTitleToView()
         loadCardSubTitleToView()
         loadCardImageToView()
-        enableToolbarButtonsIfCardImageIsNotNil()
     }
     
     func loadCardImageToView() {
@@ -125,7 +124,6 @@ class EditPowerFlashcardViewController: UIViewController {
         guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
         
         loadCardImageToView()
-        enableToolbarButtonsIfCardImageIsNotNil()
     }
     
     // MARK: Private
@@ -138,11 +136,6 @@ class EditPowerFlashcardViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    private func enableToolbarButtonsIfCardImageIsNotNil() {
-        editButton.isEnabled = self.card.image != nil
-        deleteButton.isEnabled = self.card.image != nil
     }
     
     private func showImageEditor() {
