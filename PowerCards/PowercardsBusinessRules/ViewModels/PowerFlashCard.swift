@@ -10,31 +10,23 @@ import Foundation
 import UIKit
 
 public class Shape {
-    var frame: CGRect
-    var backgroundColor: UIColor
-    var borderColor: UIColor = UIColor.clear
-    var borderWidth: CGFloat = 0
+    private(set) var layer: CALayer
     
-    public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
-        self.frame = frame
-        self.backgroundColor = backgroundColor
-        self.borderColor = borderColor
-        self.borderWidth = borderWidth
+    public init(layer: CALayer) {
+        self.layer = layer
     }
     
-    var layer: CAShapeLayer {
-        let layer = CAShapeLayer()
+    public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
+        self.layer = CAShapeLayer()
         
         layer.frame = frame
         layer.borderColor = borderColor.cgColor
         layer.borderWidth = borderWidth
         layer.backgroundColor = backgroundColor.cgColor
-        
-        return layer
     }
     
     public func setPosition(to point: CGPoint) {
-        self.frame = CGRect(x: point.x, y: point.y, width: frame.width, height: frame.height)
+        self.layer.frame = CGRect(x: point.x, y: point.y, width: layer.frame.width, height: layer.frame.height)
     }
 }
 
@@ -93,5 +85,13 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
         shapes.append(newShape)
 
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasAddedToFlashCard.rawValue), object: self, userInfo: nil))
+    }
+    
+    public func setShapes(to shapes: [Shape]) {
+        self.shapes = shapes
+    }
+    
+    public func setShapes(to layers: [CALayer]) {
+        self.setShapes(to: layers.flatMap({ Shape(layer: $0 )}))
     }
 }

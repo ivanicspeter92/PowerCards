@@ -23,11 +23,11 @@ class EditPowerFlashcardViewController: UIViewController {
     var container: PowercardContainer?
     
     private let defaultCameraIcon = UIImage(named: "camera")
+    private var draggedLayer: CALayer?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadCardToView()
         cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
     }
@@ -75,6 +75,7 @@ class EditPowerFlashcardViewController: UIViewController {
         self.card.image = cardImageView.image
         self.card.name = titleTextField.text ?? ""
         self.card.subTitle = subTitleTextField.text
+        self.card.setShapes(to: self.cardImageView.layer.sublayers ?? [])
         dismiss(animated: true, completion: nil)
     }
     
@@ -118,11 +119,15 @@ class EditPowerFlashcardViewController: UIViewController {
     
     @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
         let point = sender.location(in: cardImageView)
-        
-        if let layer = self.cardImageView.layer.sublayers?.first(where: { layer in
-            layer.hitTest(point) != nil
-        }) {
+//        let translation = sender.translation(in: self.cardImageView)
+        if sender.state == UIGestureRecognizerState.began, let layer = self.cardImageView.layer.sublayers?.first(where: { $0.hitTest(point) != nil }) {
+            draggedLayer = layer
             layer.position = point
+        } else if sender.state == UIGestureRecognizerState.changed {
+            print(point)
+            draggedLayer?.position = point
+        } else if sender.state == UIGestureRecognizerState.ended {
+            draggedLayer = nil
         }
     }
     
