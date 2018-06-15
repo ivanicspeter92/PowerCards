@@ -13,7 +13,7 @@ extension DeckDetailsTableViewController: UIImagePickerControllerDelegate, UINav
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let card = PowerFlashCard(name: "New deck", subTitle: nil, image: pickedImage)
+            let card = PowerFlashCard(name: "New flashcard", subTitle: nil, image: pickedImage)
             toCard(card: card)
         }
     }
