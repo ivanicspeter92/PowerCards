@@ -50,6 +50,8 @@ class DeckDetailsTableViewController: UITableViewController {
     // MARK: Event handlers
     @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add card", message: nil, preferredStyle: .actionSheet)
+        alert.popoverPresentationController?.barButtonItem = addCardButton
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { alert in
             self.presentImagePicker(source: .camera)
@@ -64,15 +66,25 @@ class DeckDetailsTableViewController: UITableViewController {
             self.presentNoteMaker()
         }))
         
-        alert.popoverPresentationController?.barButtonItem = addCardButton
-        
         present(alert, animated: true, completion: nil)
     }
     
     @IBAction func takeQuizButtonTapped(_ sender: UIBarButtonItem) {
         guard let deck = powerdeck else { return }
 
-        toTakeQuiz(deckDetails: deck)
+        let alert = UIAlertController(title: "Study", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.popoverPresentationController?.barButtonItem = takeQuizButton
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Crunch Mode", style: .default, handler: { [weak self] action in
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Spaced Repetition", style: .default, handler: { [weak self] action in
+            
+        }))
+        
+        
+        present(alert, animated: true)
     }
     
     // MARK: Notification listeners
@@ -120,10 +132,6 @@ class DeckDetailsTableViewController: UITableViewController {
         if let card = card as? PowerFlashCard {
             performSegue(withIdentifier: "toEditFlashcard", sender: card)
         }
-    }
-    
-    func toTakeQuiz(deckDetails: Powerdeck) {
-        performSegue(withIdentifier: "toQuiz", sender: deckDetails)
     }
     
     // MARK: Other methods

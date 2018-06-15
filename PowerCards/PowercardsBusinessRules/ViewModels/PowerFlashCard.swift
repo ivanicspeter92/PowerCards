@@ -9,6 +9,35 @@
 import Foundation
 import UIKit
 
+public class Shape {
+    var frame: CGRect
+    var backgroundColor: UIColor
+    var borderColor: UIColor = UIColor.clear
+    var borderWidth: CGFloat = 0
+    
+    public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
+        self.frame = frame
+        self.backgroundColor = backgroundColor
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
+    }
+    
+    var layer: CAShapeLayer {
+        let layer = CAShapeLayer()
+        
+        layer.frame = frame
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
+        layer.backgroundColor = backgroundColor.cgColor
+        
+        return layer
+    }
+    
+    public func setPosition(to point: CGPoint) {
+        self.frame = CGRect(x: point.x, y: point.y, width: frame.width, height: frame.height)
+    }
+}
+
 public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public let id: String
     public var name: String {
@@ -36,6 +65,7 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public var hasImage: Bool {
         return self.image != nil
     }
+    public private(set) var shapes: [Shape] = []
     
     public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date()) {
         self.id = UUID.init().uuidString
@@ -55,5 +85,13 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     
     public func setImageToBlank(withBackground backgroundColor: UIColor = AppSettings.powerFlashCardColor, size: CGSize = UIScreen.main.bounds.size) {
         self.image = UIImage(color: backgroundColor, size: size)
+    }
+    
+    public func insertRectangleOverImage(backgroundColor: UIColor, x: CGFloat = 0, y: CGFloat = 0, width: CGFloat = 200, height: CGFloat = 50) {
+        let rect = CGRect(x: x, y: y, width: width, height: height)
+        let newShape = Shape(frame: rect, backgroundColor: backgroundColor, borderColor: UIColor.black, borderWidth: 2)
+        shapes.append(newShape)
+
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasAddedToFlashCard.rawValue), object: self, userInfo: nil))
     }
 }

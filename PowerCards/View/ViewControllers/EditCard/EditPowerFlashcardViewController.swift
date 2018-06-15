@@ -24,7 +24,7 @@ class EditPowerFlashcardViewController: UIViewController {
     
     private let defaultCameraIcon = UIImage(named: "camera")
     
-    // MARK: From superclass
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +44,18 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     func loadCardImageToView() {
-        cardImageView.image = card.image ?? defaultCameraIcon
+        if let image = card.image {
+            cardImageView.image = image
+            loadCardShapesToView()
+        } else {
+            cardImageView.image = defaultCameraIcon
+        }
+    }
+    
+    private func loadCardShapesToView() {
+        card.shapes.forEach({
+            cardImageView.layer.addSublayer($0.layer)
+        })
     }
     
     func loadCardTitleToView() {
@@ -61,16 +72,14 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
-        container?.insertOrUpdate(card: self.card)
+        self.card.image = cardImageView.image
+        self.card.name = titleTextField.text ?? ""
+        self.card.subTitle = subTitleTextField.text
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
         presentDeletePhotoAlert()
-    }
-    
-    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
-        self.showImageEditor()
     }
     
     @objc func imageTapped() {
@@ -93,7 +102,7 @@ class EditPowerFlashcardViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { [weak self] action in
             self?.card.setImageToBlank()
         }))
-        if self.card.hasImage {
+        if self.card.hasImage && cardImageView.image != defaultCameraIcon {
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
                 self?.presentDeletePhotoAlert()
             }))
@@ -107,72 +116,42 @@ class EditPowerFlashcardViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: Notification listeners
-    @objc func cardNameChangedToDeckNotificationReceived(_ notification: Notification) {
-        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
+    @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
+        let point = sender.location(in: cardImageView)
         
-        loadCardTitleToView()
+        if let layer = self.cardImageView.layer.sublayers?.first(where: { layer in
+            layer.hitTest(point) != nil
+        }) {
+            layer.position = point
+        }
     }
     
-    @objc func cardSubtitleChangedFromDeckNotificationReceived(_ notification: Notification) {
-        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
+    // MARK: Toolbar event handlers
+    @IBAction func shapeButtonTapped(_ sender: UIButton) {
+        let layer = CAShapeLayer()
         
-        loadCardSubTitleToView()
+        layer.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        layer.backgroundColor = UIColor.red.cgColor
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 3
+        
+        cardImageView.layer.addSublayer(layer)
     }
     
-    @objc func cardImageChangedNotificationReceived(_ notification: Notification) {
-        guard let card = notification.object as? PowerFlashCard, card == self.card else { return }
-        
-        loadCardImageToView()
+    @IBAction func rotateButtonTapped(_ sender: UIButton) {
+        print("Rotate")
     }
     
     // MARK: Private
     private func presentDeletePhotoAlert() {
         let alert = UIAlertController(title: "Delete Photo", message: nil, preferredStyle: .alert)
         
+       
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-            self?.card.image = nil
+            self?.cardImageView.image = self?.defaultCameraIcon
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    private func showImageEditor() {
-        guard let editor = CLImageEditor(image: self.cardImageView.image) else { return } // handle error
-        let disabledTools: Set<CLImageToolKeys> = [.adjustment, .blur, .effect, .filter, .toneCurve]
-        
-        editor.delegate = self
-        disabledTools.forEach({
-            if let toolInfo = editor.toolInfo.subToolInfo(withToolName: $0.rawValue, recursive: true) {
-                toolInfo.available = false
-            }
-        })
-        if let stickerToolInfo = editor.toolInfo.subToolInfo(withToolName: CLImageToolKeys.sticker.rawValue, recursive: true) {
-            stickerToolInfo.title = "Peek-a-boo"
-        }
-        
-        present(editor, animated: true, completion: nil)
-    }
-}
-
-extension EditPowerFlashcardViewController: CLImageEditorDelegate {
-    func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
-        self.card.image = image
-        editor.dismiss(animated: true, completion: nil)
-    }
-    
-    func imageEditorDidCancel(_ editor: CLImageEditor!) {
-         editor.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension EditPowerFlashcardViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == titleTextField {
-            self.card.name = textField.text ?? ""
-        } else if textField == subTitleTextField {
-            self.card.subTitle = textField.text
-        }
     }
 }

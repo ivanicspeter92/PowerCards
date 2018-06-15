@@ -11,6 +11,6 @@ import UIKit
 extension EditPowerFlashcardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        self.card.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.cardImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
 }

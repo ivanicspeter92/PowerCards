@@ -9,7 +9,7 @@
 public protocol PowercardContainer {
     var cards: [Powercard] { get set }
     
-    mutating func insertOrUpdate(card: Powercard)
+    mutating func insert(card: Powercard)
     mutating func removeCard(at index: Int)
     func card(at index: Int) -> Powercard?
 }

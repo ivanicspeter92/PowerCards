@@ -42,7 +42,7 @@ extension Powerdeck: PowercardContainer {
         return nil
     }
     
-    public func insertOrUpdate(card: Powercard) {
+    public func insert(card: Powercard) {
         cards.append(card)
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.newCardWasAddedToDeck.rawValue), object: self, userInfo: nil))
     }
