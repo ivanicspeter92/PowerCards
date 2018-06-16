@@ -10,23 +10,30 @@ import Foundation
 import UIKit
 
 public class Shape {
-    private(set) var layer: CALayer
+    private(set) var frame: CGRect
+    private(set) var backgroundColor: UIColor
+    private(set) var borderColor: UIColor
+    private(set) var borderWidth: CGFloat
     
-    public init(layer: CALayer) {
-        self.layer = layer
+    public convenience init(layer: CALayer) {
+        self.init(frame: layer.frame, backgroundColor: UIColor(cgColor: layer.backgroundColor ?? UIColor.clear.cgColor), borderColor: UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor), borderWidth: layer.borderWidth)
     }
     
     public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
-        self.layer = CAShapeLayer()
-        
-        layer.frame = frame
-        layer.borderColor = borderColor.cgColor
-        layer.borderWidth = borderWidth
-        layer.backgroundColor = backgroundColor.cgColor
+        self.frame = frame
+        self.backgroundColor = backgroundColor
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
     }
     
-    public func setPosition(to point: CGPoint) {
-        self.layer.frame = CGRect(x: point.x, y: point.y, width: layer.frame.width, height: layer.frame.height)
+    var view: UIView {
+        let view = UIView(frame: self.frame)
+        
+        view.backgroundColor = self.backgroundColor
+        view.layer.borderWidth = self.borderWidth
+        view.layer.borderColor = self.borderColor.cgColor
+        
+        return view
     }
 }
 

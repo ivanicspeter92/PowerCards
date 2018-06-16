@@ -23,7 +23,7 @@ class EditPowerFlashcardViewController: UIViewController {
     var container: PowercardContainer?
     
     private let defaultCameraIcon = UIImage(named: "camera")
-    private var draggedLayer: CALayer?
+    private var draggedView: UIView?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class EditPowerFlashcardViewController: UIViewController {
     
     private func loadCardShapesToView() {
         card.shapes.forEach({
-            cardImageView.layer.addSublayer($0.layer)
+            cardImageView.addSubview($0.view)
         })
     }
     
@@ -120,27 +120,27 @@ class EditPowerFlashcardViewController: UIViewController {
     @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
         let point = sender.location(in: cardImageView)
 //        let translation = sender.translation(in: self.cardImageView)
-        if sender.state == UIGestureRecognizerState.began, let layer = self.cardImageView.layer.sublayers?.first(where: { $0.hitTest(point) != nil }) {
-            draggedLayer = layer
-            layer.position = point
+        if sender.state == UIGestureRecognizerState.began, let view = self.cardImageView.subviews.first(where: { $0.frame.contains(point) }) {
+            draggedView = view
+            view.center = point
         } else if sender.state == UIGestureRecognizerState.changed {
             print(point)
-            draggedLayer?.position = point
+            draggedView?.center = point
         } else if sender.state == UIGestureRecognizerState.ended {
-            draggedLayer = nil
+            draggedView = nil
         }
     }
     
     // MARK: Toolbar event handlers
     @IBAction func shapeButtonTapped(_ sender: UIButton) {
-        let layer = CAShapeLayer()
+        let view = UIView()
         
-        layer.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        layer.backgroundColor = UIColor.red.cgColor
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 3
+        view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        view.backgroundColor = UIColor.red
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 3
         
-        cardImageView.layer.addSublayer(layer)
+        cardImageView.addSubview(view)
     }
     
     @IBAction func rotateButtonTapped(_ sender: UIButton) {
