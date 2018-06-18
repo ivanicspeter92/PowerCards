@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		11D431796A382D241DF07E9F /* Pods_PowerCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DE14D40014500F8E479755 /* Pods_PowerCards.framework */; };
 		234145686419B6DC81D73D12 /* libPods-PowerCardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */; };
+		7301CB8420D574BD0030F975 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7301CB8320D574BD0030F975 /* Study.storyboard */; };
+		7301CB8620D575620030F975 /* StudyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8520D575620030F975 /* StudyMode.swift */; };
+		7301CB8820D576A20030F975 /* StudySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8720D576A20030F975 /* StudySession.swift */; };
+		7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8A20D577130030F975 /* StudySessionViewController.swift */; };
 		73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */; };
 		733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395251F5161F600041472 /* PowerdeckListTableViewController.swift */; };
 		733395281F51620600041472 /* PowerDeckSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */; };
@@ -25,11 +29,6 @@
 		734AA9D020C94E150049E37E /* PowerdeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA98720C94E150049E37E /* PowerdeckList.swift */; };
 		734AA9D120C94E150049E37E /* PowerdeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA98820C94E150049E37E /* PowerdeckType.swift */; };
 		734AA9D220C94E150049E37E /* PowerdeckListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA98920C94E150049E37E /* PowerdeckListSection.swift */; };
-		734AA9D320C94E150049E37E /* AnswerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA98A20C94E150049E37E /* AnswerList.swift */; };
-		734AA9F120C94E150049E37E /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9B120C94E150049E37E /* RemoteService.swift */; };
-		734AA9F220C94E150049E37E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9B320C94E150049E37E /* Request.swift */; };
-		734AA9F320C94E150049E37E /* TargetParserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9B420C94E150049E37E /* TargetParserRequest.swift */; };
-		734AA9F620C94E150049E37E /* CreatePowerDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9B720C94E150049E37E /* CreatePowerDeckRequest.swift */; };
 		734AA9F720C94E150049E37E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9B820C94E150049E37E /* Endpoint.swift */; };
 		734AA9F820C94E150049E37E /* PowercardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9BA20C94E150049E37E /* PowercardContainer.swift */; };
 		734AA9F920C94E150049E37E /* Powercard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9BB20C94E150049E37E /* Powercard.swift */; };
@@ -38,7 +37,6 @@
 		734AA9FC20C94E150049E37E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9BE20C94E150049E37E /* User.swift */; };
 		734AA9FD20C94E150049E37E /* IDHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9BF20C94E150049E37E /* IDHolder.swift */; };
 		734AA9FE20C94E150049E37E /* Powerdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C020C94E150049E37E /* Powerdeck.swift */; };
-		734AA9FF20C94E150049E37E /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C120C94E150049E37E /* Answer.swift */; };
 		734AAA0020C94E150049E37E /* Powerdeck+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C220C94E150049E37E /* Powerdeck+Hashable.swift */; };
 		734AAA0120C94E150049E37E /* UIImage+InitializeWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C420C94E150049E37E /* UIImage+InitializeWithColor.swift */; };
 		734AAA0220C94E150049E37E /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C520C94E150049E37E /* NotificationKeys.swift */; };
@@ -63,7 +61,6 @@
 		739463B820D0256E007C5550 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B720D0256E007C5550 /* ThemeManager.swift */; };
 		739463BA20D0259F007C5550 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B920D0259F007C5550 /* Theme.swift */; };
 		7398EBF51F516B5700F70416 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EBF41F516B5700F70416 /* TestData.swift */; };
-		73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3FD441F51E10900E95727 /* QuizViewController.swift */; };
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
 		73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */; };
@@ -105,6 +102,10 @@
 		2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		400B161C685E27751BC37EC0 /* libPods-PowerCardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerCardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A6612F3E2F2A0FCE3FAF60 /* Pods-PowerCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		7301CB8320D574BD0030F975 /* Study.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Study.storyboard; sourceTree = "<group>"; };
+		7301CB8520D575620030F975 /* StudyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMode.swift; sourceTree = "<group>"; };
+		7301CB8720D576A20030F975 /* StudySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySession.swift; sourceTree = "<group>"; };
+		7301CB8A20D577130030F975 /* StudySessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionViewController.swift; sourceTree = "<group>"; };
 		73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckTableViewCell.swift; sourceTree = "<group>"; };
 		733395251F5161F600041472 /* PowerdeckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckListTableViewController.swift; sourceTree = "<group>"; };
 		733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckSelectorDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +225,70 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7301CB8920D576FE0030F975 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				7301CB8A20D577130030F975 /* StudySessionViewController.swift */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		7301CB8C20D577940030F975 /* Deck */ = {
+			isa = PBXGroup;
+			children = (
+				734AA9C020C94E150049E37E /* Powerdeck.swift */,
+				734AA98820C94E150049E37E /* PowerdeckType.swift */,
+				734AA9C220C94E150049E37E /* Powerdeck+Hashable.swift */,
+			);
+			path = Deck;
+			sourceTree = "<group>";
+		};
+		7301CB8D20D5779A0030F975 /* Decklist */ = {
+			isa = PBXGroup;
+			children = (
+				734AA98720C94E150049E37E /* PowerdeckList.swift */,
+				734AA98920C94E150049E37E /* PowerdeckListSection.swift */,
+			);
+			path = Decklist;
+			sourceTree = "<group>";
+		};
+		7301CB8E20D5792A0030F975 /* PowerCard */ = {
+			isa = PBXGroup;
+			children = (
+				734AA9BB20C94E150049E37E /* Powercard.swift */,
+				734AA98620C94E150049E37E /* PowercardList.swift */,
+			);
+			path = PowerCard;
+			sourceTree = "<group>";
+		};
+		7301CB8F20D579300030F975 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				7301CB8520D575620030F975 /* StudyMode.swift */,
+				7301CB8720D576A20030F975 /* StudySession.swift */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		7301CB9020D579530030F975 /* Generic protocols */ = {
+			isa = PBXGroup;
+			children = (
+				734AA9BD20C94E150049E37E /* Flashcard.swift */,
+				734AA9BF20C94E150049E37E /* IDHolder.swift */,
+				734AA9BA20C94E150049E37E /* PowercardContainer.swift */,
+			);
+			path = "Generic protocols";
+			sourceTree = "<group>";
+		};
+		7301CB9120D579A40030F975 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				734AA9BE20C94E150049E37E /* User.swift */,
+				734AA9BC20C94E150049E37E /* User+Hashable.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		73203A3F20BDC8EE00F54850 /* Decklist */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,12 +354,15 @@
 		734AA98420C94E150049E37E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7301CB9020D579530030F975 /* Generic protocols */,
+				7301CB8F20D579300030F975 /* Study */,
+				7301CB8E20D5792A0030F975 /* PowerCard */,
+				7301CB8D20D5779A0030F975 /* Decklist */,
+				7301CB8C20D577940030F975 /* Deck */,
+				7301CB9120D579A40030F975 /* User */,
 				734AA98520C94E150049E37E /* PowerFlashCard.swift */,
-				734AA98620C94E150049E37E /* PowercardList.swift */,
-				734AA98720C94E150049E37E /* PowerdeckList.swift */,
-				734AA98820C94E150049E37E /* PowerdeckType.swift */,
-				734AA98920C94E150049E37E /* PowerdeckListSection.swift */,
 				734AA98A20C94E150049E37E /* AnswerList.swift */,
+				734AA9C120C94E150049E37E /* Answer.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -324,15 +392,6 @@
 		734AA9B920C94E150049E37E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				734AA9BA20C94E150049E37E /* PowercardContainer.swift */,
-				734AA9BB20C94E150049E37E /* Powercard.swift */,
-				734AA9BC20C94E150049E37E /* User+Hashable.swift */,
-				734AA9BD20C94E150049E37E /* Flashcard.swift */,
-				734AA9BE20C94E150049E37E /* User.swift */,
-				734AA9BF20C94E150049E37E /* IDHolder.swift */,
-				734AA9C020C94E150049E37E /* Powerdeck.swift */,
-				734AA9C120C94E150049E37E /* Answer.swift */,
-				734AA9C220C94E150049E37E /* Powerdeck+Hashable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,6 +430,7 @@
 				733B24571F5161BF0070C5FE /* Decks */,
 				73203A3F20BDC8EE00F54850 /* Decklist */,
 				73BC29161F51901400C3EB2C /* EditCard */,
+				7301CB8920D576FE0030F975 /* Study */,
 				73B3FD431F51E0A300E95727 /* Quiz */,
 				733395291F51625500041472 /* PowerdecksSplitViewController.swift */,
 				7333952B1F51626900041472 /* PowerdeckSplitViewController+PowerdeckSelectorDelegate.swift */,
@@ -383,6 +443,7 @@
 			children = (
 				737357D51F509AAF00377EAD /* Main.storyboard */,
 				7355D96D1F51FFA300244257 /* Quiz.storyboard */,
+				7301CB8320D574BD0030F975 /* Study.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -610,6 +671,7 @@
 				734CB1351F509F7A00059618 /* Settings.plist in Resources */,
 				7355D96E1F5200C700244257 /* Quiz.storyboard in Resources */,
 				737357D91F509AAF00377EAD /* Assets.xcassets in Resources */,
+				7301CB8420D574BD0030F975 /* Study.storyboard in Resources */,
 				737357D71F509AAF00377EAD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,17 +754,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PowerCards/Pods-PowerCards-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
-				"${BUILT_PRODUCTS_DIR}/CLImageEditor/CLImageEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TBEmptyDataSet/TBEmptyDataSet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLImageEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBEmptyDataSet.framework",
 			);
@@ -733,7 +789,6 @@
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,
 				734AAA0220C94E150049E37E /* NotificationKeys.swift in Sources */,
 				73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */,
-				73B3FD451F51E10900E95727 /* QuizViewController.swift in Sources */,
 				734AA9FA20C94E150049E37E /* User+Hashable.swift in Sources */,
 				734AA9FD20C94E150049E37E /* IDHolder.swift in Sources */,
 				737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */,
@@ -742,13 +797,11 @@
 				733395281F51620600041472 /* PowerDeckSelectorDelegate.swift in Sources */,
 				733B24561F51605B0070C5FE /* PowerdeckListTableViewController+UITableViewDataSource.swift in Sources */,
 				73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */,
-				734AA9FF20C94E150049E37E /* Answer.swift in Sources */,
 				739463B820D0256E007C5550 /* ThemeManager.swift in Sources */,
 				7398EBF51F516B5700F70416 /* TestData.swift in Sources */,
 				739463BA20D0259F007C5550 /* Theme.swift in Sources */,
 				734AAA0120C94E150049E37E /* UIImage+InitializeWithColor.swift in Sources */,
 				733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */,
-				734AA9F220C94E150049E37E /* Request.swift in Sources */,
 				73649FD51F5BEC6900ED6192 /* PowerdeckListTableViewController+PowerdeckSelectorDelegate.swift in Sources */,
 				734AA9D020C94E150049E37E /* PowerdeckList.swift in Sources */,
 				7333952C1F51626900041472 /* PowerdeckSplitViewController+PowerdeckSelectorDelegate.swift in Sources */,
@@ -763,11 +816,10 @@
 				7337F64220C6C38B00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDataSource.swift in Sources */,
 				737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */,
 				734AAA0620C94E150049E37E /* AppSettingKeys.swift in Sources */,
+				7301CB8620D575620030F975 /* StudyMode.swift in Sources */,
 				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
-				734AA9F620C94E150049E37E /* CreatePowerDeckRequest.swift in Sources */,
-				734AA9F320C94E150049E37E /* TargetParserRequest.swift in Sources */,
-				734AA9F120C94E150049E37E /* RemoteService.swift in Sources */,
-				734AA9D320C94E150049E37E /* AnswerList.swift in Sources */,
+				7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */,
+				7301CB8820D576A20030F975 /* StudySession.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				734AA9FB20C94E150049E37E /* Flashcard.swift in Sources */,
 				734AAA0920C94E9D0049E37E /* AppSettings.swift in Sources */,

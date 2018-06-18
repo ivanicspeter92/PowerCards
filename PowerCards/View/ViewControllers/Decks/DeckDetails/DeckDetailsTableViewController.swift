@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 
 class DeckDetailsTableViewController: UITableViewController {
+    private typealias StudySessionPreparationTuple = (mode: StudyMode, deck: Powerdeck)
+    
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
@@ -77,12 +79,11 @@ class DeckDetailsTableViewController: UITableViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Crunch Mode", style: .default, handler: { [weak self] action in
-            
+            self?.toStudy(mode: .crunch, deck: deck)
         }))
         alert.addAction(UIAlertAction(title: "Spaced Repetition", style: .default, handler: { [weak self] action in
-            
+            self?.toStudy(mode: .spacedRepetition, deck: deck)
         }))
-        
         
         present(alert, animated: true)
     }
@@ -123,8 +124,12 @@ class DeckDetailsTableViewController: UITableViewController {
             } else {
                 // handle error
             }
-        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? QuizViewController ?? segue.destination as? QuizViewController {
-            destination.deckDetails = powerdeck
+        } else if let destination = (segue.destination as? UINavigationController)?.topViewController as? StudySessionViewController ?? segue.destination as? StudySessionViewController {
+            if let sender = sender as? StudySessionPreparationTuple {
+                destination.session = StudySession(mode: sender.mode, deck: sender.deck, delegate: destination)
+            } else {
+                // handle error
+            }
         }
     }
     
@@ -132,6 +137,10 @@ class DeckDetailsTableViewController: UITableViewController {
         if let card = card as? PowerFlashCard {
             performSegue(withIdentifier: "toEditFlashcard", sender: card)
         }
+    }
+    
+    func toStudy(mode: StudyMode, deck: Powerdeck) {
+        performSegue(withIdentifier: "toStudy", sender: StudySessionPreparationTuple(mode: mode, deck: deck))
     }
     
     // MARK: Other methods

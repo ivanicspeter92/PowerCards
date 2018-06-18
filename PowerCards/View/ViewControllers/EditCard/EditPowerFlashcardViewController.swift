@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CLImageEditor
 import Foundation
 
 class EditPowerFlashcardViewController: UIViewController {

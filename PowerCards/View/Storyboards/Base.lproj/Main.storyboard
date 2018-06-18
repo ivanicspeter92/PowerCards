@@ -45,12 +45,12 @@
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toEditFlashcard" id="LZX-n6-lBX"/>
-                        <segue destination="wda-Yi-EAm" kind="presentation" identifier="toQuiz" id="hLo-RB-1XX"/>
+                        <segue destination="wda-Yi-EAm" kind="presentation" identifier="toStudy" id="hLo-RB-1XX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60t-5U-uoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="211"/>
+            <point key="canvasLocation" x="1177" y="210"/>
         </scene>
         <!--Edit flashcard-->
         <scene sceneID="2k6-RP-QI2">
@@ -380,7 +380,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3097" y="201"/>
+            <point key="canvasLocation" x="2780" y="211"/>
         </scene>
         <!--PowerDecks-->
         <scene sceneID="FAx-Vk-hFf">
@@ -583,13 +583,13 @@
             </objects>
             <point key="canvasLocation" x="2024" y="210.49475262368819"/>
         </scene>
-        <!--Quiz-->
+        <!--Study-->
         <scene sceneID="V67-Xq-0wq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="wda-Yi-EAm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Study" id="wda-Yi-EAm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbD-c8-Ed1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022.4000000000001" y="874.36281859070471"/>
+            <point key="canvasLocation" x="1177" y="638"/>
         </scene>
     </scenes>
     <resources>

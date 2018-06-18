@@ -6,13 +6,8 @@ target 'PowerCards' do
     use_frameworks!
     
     # Pods for PowerCards
-    pod 'Alamofire'
     pod 'TBEmptyDataSet'
-    pod 'CLImageEditor/StickerTool'
-    pod 'CLImageEditor/TextTool'
-    pod 'CLImageEditor/ResizeTool'
     pod 'IQKeyboardManagerSwift'
-    pod 'BEMCheckBox'
 end
 
 target 'PowerCardsTests' do
