@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Fp-la-1ZG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Fp-la-1ZG">
+                                <rect key="frame" x="5" y="69" width="365" height="593"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1Fp-la-1ZG" firstAttribute="top" secondItem="tK6-Up-qve" secondAttribute="top" id="7QA-s4-Yfc"/>
-                            <constraint firstItem="tK6-Up-qve" firstAttribute="trailing" secondItem="1Fp-la-1ZG" secondAttribute="trailing" id="Wno-A9-MSF"/>
-                            <constraint firstItem="tK6-Up-qve" firstAttribute="bottom" secondItem="1Fp-la-1ZG" secondAttribute="bottom" id="iaK-Mq-Fwr"/>
-                            <constraint firstItem="1Fp-la-1ZG" firstAttribute="leading" secondItem="tK6-Up-qve" secondAttribute="leading" id="zjo-ea-vqK"/>
+                            <constraint firstItem="1Fp-la-1ZG" firstAttribute="top" secondItem="tK6-Up-qve" secondAttribute="top" constant="5" id="7QA-s4-Yfc"/>
+                            <constraint firstItem="tK6-Up-qve" firstAttribute="trailing" secondItem="1Fp-la-1ZG" secondAttribute="trailing" constant="5" id="Wno-A9-MSF"/>
+                            <constraint firstItem="tK6-Up-qve" firstAttribute="bottom" secondItem="1Fp-la-1ZG" secondAttribute="bottom" constant="5" id="iaK-Mq-Fwr"/>
+                            <constraint firstItem="1Fp-la-1ZG" firstAttribute="leading" secondItem="tK6-Up-qve" secondAttribute="leading" constant="5" id="zjo-ea-vqK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tK6-Up-qve"/>
                     </view>
