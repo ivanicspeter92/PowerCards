@@ -13,4 +13,5 @@ struct Defaults {
     }
     
     static let cameraIcon = UIImage(named: "camera")
+    static let selectedToolbarItemColor: UIColor = UIColor.lightGray
 }

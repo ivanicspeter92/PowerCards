@@ -39,7 +39,14 @@ enum ToolbarItem {
     
     var isEnabled: Bool {
         switch self {
-        case .shape, .rotate: return true
+        case .shape: return true
+        default: return false
+        }
+    }
+    
+    var isSticky: Bool {
+        switch self {
+//        case .shape: return true
         default: return false
         }
     }

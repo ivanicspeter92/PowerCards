@@ -24,6 +24,11 @@ class ToolbarItemUIView: UIView {
         }
     }
     var delegate: ToolbarItemDelegate?
+    var highlighted: Bool = false {
+        didSet {
+            backgroundColor = highlighted ? Defaults.selectedToolbarItemColor : UIColor.clear
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

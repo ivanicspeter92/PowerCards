@@ -10,10 +10,26 @@ import UIKit
 
 class ToolbarUIView: XIBLoadingUIView {
     @IBOutlet weak var itemsContainer: UIStackView!
-    var delegate: ToolbarItemDelegate? {
+    
+    private(set) var activeToolbarItem: ToolbarItem? {
         didSet {
-            itemsContainer.arrangedSubviews.compactMap({ $0 as? ToolbarItemUIView}).forEach({ $0.delegate = self.delegate })
+            if let oldValue = oldValue, oldValue.isSticky {
+                delegate?.didDeselect(item: oldValue)
+            }
+            if let activeToolbarItem = activeToolbarItem {
+                delegate?.didSelect(item: activeToolbarItem)
+                
+                if !activeToolbarItem.isSticky {
+                    self.activeToolbarItem = nil
+                }
+            }
+            highlightActiveToolbar(for: activeToolbarItem)
         }
+    }
+    
+    var delegate: ToolbarDelegate?
+    private var toolbarItemViews: [ToolbarItemUIView] {
+        return itemsContainer.arrangedSubviews.compactMap({ $0 as? ToolbarItemUIView })
     }
     
     override func awakeFromNib() {
@@ -33,7 +49,31 @@ class ToolbarUIView: XIBLoadingUIView {
             let view = ToolbarItemUIView.loadFromNib()
             
             view.toolbarItem = $0
+            view.delegate = self
             itemsContainer.addArrangedSubview(view)
         })
     }
+    
+    private func highlightActiveToolbar(for item: ToolbarItem?) {
+        if let item = item, let view = toolbarItemViews.first(where: { $0.toolbarItem == item }) {
+            view.highlighted = true
+        } else {
+            toolbarItemViews.filter({ $0.highlighted == true }).forEach({ $0.highlighted = false })
+        }
+    }
+}
+
+extension ToolbarUIView: ToolbarItemDelegate {
+    func didSelect(toolbarItem item: ToolbarItem) {
+        if self.activeToolbarItem == item {
+            activeToolbarItem = nil
+        } else {
+            activeToolbarItem = item
+        }
+    }
+}
+
+protocol ToolbarDelegate {
+    func didSelect(item: ToolbarItem)
+    func didDeselect(item: ToolbarItem)
 }

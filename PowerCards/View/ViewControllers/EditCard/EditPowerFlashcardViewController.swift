@@ -110,11 +110,17 @@ class EditPowerFlashcardViewController: UIViewController {
     }
 }
 
-extension EditPowerFlashcardViewController: ToolbarItemDelegate {
-    func didSelect(toolbarItem item: ToolbarItem) {
+extension EditPowerFlashcardViewController: ToolbarDelegate {
+    func didSelect(item: ToolbarItem) {
         switch item {
         case .shape: addNewShapeToView()
         default: return
+        }
+    }
+    
+    func didDeselect(item: ToolbarItem) {
+        switch item {
+        default: return 
         }
     }
 }
