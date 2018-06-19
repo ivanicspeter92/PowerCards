@@ -8,7 +8,14 @@
 
 import UIKit
 
-class ToolbarUIView: UIView {
+class ToolbarUIView: XIBLoadingUIView {
+    @IBOutlet weak var itemsContainer: UIStackView!
+    var delegate: ToolbarItemDelegate? {
+        didSet {
+            itemsContainer.arrangedSubviews.compactMap({ $0 as? ToolbarItemUIView}).forEach({ $0.delegate = self.delegate })
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,5 +28,12 @@ class ToolbarUIView: UIView {
         layer.shadowColor = theme.toolbarShadowColor
         layer.shadowOpacity = theme.toolbarShadowOpacity
         layer.shadowRadius = theme.toolbarShadowRadius
+        
+        ToolbarItem.all.forEach({
+            let view = ToolbarItemUIView.loadFromNib()
+            
+            view.toolbarItem = $0
+            itemsContainer.addArrangedSubview(view)
+        })
     }
 }

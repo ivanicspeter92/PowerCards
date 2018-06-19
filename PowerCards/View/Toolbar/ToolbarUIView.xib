@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToolbarUIView" customModule="PowerCards" customModuleProvider="target">
+            <connections>
+                <outlet property="itemsContainer" destination="ODG-My-M76" id="VzM-ZM-KMa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v2F-QV-PVr">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-My-M76">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="326"/>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="x28-0k-mcd"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="v2F-QV-PVr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4PG-0J-lCY"/>
+                <constraint firstItem="v2F-QV-PVr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U13-4w-eyg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v2F-QV-PVr" secondAttribute="trailing" id="f84-Pr-i1c"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="v2F-QV-PVr" secondAttribute="bottom" id="qLe-yF-GX3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

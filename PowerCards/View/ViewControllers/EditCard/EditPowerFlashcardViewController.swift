@@ -17,6 +17,7 @@ class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var subTitleTextField: UITextField!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet weak var toolbarView: ToolbarUIView!
     
     var card: PowerFlashCard!
     var container: PowercardContainer?
@@ -27,6 +28,7 @@ class EditPowerFlashcardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCardToView()
+        toolbarView.delegate = self
     }
     
     deinit {
@@ -83,7 +85,7 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     // MARK: Toolbar event handlers
-    @IBAction func shapeButtonTapped(_ sender: UIButton) {
+    func addNewShapeToView() {
         let view = UIView()
         
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
@@ -92,10 +94,6 @@ class EditPowerFlashcardViewController: UIViewController {
         view.layer.borderWidth = 3
         
         cardImageView.addSubview(view)
-    }
-    
-    @IBAction func rotateButtonTapped(_ sender: UIButton) {
-        print("Rotate")
     }
     
     // MARK: Private
@@ -109,5 +107,14 @@ class EditPowerFlashcardViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension EditPowerFlashcardViewController: ToolbarItemDelegate {
+    func didSelect(toolbarItem item: ToolbarItem) {
+        switch item {
+        case .shape: addNewShapeToView()
+        default: return
+        }
     }
 }
