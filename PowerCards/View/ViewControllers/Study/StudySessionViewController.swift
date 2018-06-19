@@ -9,17 +9,15 @@
 import UIKit
 
 class StudySessionViewController: UIViewController {
-    var session: StudySession! {
-        didSet {
-            loadSessionToView()
-        }
-    }
+    var session: StudySession!
     
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadSessionToView()
     }
     
     // MARK: Event handlers
@@ -35,10 +33,17 @@ class StudySessionViewController: UIViewController {
     private func loadSessionToView() {
         navigationItem.title = session.title
         loadCurrentCardToView()
+        loadCardShapesToView()
     }
     
     private func loadCurrentCardToView() {
-        print(session.currentCard.name)
+        self.cardImageView.image = self.session.currentCard.image
+    }
+    
+    private func loadCardShapesToView() {
+        (self.session.currentCard as? PowerFlashCard)?.shapes.forEach({
+            cardImageView.addSubview($0.view)
+        })
     }
     
     private func presentAreYouSureToExitAlert() {
@@ -55,6 +60,7 @@ class StudySessionViewController: UIViewController {
 
 extension StudySessionViewController: StudySessionDelegate {
     func stateHasChanged() {
+        loadSessionToView()
     }
     
     func lastStateWasReached() {

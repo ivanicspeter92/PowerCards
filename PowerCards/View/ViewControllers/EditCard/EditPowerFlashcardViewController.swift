@@ -123,7 +123,6 @@ class EditPowerFlashcardViewController: UIViewController {
             draggedView = view
             view.center = point
         } else if sender.state == UIGestureRecognizerState.changed {
-            print(point)
             draggedView?.center = point
         } else if sender.state == UIGestureRecognizerState.ended {
             draggedView = nil
@@ -149,10 +148,10 @@ class EditPowerFlashcardViewController: UIViewController {
     // MARK: Private
     private func presentDeletePhotoAlert() {
         let alert = UIAlertController(title: "Delete Photo", message: nil, preferredStyle: .alert)
-        
        
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
             self?.cardImageView.image = self?.defaultCameraIcon
+            self?.cardImageView.subviews.forEach({$0.removeFromSuperview()})
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
