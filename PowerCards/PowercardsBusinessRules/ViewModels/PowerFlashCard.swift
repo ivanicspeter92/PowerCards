@@ -99,6 +99,6 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     }
     
     public func setShapes(to layers: [CALayer]) {
-        self.setShapes(to: layers.flatMap({ Shape(layer: $0 )}))
+        self.setShapes(to: layers.compactMap({ Shape(layer: $0 )}))
     }
 }

@@ -13,6 +13,7 @@
 		7301CB8620D575620030F975 /* StudyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8520D575620030F975 /* StudyMode.swift */; };
 		7301CB8820D576A20030F975 /* StudySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8720D576A20030F975 /* StudySession.swift */; };
 		7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8A20D577130030F975 /* StudySessionViewController.swift */; };
+		7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307D0D320D8136A008DA957 /* FlashcardImageView.swift */; };
 		73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */; };
 		733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395251F5161F600041472 /* PowerdeckListTableViewController.swift */; };
 		733395281F51620600041472 /* PowerDeckSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */; };
@@ -64,6 +65,7 @@
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
 		73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */; };
+		73E5A99A20D9595A00095B69 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5A99920D9595A00095B69 /* Defaults.swift */; };
 		73E6846920CF02B500964B1D /* PowerFlashCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */; };
 		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,7 @@
 		7301CB8520D575620030F975 /* StudyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMode.swift; sourceTree = "<group>"; };
 		7301CB8720D576A20030F975 /* StudySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySession.swift; sourceTree = "<group>"; };
 		7301CB8A20D577130030F975 /* StudySessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionViewController.swift; sourceTree = "<group>"; };
+		7307D0D320D8136A008DA957 /* FlashcardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardImageView.swift; sourceTree = "<group>"; };
 		73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckTableViewCell.swift; sourceTree = "<group>"; };
 		733395251F5161F600041472 /* PowerdeckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckListTableViewController.swift; sourceTree = "<group>"; };
 		733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckSelectorDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 		73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerFlashcardViewController.swift; sourceTree = "<group>"; };
 		73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		73E5A99920D9595A00095B69 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCardTableViewCell.swift; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				734AA9C320C94E150049E37E /* Extensions */,
 				734AA9C520C94E150049E37E /* NotificationKeys.swift */,
 				734AA9C620C94E150049E37E /* JSONInitialziable.swift */,
+				73E5A99920D9595A00095B69 /* Defaults.swift */,
 				734AA9CB20C94E150049E37E /* Services */,
 			);
 			path = PowercardsBusinessRules;
@@ -506,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				739463B420D003A4007C5550 /* ToolbarUIView.swift */,
+				7307D0D320D8136A008DA957 /* FlashcardImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -636,7 +642,7 @@
 					737357EC1F509AAF00377EAD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FCGED7Q6S2;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 737357CD1F509AAF00377EAD;
 					};
@@ -754,11 +760,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PowerCards/Pods-PowerCards-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TBEmptyDataSet/TBEmptyDataSet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBEmptyDataSet.framework",
 			);
@@ -775,6 +783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				734AA9CE20C94E150049E37E /* PowerFlashCard.swift in Sources */,
+				73E5A99A20D9595A00095B69 /* Defaults.swift in Sources */,
 				734AA9CF20C94E150049E37E /* PowercardList.swift in Sources */,
 				734AA9F820C94E150049E37E /* PowercardContainer.swift in Sources */,
 				73E6846920CF02B500964B1D /* PowerFlashCardTableViewCell.swift in Sources */,
@@ -819,6 +828,7 @@
 				7301CB8620D575620030F975 /* StudyMode.swift in Sources */,
 				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
 				7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */,
+				7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */,
 				7301CB8820D576A20030F975 /* StudySession.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				734AA9FB20C94E150049E37E /* Flashcard.swift in Sources */,
@@ -1000,6 +1010,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PowerCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1016,6 +1027,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PowerCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

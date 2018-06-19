@@ -118,7 +118,7 @@
                                             <constraint firstItem="hdy-aN-OyS" firstAttribute="width" secondItem="6rW-RT-19s" secondAttribute="width" id="t4m-7p-gzW"/>
                                         </constraints>
                                     </stackView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-m5-OjX">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-m5-OjX" customClass="FlashcardImageView" customModule="PowerCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="628" height="841"/>
                                         <gestureRecognizers/>
                                         <connections>

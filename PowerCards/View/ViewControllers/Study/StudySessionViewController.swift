@@ -11,7 +11,7 @@ import UIKit
 class StudySessionViewController: UIViewController {
     var session: StudySession!
     
-    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardImageView: FlashcardImageView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -33,17 +33,10 @@ class StudySessionViewController: UIViewController {
     private func loadSessionToView() {
         navigationItem.title = session.title
         loadCurrentCardToView()
-        loadCardShapesToView()
     }
     
     private func loadCurrentCardToView() {
-        self.cardImageView.image = self.session.currentCard.image
-    }
-    
-    private func loadCardShapesToView() {
-        (self.session.currentCard as? PowerFlashCard)?.shapes.forEach({
-            cardImageView.addSubview($0.view)
-        })
+        self.cardImageView.card = self.session.currentCard as? PowerFlashCard
     }
     
     private func presentAreYouSureToExitAlert() {

@@ -12,7 +12,7 @@ import Foundation
 class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardImageView: FlashcardImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subTitleTextField: UITextField!
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -21,7 +21,6 @@ class EditPowerFlashcardViewController: UIViewController {
     var card: PowerFlashCard!
     var container: PowercardContainer?
     
-    private let defaultCameraIcon = UIImage(named: "camera")
     private var draggedView: UIView?
     
     // MARK: Lifecycle
@@ -42,18 +41,7 @@ class EditPowerFlashcardViewController: UIViewController {
     }
     
     func loadCardImageToView() {
-        if let image = card.image {
-            cardImageView.image = image
-            loadCardShapesToView()
-        } else {
-            cardImageView.image = defaultCameraIcon
-        }
-    }
-    
-    private func loadCardShapesToView() {
-        card.shapes.forEach({
-            cardImageView.addSubview($0.view)
-        })
+        cardImageView.card = card
     }
     
     func loadCardTitleToView() {
@@ -115,7 +103,7 @@ class EditPowerFlashcardViewController: UIViewController {
         let alert = UIAlertController(title: "Delete Photo", message: nil, preferredStyle: .alert)
        
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-            self?.cardImageView.image = self?.defaultCameraIcon
+            self?.cardImageView.image = Defaults.cameraIcon
             self?.cardImageView.subviews.forEach({$0.removeFromSuperview()})
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

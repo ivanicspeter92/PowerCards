@@ -9,7 +9,12 @@
 import UIKit
 
 class FlashcardImageView: UIImageView {
-    var shapes: [Shape] = []
-    
-    
+    var card: PowerFlashCard? {
+        didSet {
+            subviews.forEach({ $0.removeFromSuperview() })
+            
+            image = card?.image ?? Defaults.cameraIcon
+            card?.shapes.forEach({ self.addSubview( $0.view )})
+        }
+    }
 }
