@@ -1,20 +1,24 @@
 PODS:
+  - ALCameraViewController (2.0.3)
   - IQKeyboardManagerSwift (6.0.3)
   - TBEmptyDataSet (2.7)
 
 DEPENDENCIES:
+  - ALCameraViewController (~> 2.0.3)
   - IQKeyboardManagerSwift
   - TBEmptyDataSet
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ALCameraViewController
     - IQKeyboardManagerSwift
     - TBEmptyDataSet
 
 SPEC CHECKSUMS:
+  ALCameraViewController: 7b86c2888df0e63f53a801e9d96fe194f51157ec
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
   TBEmptyDataSet: 1da712a3e0c324179253960165202d30009cba26
 
-PODFILE CHECKSUM: 797f6f42cffdd3a73d3777c05387f6e63cf6b0d0
+PODFILE CHECKSUM: 6eeee4926017d67723592f8bd7a4978ee7e6ef62
 
 COCOAPODS: 1.5.3

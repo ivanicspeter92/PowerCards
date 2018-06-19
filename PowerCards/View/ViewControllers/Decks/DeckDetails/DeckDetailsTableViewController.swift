@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import ALCameraViewController
 
 class DeckDetailsTableViewController: UITableViewController {
     private typealias StudySessionPreparationTuple = (mode: StudyMode, deck: Powerdeck)
@@ -56,10 +57,7 @@ class DeckDetailsTableViewController: UITableViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { alert in
-            self.presentImagePicker(source: .camera)
-        }))
-        alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { alert in
-            self.presentImagePicker(source: .photoLibrary)
+            self.presentImagePicker()
         }))
         alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { alert in
             self.createNewBlankCard()
@@ -178,12 +176,24 @@ class DeckDetailsTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = leftItem
     }
     
-    private func presentImagePicker(source: UIImagePickerControllerSourceType) {
-        let controller = UIImagePickerController()
-        controller.sourceType = source
-        controller.delegate = self
+    private func presentImagePicker() {
+        let croppingParameters = CroppingParameters(isEnabled: true, allowResizing: true, allowMoving: true, minimumSize: CGSize.zero)
+        let cameraViewController = CameraViewController(croppingParameters: croppingParameters, allowsLibraryAccess: true, allowsSwapCameraOrientation: true, allowVolumeButtonCapture: true, completion: { [weak self] image, asset in
+            guard let image = image else {
+                // handle errors
+                return
+            }
+            
+            self?.dismiss(animated: true, completion: nil)
+            self?.addNewCardToDeck(withImage: image)
+        })
         
-        present(controller, animated: true, completion: nil)
+        present(cameraViewController, animated: true, completion: nil)
+    }
+    
+    func addNewCardToDeck(withImage pickedImage: UIImage, name: String = "New flashcard") {
+        let card = PowerFlashCard(name: "New flashcard", subTitle: nil, image: pickedImage)
+        toCard(card: card)
     }
     
     private func createNewBlankCard() {
