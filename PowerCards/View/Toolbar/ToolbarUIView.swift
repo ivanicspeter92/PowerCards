@@ -13,14 +13,14 @@ class ToolbarUIView: XIBLoadingUIView {
     
     private(set) var activeToolbarItem: ToolbarItem? {
         didSet {
-            if let oldValue = oldValue, oldValue.isSticky {
+            if let oldValue = oldValue, oldValue.isSticky && activeToolbarItem?.isSticky != false {
                 delegate?.didDeselect(item: oldValue)
             }
             if let activeToolbarItem = activeToolbarItem {
                 delegate?.didSelect(item: activeToolbarItem)
                 
                 if !activeToolbarItem.isSticky {
-                    self.activeToolbarItem = nil
+                    self.activeToolbarItem = oldValue
                 }
             }
             highlightActiveToolbar(for: activeToolbarItem)
@@ -56,6 +56,7 @@ class ToolbarUIView: XIBLoadingUIView {
     
     private func highlightActiveToolbar(for item: ToolbarItem?) {
         if let item = item, let view = toolbarItemViews.first(where: { $0.toolbarItem == item }) {
+            highlightActiveToolbar(for: nil)
             view.highlighted = true
         } else {
             toolbarItemViews.filter({ $0.highlighted == true }).forEach({ $0.highlighted = false })

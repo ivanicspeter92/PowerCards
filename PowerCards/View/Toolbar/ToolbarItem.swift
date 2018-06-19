@@ -9,10 +9,10 @@
 import UIKit
 
 enum ToolbarItem {
-    case resize, rotate, shape, text, draw, crop
+    case resize, rotate, shape, text, draw, crop, move
     
     static var all: [ToolbarItem] {
-        return [.shape, .text, .draw, .rotate, .resize, .crop]
+        return [.shape, .text, .draw, .rotate, .resize, .crop, .move]
     }
     
     var image: UIImage? {
@@ -23,6 +23,7 @@ enum ToolbarItem {
         case .text: return UIImage(named: "text")
         case .draw: return UIImage(named: "draw")
         case .crop: return UIImage(named: "crop")
+        case .move: return UIImage(named: "move")
         }
     }
     
@@ -34,12 +35,13 @@ enum ToolbarItem {
         case .text: return "Text"
         case .draw: return "Draw"
         case .crop: return "Crop"
+        case .move: return "Move"
         }
     }
     
     var isEnabled: Bool {
         switch self {
-        case .shape: return true
+        case .shape, .resize, .move: return true
         default: return false
         }
     }
@@ -47,6 +49,7 @@ enum ToolbarItem {
     var isSticky: Bool {
         switch self {
 //        case .shape: return true
+        case .resize, .move: return true
         default: return false
         }
     }

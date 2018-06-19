@@ -73,14 +73,21 @@ class EditPowerFlashcardViewController: UIViewController {
     
     @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
         let point = sender.location(in: cardImageView)
+        
 //        let translation = sender.translation(in: self.cardImageView)
         if sender.state == UIGestureRecognizerState.began, let view = self.cardImageView.subviews.first(where: { $0.frame.contains(point) }) {
             draggedView = view
-            view.center = point
+            performActionOnDraggedView(at: point)
         } else if sender.state == UIGestureRecognizerState.changed {
-            draggedView?.center = point
+            performActionOnDraggedView(at: point)
         } else if sender.state == UIGestureRecognizerState.ended {
             draggedView = nil
+        }
+    }
+    
+    private func performActionOnDraggedView(at point: CGPoint) {
+        if toolbarView.activeToolbarItem == ToolbarItem.move {
+            draggedView?.center = point
         }
     }
     
