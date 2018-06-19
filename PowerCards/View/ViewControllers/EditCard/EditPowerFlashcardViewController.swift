@@ -28,7 +28,6 @@ class EditPowerFlashcardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCardToView()
-        cardImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
     }
     
     deinit {
@@ -80,40 +79,6 @@ class EditPowerFlashcardViewController: UIViewController {
     
     @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
         presentDeletePhotoAlert()
-    }
-    
-    @objc func imageTapped() {
-        let alert = UIAlertController(title: "Image Tools", message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Take a photo", style: .default, handler: { [weak self] action in
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = UIImagePickerControllerSourceType.camera
-            
-            self?.present(picker, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Select a photo", style: .default, handler: { [weak self] action in
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            
-            self?.present(picker, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Create a blank card", style: .default, handler: { [weak self] action in
-            self?.card.setImageToBlank()
-        }))
-        if self.card.hasImage && cardImageView.image != defaultCameraIcon {
-            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-                self?.presentDeletePhotoAlert()
-            }))
-        }
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        alert.popoverPresentationController?.sourceView = cardImageView
-        alert.popoverPresentationController?.sourceRect = cardImageView.bounds
-        
-        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
