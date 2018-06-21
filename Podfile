@@ -1,6 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/pionl/SPUserResizableView.git'
 platform :ios, '9.0'
 
 target 'PowerCards' do
@@ -11,6 +12,7 @@ target 'PowerCards' do
     pod 'TBEmptyDataSet'
     pod 'IQKeyboardManagerSwift'
     pod 'ALCameraViewController', '~> 2.0.3'
+    pod 'SPUserResizableView+Pion'
 end
 
 target 'PowerCardsTests' do

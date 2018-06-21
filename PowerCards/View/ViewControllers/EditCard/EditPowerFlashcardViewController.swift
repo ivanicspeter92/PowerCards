@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import SPUserResizableView_Pion
 
 class EditPowerFlashcardViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -21,8 +22,6 @@ class EditPowerFlashcardViewController: UIViewController {
     
     var card: PowerFlashCard!
     var container: PowercardContainer?
-    
-    private var draggedView: UIView?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -71,34 +70,17 @@ class EditPowerFlashcardViewController: UIViewController {
         presentDeletePhotoAlert()
     }
     
-    @IBAction func handleImagePanGesture(_ sender: UIPanGestureRecognizer) {
-        let point = sender.location(in: cardImageView)
-        
-//        let translation = sender.translation(in: self.cardImageView)
-        if sender.state == UIGestureRecognizerState.began, let view = self.cardImageView.subviews.first(where: { $0.frame.contains(point) }) {
-            draggedView = view
-            performActionOnDraggedView(at: point)
-        } else if sender.state == UIGestureRecognizerState.changed {
-            performActionOnDraggedView(at: point)
-        } else if sender.state == UIGestureRecognizerState.ended {
-            draggedView = nil
-        }
-    }
-    
-    private func performActionOnDraggedView(at point: CGPoint) {
-        if toolbarView.activeToolbarItem == ToolbarItem.move {
-            draggedView?.center = point
-        }
-    }
-    
     // MARK: Toolbar event handlers
     func addNewShapeToView() {
-        let view = UIView()
+        let view = SPUserResizableView()
         
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         view.backgroundColor = UIColor.red
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 3
+        view.minWidth = 10
+        view.minHeight = 10
+        view.preventsPositionOutsideSuperview = true
         
         cardImageView.addSubview(view)
     }

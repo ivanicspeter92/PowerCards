@@ -121,9 +121,6 @@
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-m5-OjX" customClass="FlashcardImageView" customModule="PowerCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="628" height="841"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="3Dw-Fq-hfL" appends="YES" id="afK-bb-1dT"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -174,11 +171,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbx-rE-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="3Dw-Fq-hfL">
-                    <connections>
-                        <action selector="handleImagePanGesture:" destination="ISL-0v-NYF" id="Eam-8J-0dO"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2780" y="211"/>
         </scene>

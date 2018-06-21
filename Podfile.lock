@@ -1,24 +1,28 @@
 PODS:
   - ALCameraViewController (2.0.3)
   - IQKeyboardManagerSwift (6.0.3)
+  - "SPUserResizableView+Pion (0.5.4)"
   - TBEmptyDataSet (2.7)
 
 DEPENDENCIES:
   - ALCameraViewController (~> 2.0.3)
   - IQKeyboardManagerSwift
+  - "SPUserResizableView+Pion"
   - TBEmptyDataSet
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ALCameraViewController
     - IQKeyboardManagerSwift
+    - "SPUserResizableView+Pion"
     - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   ALCameraViewController: 7b86c2888df0e63f53a801e9d96fe194f51157ec
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  "SPUserResizableView+Pion": e704a69fa35eb1bf77fcc72841ea3f6465abcd54
   TBEmptyDataSet: 1da712a3e0c324179253960165202d30009cba26
 
-PODFILE CHECKSUM: 6eeee4926017d67723592f8bd7a4978ee7e6ef62
+PODFILE CHECKSUM: 8d890260d870f0c9dbf4791745accfbe0ede6c26
 
 COCOAPODS: 1.5.3
