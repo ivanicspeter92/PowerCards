@@ -13,6 +13,7 @@ import ALCameraViewController
 class DeckDetailsTableViewController: UITableViewController {
     private typealias StudySessionPreparationTuple = (mode: StudyMode, deck: Powerdeck)
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var takeQuizButton: UIBarButtonItem!
     @IBOutlet weak var addCardButton: UIBarButtonItem!
     
@@ -26,6 +27,7 @@ class DeckDetailsTableViewController: UITableViewController {
             loadDeckTitleToView()
             
             takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
+            shareButton.isEnabled = powerdeck != nil
             addCardButton.isEnabled = powerdeck != nil
         }
     }
@@ -38,7 +40,7 @@ class DeckDetailsTableViewController: UITableViewController {
        
         takeQuizButton.isEnabled = false
         addCardButton.isEnabled = false
-        navigationItem.rightBarButtonItems = [addCardButton, takeQuizButton]
+        navigationItem.rightBarButtonItems = [addCardButton, shareButton, takeQuizButton]
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckNameChanged.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deckRemovedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckDeleted.rawValue), object: nil)
@@ -81,6 +83,23 @@ class DeckDetailsTableViewController: UITableViewController {
         }))
         alert.addAction(UIAlertAction(title: "Spaced Repetition", style: .default, handler: { [weak self] action in
             self?.toStudy(mode: .spacedRepetition, deck: deck)
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
+        guard let deck = powerdeck else { return }
+        
+        let alert = UIAlertController(title: "Share", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.popoverPresentationController?.barButtonItem = shareButton
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Public", style: .default, image: deck.isShared ? UIImage(named: "checkmark") : nil, handler: { action in
+            deck.isShared = true
+        }))
+        alert.addAction(UIAlertAction(title: "Private", style: .default, image: deck.isShared ? nil : UIImage(named: "checkmark"), handler: { action in
+            deck.isShared = false
         }))
         
         present(alert, animated: true)

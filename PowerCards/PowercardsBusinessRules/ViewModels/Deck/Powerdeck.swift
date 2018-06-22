@@ -19,7 +19,7 @@ public class Powerdeck {
     }
     public let subTitle: String?
     public var cards: [Powercard]
-    public let isShared: Bool
+    public var isShared: Bool
     public let creationDate: Date
     public let creator: User
     

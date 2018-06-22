@@ -14,6 +14,7 @@
 		7301CB8820D576A20030F975 /* StudySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8720D576A20030F975 /* StudySession.swift */; };
 		7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301CB8A20D577130030F975 /* StudySessionViewController.swift */; };
 		7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307D0D320D8136A008DA957 /* FlashcardImageView.swift */; };
+		730BD31220DD33020077B73A /* UIAlertAction+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730BD31120DD33020077B73A /* UIAlertAction+Image.swift */; };
 		73119E4320D96A12005BB5D3 /* XIBLoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73119E4220D96A11005BB5D3 /* XIBLoadingUIView.swift */; };
 		73119E4520D96AA8005BB5D3 /* UIView+LoadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73119E4420D96AA8005BB5D3 /* UIView+LoadFromNib.swift */; };
 		73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */; };
@@ -115,6 +116,7 @@
 		7301CB8720D576A20030F975 /* StudySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySession.swift; sourceTree = "<group>"; };
 		7301CB8A20D577130030F975 /* StudySessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionViewController.swift; sourceTree = "<group>"; };
 		7307D0D320D8136A008DA957 /* FlashcardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardImageView.swift; sourceTree = "<group>"; };
+		730BD31120DD33020077B73A /* UIAlertAction+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Image.swift"; sourceTree = "<group>"; };
 		73119E4220D96A11005BB5D3 /* XIBLoadingUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBLoadingUIView.swift; sourceTree = "<group>"; };
 		73119E4420D96AA8005BB5D3 /* UIView+LoadFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadFromNib.swift"; sourceTree = "<group>"; };
 		73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckTableViewCell.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				734AA9C420C94E150049E37E /* UIImage+InitializeWithColor.swift */,
+				730BD31120DD33020077B73A /* UIAlertAction+Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				734AA9D220C94E150049E37E /* PowerdeckListSection.swift in Sources */,
 				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
 				734AA9F920C94E150049E37E /* Powercard.swift in Sources */,
+				730BD31220DD33020077B73A /* UIAlertAction+Image.swift in Sources */,
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,
 				734AAA0220C94E150049E37E /* NotificationKeys.swift in Sources */,
 				73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */,

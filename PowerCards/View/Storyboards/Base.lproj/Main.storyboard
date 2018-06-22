@@ -33,6 +33,11 @@
                                 <action selector="addCardButtonTapped:" destination="5GO-3b-h7P" id="kBO-5t-mlQ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem systemItem="action" id="cGW-9Q-Pn2">
+                            <connections>
+                                <action selector="shareButtonTapped:" destination="5GO-3b-h7P" id="7x2-9p-Cdc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="Study" id="mHJ-sz-2a9">
                             <connections>
                                 <action selector="takeQuizButtonTapped:" destination="5GO-3b-h7P" id="g3p-D2-nag"/>
@@ -43,6 +48,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
+                        <outlet property="shareButton" destination="cGW-9Q-Pn2" id="6c9-8m-vh6"/>
                         <outlet property="takeQuizButton" destination="mHJ-sz-2a9" id="sfL-AI-1YW"/>
                         <segue destination="GZF-H1-qC8" kind="presentation" identifier="toEditFlashcard" id="LZX-n6-lBX"/>
                         <segue destination="wda-Yi-EAm" kind="presentation" identifier="toStudy" id="hLo-RB-1XX"/>
