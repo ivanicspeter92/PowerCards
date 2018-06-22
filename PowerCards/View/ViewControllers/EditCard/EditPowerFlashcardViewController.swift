@@ -62,7 +62,7 @@ class EditPowerFlashcardViewController: UIViewController {
         self.card.image = cardImageView.image
         self.card.name = titleTextField.text ?? ""
         self.card.subTitle = subTitleTextField.text
-        self.card.setShapes(to: self.cardImageView.layer.sublayers ?? [])
+        self.card.setShapes(to: self.cardImageView.subviews)
         dismiss(animated: true, completion: nil)
     }
     

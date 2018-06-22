@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPUserResizableView_Pion
 
 class FlashcardImageView: UIImageView {
     var card: PowerFlashCard? {
@@ -14,7 +15,7 @@ class FlashcardImageView: UIImageView {
             subviews.forEach({ $0.removeFromSuperview() })
             
             image = card?.image ?? Defaults.cameraIcon
-            card?.shapes.forEach({ self.addSubview( $0.view )})
+            card?.shapes.forEach({ self.addSubview( SPUserResizableView.instantiate(for: $0) )})
         }
     }
 }

@@ -19,21 +19,15 @@ public class Shape {
         self.init(frame: layer.frame, backgroundColor: UIColor(cgColor: layer.backgroundColor ?? UIColor.clear.cgColor), borderColor: UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor), borderWidth: layer.borderWidth)
     }
     
+    public convenience init(view: UIView) {
+        self.init(frame: view.frame, backgroundColor: view.backgroundColor ?? UIColor.clear, borderColor: UIColor(cgColor: view.layer.borderColor ?? UIColor.clear.cgColor), borderWidth: view.layer.borderWidth)
+    }
+    
     public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
         self.frame = frame
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
         self.borderWidth = borderWidth
-    }
-    
-    var view: UIView {
-        let view = UIView(frame: self.frame)
-        
-        view.backgroundColor = self.backgroundColor
-        view.layer.borderWidth = self.borderWidth
-        view.layer.borderColor = self.borderColor.cgColor
-        
-        return view
     }
 }
 
@@ -100,5 +94,9 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     
     public func setShapes(to layers: [CALayer]) {
         self.setShapes(to: layers.compactMap({ Shape(layer: $0 )}))
+    }
+    
+    public func setShapes(to views: [UIView]) {
+        self.setShapes(to: views.compactMap({ Shape(view: $0 )}))
     }
 }
