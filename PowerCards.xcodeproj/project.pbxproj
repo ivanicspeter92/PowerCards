@@ -76,6 +76,7 @@
 		73E5A9A120D95E0600095B69 /* ToolbarItemUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E5A9A020D95E0600095B69 /* ToolbarItemUIView.xib */; };
 		73E5A9A320D95F4800095B69 /* ToolbarUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E5A9A220D95F4800095B69 /* ToolbarUIView.xib */; };
 		73E6846920CF02B500964B1D /* PowerFlashCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */; };
+		73EA176720DF7BCC001A59FF /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA176620DF7BCC001A59FF /* UserSession.swift */; };
 		95626DC6FA254A07C6C5BF18 /* libPods-PowerCardsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2CCB313B4157D59B7528D5 /* libPods-PowerCardsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,7 @@
 		73E5A9A020D95E0600095B69 /* ToolbarItemUIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolbarItemUIView.xib; sourceTree = "<group>"; };
 		73E5A9A220D95F4800095B69 /* ToolbarUIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolbarUIView.xib; sourceTree = "<group>"; };
 		73E6846820CF02B500964B1D /* PowerFlashCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerFlashCardTableViewCell.swift; sourceTree = "<group>"; };
+		73EA176620DF7BCC001A59FF /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		751891EF4CFD8A2CE373AAEA /* Pods-PowerCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsTests/Pods-PowerCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B222C7F44E810CE33C97F843 /* Pods-PowerCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C73EE349D635CEC5CC142560 /* Pods-PowerCardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerCardsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerCardsUITests/Pods-PowerCardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				734AA9CC20C94E150049E37E /* AppSettingKeys.swift */,
 				734AA9CD20C94E150049E37E /* AppSettings.swift */,
+				73EA176620DF7BCC001A59FF /* UserSession.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */,
 				734AAA0620C94E150049E37E /* AppSettingKeys.swift in Sources */,
 				7301CB8620D575620030F975 /* StudyMode.swift in Sources */,
+				73EA176720DF7BCC001A59FF /* UserSession.swift in Sources */,
 				73745B151F51CAB40065D968 /* UIViewController+isPresentingForFirstTime.swift in Sources */,
 				7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */,
 				7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */,

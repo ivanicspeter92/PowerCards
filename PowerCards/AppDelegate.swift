@@ -14,10 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
-        
         ThemeManager.apply(theme: ThemeManager.current)
+        UserSession.shared.establishUserSession(for: TestData.testUser)
         
         return true
     }

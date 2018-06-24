@@ -27,7 +27,7 @@ class DeckDetailsTableViewController: UITableViewController {
             loadDeckTitleToView()
             
             takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
-            shareButton.isEnabled = powerdeck != nil
+            shareButton.isEnabled = powerdeck != nil && powerdeck?.canModifySharingOptions == true
             addCardButton.isEnabled = powerdeck != nil
         }
     }
@@ -39,7 +39,9 @@ class DeckDetailsTableViewController: UITableViewController {
         tableView.emptyDataSetDelegate = self
        
         takeQuizButton.isEnabled = false
+        shareButton.isEnabled = false
         addCardButton.isEnabled = false
+        
         navigationItem.rightBarButtonItems = [addCardButton, shareButton, takeQuizButton]
         
         NotificationCenter.default.addObserver(self, selector: #selector(deckNameChangedNotificationReceived(_:)), name: NSNotification.Name(rawValue: NotificationKeys.deckNameChanged.rawValue), object: nil)

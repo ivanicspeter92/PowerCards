@@ -32,6 +32,10 @@ public class Powerdeck {
         self.isShared = isShared
         self.creationDate = Date()
     }
+    
+    public var canModifySharingOptions: Bool {
+        return creator == UserSession.shared.currentUser
+    }
 }
 
 extension Powerdeck: PowercardContainer {
