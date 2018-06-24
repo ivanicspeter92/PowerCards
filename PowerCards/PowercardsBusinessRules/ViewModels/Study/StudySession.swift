@@ -46,6 +46,14 @@ struct StudySession {
     }
     
     public func selected(shape: Shape) {
+        delegate?.shouldReveal(shape: shape)
+        
+        if mode.shouldShowResultPickerAfterSelectingShape {
+            delegate?.shouldShowResultPicker(for: shape)
+        }
+    }
+    
+    public func setResult(to result: StudyModeResult, shape: Shape) {
         
     }
 }
@@ -55,4 +63,5 @@ protocol StudySessionDelegate {
     func lastStateWasReached()
     func sessionFinished()
     func shouldReveal(shape: Shape)
+    func shouldShowResultPicker(for shape: Shape)
 }

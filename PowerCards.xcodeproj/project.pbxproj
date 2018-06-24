@@ -48,6 +48,7 @@
 		734AAA0320C94E150049E37E /* JSONInitialziable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9C620C94E150049E37E /* JSONInitialziable.swift */; };
 		734AAA0620C94E150049E37E /* AppSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9CC20C94E150049E37E /* AppSettingKeys.swift */; };
 		734AAA0920C94E9D0049E37E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AA9CD20C94E150049E37E /* AppSettings.swift */; };
+		734C39D120DFA5AD0004C546 /* StudyModeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734C39D020DFA5AD0004C546 /* StudyModeResult.swift */; };
 		734CB1351F509F7A00059618 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734CB1341F509F7A00059618 /* Settings.plist */; };
 		734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */; };
 		7355D96E1F5200C700244257 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7355D96D1F51FFA300244257 /* Quiz.storyboard */; };
@@ -161,6 +162,7 @@
 		734AA9CD20C94E150049E37E /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		734AAA0B20C94F2B0049E37E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		734AAA0D20C94F3F0049E37E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		734C39D020DFA5AD0004C546 /* StudyModeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeResult.swift; sourceTree = "<group>"; };
 		734CB1341F509F7A00059618 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		734DCB001F50BC3800CBE709 /* PowerDeckDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckDetailsViewController.swift; sourceTree = "<group>"; };
 		7355D96D1F51FFA300244257 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				7301CB8520D575620030F975 /* StudyMode.swift */,
 				7301CB8720D576A20030F975 /* StudySession.swift */,
+				734C39D020DFA5AD0004C546 /* StudyModeResult.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				730BD31220DD33020077B73A /* UIAlertAction+Image.swift in Sources */,
 				733395341F51679F00041472 /* Set+ItemAt.swift in Sources */,
 				730BD31420DD561E0077B73A /* ShapeView.swift in Sources */,
+				734C39D120DFA5AD0004C546 /* StudyModeResult.swift in Sources */,
 				734AAA0220C94E150049E37E /* NotificationKeys.swift in Sources */,
 				73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */,
 				734AA9FA20C94E150049E37E /* User+Hashable.swift in Sources */,

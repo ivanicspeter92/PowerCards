@@ -8,4 +8,10 @@
 
 enum StudyMode {
     case crunch, spacedRepetition
+    
+    var shouldShowResultPickerAfterSelectingShape: Bool {
+        switch self {
+        case .crunch, .spacedRepetition: return true
+        }
+    }
 }

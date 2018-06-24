@@ -82,10 +82,28 @@ extension StudySessionViewController: StudySessionDelegate {
             })
         }
     }
+    
+    func shouldShowResultPicker(for shape: Shape) {
+        if let view = findShapeView(for: shape) {
+            let alert = UIAlertController(title: "Result", message: nil, preferredStyle: .actionSheet)
+            alert.popoverPresentationController?.sourceView = view
+            alert.popoverPresentationController?.sourceRect = view.bounds
+            alert.popoverPresentationController?.permittedArrowDirections = [.down, .up]
+            
+            
+            StudyModeResult.all.forEach({ result in
+                alert.addAction(UIAlertAction(title: result.title, style: .default, image: result.image?.withRenderingMode(.alwaysOriginal), handler: { alert in
+                    self.session.setResult(to: result, shape: shape)
+                }))
+            })
+            
+            present(alert, animated: true)
+        }
+    }
 }
 
 extension StudySessionViewController: FlashcardImageViewDelegate {
     func selected(shape: Shape) {
-        shouldReveal(shape: shape)
+        self.session.selected(shape: shape)
     }
 }
