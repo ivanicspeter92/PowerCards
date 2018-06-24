@@ -6,10 +6,6 @@
 //  Copyright © 2018 Lovented Oy. All rights reserved.
 //
 
-public protocol IDHolder: Equatable {
+public protocol IDHolder {
     var id: String { get }
-}
-
-public func ==<T: IDHolder>(lhs: T, rhs: T) -> Bool {
-    return lhs.id == rhs.id
 }

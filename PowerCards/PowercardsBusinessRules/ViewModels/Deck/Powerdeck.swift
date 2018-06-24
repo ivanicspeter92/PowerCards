@@ -57,6 +57,6 @@ extension Powerdeck: PowercardContainer {
     }
     
     public func contains(card: Powercard) -> Bool {
-        return self.cards.contains(where: { $0 === card })
+        return self.cards.contains(where: { $0 == card })
     }
 }
