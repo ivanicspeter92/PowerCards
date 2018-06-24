@@ -29,20 +29,24 @@ struct StudySession {
         self.delegate = delegate
     }
     
-    var statesCount: Int {
+    public var statesCount: Int {
         return deck.cards.count
     }
     
-    var title: String {
+    public var title: String {
         return "\(self.deck.name) (\(self.currentState)/\(self.statesCount))"
     }
     
-    var currentCard: Powercard {
+    public var currentCard: Powercard {
         return self.deck.card(at: currentState - 1)!
     }
     
-    mutating func nextState() {
+    public mutating func nextState() {
         currentState = currentState + 1
+    }
+    
+    public func selected(shape: Shape) {
+        
     }
 }
 
@@ -50,4 +54,5 @@ protocol StudySessionDelegate {
     func stateHasChanged()
     func lastStateWasReached()
     func sessionFinished()
+    func shouldReveal(shape: Shape)
 }

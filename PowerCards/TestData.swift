@@ -12,7 +12,7 @@ import UIKit
 struct TestData {
     static var endocrineCards: [Powercard] {
         return [
-            PowerFlashCard(name: "Hypothalamus", subTitle: "Eleifend ligula lorem turpis consectetuer, fusce integer eget ultricies inceptos.", image: UIImage(named: "Hypothalamus")),
+            PowerFlashCard(name: "Hypothalamus", subTitle: "Eleifend ligula lorem turpis consectetuer, fusce integer eget ultricies inceptos.", image: UIImage(named: "Hypothalamus"), shapes: [Shape(frame: CGRect(x: 157.5, y: 138.5, width: 200, height: 50), backgroundColor: UIColor.red, borderColor: UIColor.black, borderWidth: 3)]),
             PowerFlashCard(name: "Pineal body", subTitle: "Eleifend ligula lorem turpis consectetuer, fusce integer eget ultricies inceptos.", image: UIImage(named: "Pineal body")),
             PowerFlashCard(name: "Digestive system", subTitle: "Eleifend ligula lorem turpis consectetuer, fusce integer eget ultricies inceptos.", image: UIImage(named: "Digestive system")),
             PowerFlashCard(name: "Kidney", subTitle: nil, image: UIImage(named: "Kidney"))

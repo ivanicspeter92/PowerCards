@@ -26,6 +26,7 @@ class EditPowerFlashcardViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardImageView.enableMovingShapes = true
         loadCardToView()
         toolbarView.delegate = self
     }

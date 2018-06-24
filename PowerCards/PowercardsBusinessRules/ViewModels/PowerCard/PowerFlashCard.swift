@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-public class Shape {
-    private(set) var frame: CGRect
-    private(set) var backgroundColor: UIColor
-    private(set) var borderColor: UIColor
-    private(set) var borderWidth: CGFloat
-    
-    public convenience init(layer: CALayer) {
-        self.init(frame: layer.frame, backgroundColor: UIColor(cgColor: layer.backgroundColor ?? UIColor.clear.cgColor), borderColor: UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor), borderWidth: layer.borderWidth)
-    }
-    
-    public convenience init(view: UIView) {
-        self.init(frame: view.frame, backgroundColor: view.backgroundColor ?? UIColor.clear, borderColor: UIColor(cgColor: view.layer.borderColor ?? UIColor.clear.cgColor), borderWidth: view.layer.borderWidth)
-    }
-    
-    public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0) {
-        self.frame = frame
-        self.backgroundColor = backgroundColor
-        self.borderColor = borderColor
-        self.borderWidth = borderWidth
-    }
-}
-
 public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public let id: String
     public var name: String {
@@ -58,14 +36,15 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public var hasImage: Bool {
         return self.image != nil
     }
-    public private(set) var shapes: [Shape] = []
+    public private(set) var shapes: [Shape]
     
-    public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date()) {
+    public init(name: String, subTitle: String?, image: UIImage?, creationDate: Date = Date(), shapes: [Shape] = []) {
         self.id = UUID.init().uuidString
         self.name = name
         self.subTitle = subTitle
         self.image = image
         self.creationDate = creationDate
+        self.shapes = shapes
     }
     
     public convenience init(name: String, subTitle: String?, backgroundColor: UIColor, size: CGSize = UIScreen.main.bounds.size, creationDate: Date = Date()) {
