@@ -53,16 +53,26 @@ class EditPowerFlashcardViewController: UIViewController {
         subTitleTextField.text = card.subTitle
     }
     
+    // MARK: View to object
+    func loadViewStateToCardFields() {
+        card.image = cardImageView.image
+        card.name = titleTextField.text ?? ""
+        card.subTitle = subTitleTextField.text
+        card.setShapes(to: cardImageView.subviews)
+    }
+    
     // MARK: Event handlers
     @IBAction func backTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
-        self.card.image = cardImageView.image
-        self.card.name = titleTextField.text ?? ""
-        self.card.subTitle = subTitleTextField.text
-        self.card.setShapes(to: self.cardImageView.subviews)
+        loadViewStateToCardFields()
+        
+        if container?.contains(card: card) == false {
+            container?.insert(card: card)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     

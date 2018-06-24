@@ -12,6 +12,7 @@ public protocol PowercardContainer {
     mutating func insert(card: Powercard)
     mutating func removeCard(at index: Int)
     func card(at index: Int) -> Powercard?
+    func contains(card: Powercard) -> Bool
 }
 
 extension Array where Element: Equatable {

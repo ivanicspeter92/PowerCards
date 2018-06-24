@@ -55,4 +55,8 @@ extension Powerdeck: PowercardContainer {
         self.cards.remove(at: index)
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.cardWasRemovedFromDeck.rawValue), object: self, userInfo: nil))
     }
+    
+    public func contains(card: Powercard) -> Bool {
+        return self.cards.contains(where: { $0 === card })
+    }
 }
