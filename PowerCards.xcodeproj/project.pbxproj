@@ -19,6 +19,7 @@
 		73119E4320D96A12005BB5D3 /* XIBLoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73119E4220D96A11005BB5D3 /* XIBLoadingUIView.swift */; };
 		73119E4520D96AA8005BB5D3 /* UIView+LoadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73119E4420D96AA8005BB5D3 /* UIView+LoadFromNib.swift */; };
 		73203A4120BDCA6200F54850 /* PowerDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */; };
+		7320D40220E5147100434E85 /* StudySessionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320D40120E5147100434E85 /* StudySessionSummary.swift */; };
 		733395261F5161F600041472 /* PowerdeckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395251F5161F600041472 /* PowerdeckListTableViewController.swift */; };
 		733395281F51620600041472 /* PowerDeckSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */; };
 		7333952A1F51625500041472 /* PowerdecksSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733395291F51625500041472 /* PowerdecksSplitViewController.swift */; };
@@ -125,6 +126,7 @@
 		73119E4220D96A11005BB5D3 /* XIBLoadingUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBLoadingUIView.swift; sourceTree = "<group>"; };
 		73119E4420D96AA8005BB5D3 /* UIView+LoadFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadFromNib.swift"; sourceTree = "<group>"; };
 		73203A4020BDCA6200F54850 /* PowerDeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckTableViewCell.swift; sourceTree = "<group>"; };
+		7320D40120E5147100434E85 /* StudySessionSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionSummary.swift; sourceTree = "<group>"; };
 		733395251F5161F600041472 /* PowerdeckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdeckListTableViewController.swift; sourceTree = "<group>"; };
 		733395271F51620600041472 /* PowerDeckSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerDeckSelectorDelegate.swift; sourceTree = "<group>"; };
 		733395291F51625500041472 /* PowerdecksSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerdecksSplitViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				7301CB8520D575620030F975 /* StudyMode.swift */,
 				7301CB8720D576A20030F975 /* StudySession.swift */,
 				734C39D020DFA5AD0004C546 /* StudyModeResult.swift */,
+				7320D40120E5147100434E85 /* StudySessionSummary.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */,
 				7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */,
 				7301CB8820D576A20030F975 /* StudySession.swift in Sources */,
+				7320D40220E5147100434E85 /* StudySessionSummary.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				734AA9FB20C94E150049E37E /* Flashcard.swift in Sources */,
 				734AAA0920C94E9D0049E37E /* AppSettings.swift in Sources */,
