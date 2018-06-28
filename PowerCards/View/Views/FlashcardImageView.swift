@@ -15,7 +15,16 @@ class FlashcardImageView: UIImageView {
             subviews.forEach({ $0.removeFromSuperview() })
             
             image = card?.image ?? Defaults.cameraIcon
-            card?.shapes.forEach({ self.addSubview( ShapeView.instantiate(for: $0, disabled: !enableMovingShapes) )})
+            card?.shapes.forEach({
+                let view = ShapeView.instantiate(for: $0, disabled: !enableMovingShapes)
+                
+                self.addSubview(view)
+                
+                self.addConstraints([
+                    NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: $0.xCenterRelative, constant: 0.0),
+                    NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: $0.yCenterRelative, constant: 0.0)
+                    ])
+            })
         }
     }
     var delegate: FlashcardImageViewDelegate?
@@ -27,6 +36,11 @@ class FlashcardImageView: UIImageView {
         if let shapeView = shapeViews.first(where: { $0.frame.contains(location) }) {
             self.delegate?.selected(shape: shapeView.shape)
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }
 

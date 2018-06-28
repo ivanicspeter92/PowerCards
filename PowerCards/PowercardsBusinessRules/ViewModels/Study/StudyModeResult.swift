@@ -12,14 +12,14 @@ enum StudyModeResult {
     case red, yellow, green
     
     static var all: [StudyModeResult] {
-        return [StudyModeResult.red, StudyModeResult.yellow, StudyModeResult.green]
+        return [StudyModeResult.green, StudyModeResult.yellow, StudyModeResult.red]
     }
     
     var title: String {
         switch self {
-        case .red: return "Wrong"
-        case .yellow: return "Okay"
-        case .green: return "Perfect"
+        case .red: return "I'll keep on trying!"
+        case .yellow: return "I'd need to see this one again"
+        case .green: return "Confidently perfect"
         }
     }
     
