@@ -95,7 +95,7 @@ extension StudySessionViewController: StudySessionDelegate {
     }
     
     func shouldShowResultPicker(for shape: Shape) {
-        if let view = findShapeView(for: shape) {
+        if !session.hasResult(for: shape), let view = findShapeView(for: shape) {
             let alert = UIAlertController(title: "Result", message: nil, preferredStyle: .actionSheet)
             alert.popoverPresentationController?.sourceView = view
             alert.popoverPresentationController?.sourceRect = view.bounds
@@ -106,7 +106,9 @@ extension StudySessionViewController: StudySessionDelegate {
                     self.session.setResult(to: result, shape: shape)
                 }))
             })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alert in
+                self.session.setResult(to: nil, shape: shape)
+            }))
             
             present(alert, animated: true)
         }

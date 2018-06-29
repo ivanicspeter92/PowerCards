@@ -21,7 +21,7 @@ struct StudySession {
         }
     }
     var delegate: StudySessionDelegate?
-    private(set) var results: [(result: StudyModeResult, card: Powercard, shape: Shape)] = []
+    private(set) var results: [(result: StudyModeResult?, card: Powercard, shape: Shape)] = []
     
     public init(mode: StudyMode, deck: Powerdeck, delegate: StudySessionDelegate?) {
         self.mode = mode
@@ -62,8 +62,14 @@ struct StudySession {
         }
     }
     
-    public mutating func setResult(to result: StudyModeResult, shape: Shape) {
+    public mutating func setResult(to result: StudyModeResult?, shape: Shape) {
         results.append((result: result, card: currentCard, shape: shape))
+    }
+    
+    public func hasResult(for shape: Shape) -> Bool {
+        return self.results.contains(where: { previousResult in
+            return previousResult.shape == shape
+        })
     }
 }
 
