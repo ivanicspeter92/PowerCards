@@ -64,7 +64,6 @@ struct StudySession {
     
     public mutating func setResult(to result: StudyModeResult, shape: Shape) {
         results.append((result: result, card: currentCard, shape: shape))
-        nextState()
     }
 }
 
