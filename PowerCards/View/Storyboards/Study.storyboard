@@ -79,14 +79,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-fV-06i">
                                                 <rect key="frame" x="0.0" y="0.0" width="247.5" height="65.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ENe-dJ-0DE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="65.5"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ENe-dJ-0DE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="65.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unsure_face" translatesAutoresizingMaskIntoConstraints="NO" id="dfr-V5-SXw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="45"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Null count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZD-zy-8Ma">
-                                                                <rect key="frame" x="0.0" y="45" width="54.5" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="45" width="0.0" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -94,13 +94,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uKp-xU-6yZ">
-                                                        <rect key="frame" x="64.5" y="0.0" width="54.5" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="65.5"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="happy_face" translatesAutoresizingMaskIntoConstraints="NO" id="ERI-4Y-eT0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="45"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy_face" translatesAutoresizingMaskIntoConstraints="NO" id="ERI-4Y-eT0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Green count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-uu-xWg">
-                                                                <rect key="frame" x="0.0" y="45" width="54.5" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-uu-xWg">
+                                                                <rect key="frame" x="0.0" y="45" width="76" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -108,13 +108,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eLF-lg-BIC">
-                                                        <rect key="frame" x="129" y="0.0" width="54" height="65.5"/>
+                                                        <rect key="frame" x="86" y="0.0" width="75.5" height="65.5"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bored_face" translatesAutoresizingMaskIntoConstraints="NO" id="AMJ-tv-qnD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="54" height="45"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bored_face" translatesAutoresizingMaskIntoConstraints="NO" id="AMJ-tv-qnD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="45"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Yellow count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-4K-CaO">
-                                                                <rect key="frame" x="0.0" y="45" width="54" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yellow count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-4K-CaO">
+                                                                <rect key="frame" x="0.0" y="45" width="75.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -122,13 +122,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fTu-qv-J85">
-                                                        <rect key="frame" x="193" y="0.0" width="54.5" height="65.5"/>
+                                                        <rect key="frame" x="171.5" y="0.0" width="76" height="65.5"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="angry_face" translatesAutoresizingMaskIntoConstraints="NO" id="q6I-Nf-eBd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="45"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angry_face" translatesAutoresizingMaskIntoConstraints="NO" id="q6I-Nf-eBd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Red count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmJ-nn-vQR">
-                                                                <rect key="frame" x="0.0" y="45" width="54.5" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmJ-nn-vQR">
+                                                                <rect key="frame" x="0.0" y="45" width="76" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

@@ -113,10 +113,14 @@ extension StudySessionViewController: StudySessionDelegate {
                     self.session.setResult(to: result, shape: shape)
                 }))
             })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { alert in
-                self.session.setResult(to: nil, shape: shape)
-            }))
-            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] alert in
+                    //                self.session.setResult(to: nil, shape: shape)
+                    self?.shouldShowResultPicker(for: shape)
+                })
+                
+                alert.addAction(cancelAction)
+            }
             present(alert, animated: true)
         }
     }
