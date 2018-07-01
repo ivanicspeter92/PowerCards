@@ -27,6 +27,7 @@ class EditPowerFlashcardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cardImageView.enableMovingShapes = true
+        cardImageView.delegate = self
         loadCardToView()
         toolbarView.delegate = self
     }
@@ -81,6 +82,14 @@ class EditPowerFlashcardViewController: UIViewController {
         presentDeletePhotoAlert()
     }
     
+    // MARK: Event handlers
+    @IBAction func cardImageViewWasTapped(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: cardImageView)
+        
+        cardImageView.wasTapped(at: point)
+    }
+    
+    
     // MARK: Toolbar event handlers
     func addNewShapeToView() {
         let view = SPUserResizableView()
@@ -121,6 +130,17 @@ extension EditPowerFlashcardViewController: ToolbarDelegate {
     func didDeselect(item: ToolbarItem) {
         switch item {
         default: return 
+        }
+    }
+}
+
+extension EditPowerFlashcardViewController: FlashcardImageViewDelegate {
+    func selected(shape: Shape) {
+        guard let activeToolbarItem = toolbarView.activeToolbarItem else { return }
+        
+        switch activeToolbarItem {
+        case .delete: card.remove(shape: shape)
+        default: return
         }
     }
 }

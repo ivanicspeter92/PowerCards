@@ -78,4 +78,10 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public func setShapes(to views: [UIView]) {
         self.setShapes(to: views.compactMap({ Shape(view: $0 )}))
     }
+    
+    public func remove(shape: Shape) {
+        self.shapes.remove(object: shape)
+        
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasRemovedFromFlashCard.rawValue), object: self, userInfo: nil))
+    }
 }
