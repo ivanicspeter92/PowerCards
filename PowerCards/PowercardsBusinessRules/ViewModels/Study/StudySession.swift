@@ -6,6 +6,8 @@
 //  Copyright © 2018 Powercards. All rights reserved.
 //
 
+public typealias ResultOnCardShape = (result: StudyModeResult?, card: Powercard, shape: Shape)
+
 struct StudySession {
     let mode: StudyMode
     let deck: Powerdeck
@@ -21,7 +23,7 @@ struct StudySession {
         }
     }
     var delegate: StudySessionDelegate?
-    private(set) var results: [(result: StudyModeResult?, card: Powercard, shape: Shape)] = []
+    private(set) var results: [ResultOnCardShape] = []
     
     public init(mode: StudyMode, deck: Powerdeck, delegate: StudySessionDelegate?) {
         self.mode = mode
@@ -51,7 +53,7 @@ struct StudySession {
     }
     
     public mutating func finishSession() -> StudySessionSummary {
-        return StudySessionSummary()
+        return StudySessionSummary(results: self.results)
     }
     
     public func selected(shape: Shape) {

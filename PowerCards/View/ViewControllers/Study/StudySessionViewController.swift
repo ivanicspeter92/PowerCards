@@ -44,6 +44,13 @@ class StudySessionViewController: UIViewController {
         return cardImageView.subviews.compactMap({ $0 as? ShapeView }).first(where: { $0.shape == shape })
     }
     
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sessionSummaryVC = segue.destination as? SessionSummaryViewController ?? (segue.destination as? UINavigationController)?.topViewController as? SessionSummaryViewController, let summary = sender as? StudySessionSummary {
+            sessionSummaryVC.summary = summary
+        }
+    }
+    
     // MARK: Private
     private func loadSessionToView() {
         navigationItem.title = session.title
@@ -56,8 +63,8 @@ class StudySessionViewController: UIViewController {
     
     private func finishSession() {
         let summary = session.finishSession()
-        print(summary)
-        dismiss(animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "toSessionSummary", sender: summary)
     }
     
     private func presentAreYouSureToExitAlert() {

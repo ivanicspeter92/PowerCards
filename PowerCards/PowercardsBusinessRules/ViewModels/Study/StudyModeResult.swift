@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum StudyModeResult {
+public enum StudyModeResult {
     case red, yellow, green
     
-    static var all: [StudyModeResult] {
+    public static var all: [StudyModeResult] {
         return [StudyModeResult.red, StudyModeResult.yellow, StudyModeResult.green]
     }
     
-    var title: String {
+    public var title: String {
         switch self {
         case .red: return "Wrong"
         case .yellow: return "Okay"
@@ -23,7 +23,7 @@ enum StudyModeResult {
         }
     }
     
-    var image: UIImage? {
+    public var image: UIImage? {
         switch self {
         case .red: return UIImage(named: "angry_face")
         case .yellow: return UIImage(named: "bored_face")

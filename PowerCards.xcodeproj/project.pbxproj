@@ -71,6 +71,7 @@
 		73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */; };
 		73E1F8C11F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */; };
 		73E1F8C61F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */; };
+		73E5234E20E6724E00566149 /* SessionSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5234D20E6724E00566149 /* SessionSummaryViewController.swift */; };
 		73E5A99A20D9595A00095B69 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5A99920D9595A00095B69 /* Defaults.swift */; };
 		73E5A99D20D95C9600095B69 /* ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5A99C20D95C9600095B69 /* ToolbarItem.swift */; };
 		73E5A99F20D95DFB00095B69 /* ToolbarItemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5A99E20D95DFB00095B69 /* ToolbarItemUIView.swift */; };
@@ -196,6 +197,7 @@
 		73BC29171F51902800C3EB2C /* EditPowerFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerFlashcardViewController.swift; sourceTree = "<group>"; };
 		73E1F8C01F51801B00983C73 /* DeckDetailsTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		73E1F8C51F518E3800983C73 /* DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		73E5234D20E6724E00566149 /* SessionSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSummaryViewController.swift; sourceTree = "<group>"; };
 		73E5A99920D9595A00095B69 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		73E5A99C20D95C9600095B69 /* ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItem.swift; sourceTree = "<group>"; };
 		73E5A99E20D95DFB00095B69 /* ToolbarItemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemUIView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				7301CB8A20D577130030F975 /* StudySessionViewController.swift */,
+				73E5234D20E6724E00566149 /* SessionSummaryViewController.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				7301CB8B20D577130030F975 /* StudySessionViewController.swift in Sources */,
 				7307D0D420D8136A008DA957 /* FlashcardImageView.swift in Sources */,
 				7301CB8820D576A20030F975 /* StudySession.swift in Sources */,
+				73E5234E20E6724E00566149 /* SessionSummaryViewController.swift in Sources */,
 				7320D40220E5147100434E85 /* StudySessionSummary.swift in Sources */,
 				73745B171F51DCA00065D968 /* CLImageToolKeys.swift in Sources */,
 				734AA9FB20C94E150049E37E /* Flashcard.swift in Sources */,
