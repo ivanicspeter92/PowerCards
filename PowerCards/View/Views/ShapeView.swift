@@ -32,4 +32,12 @@ class ShapeView: SPUserResizableView {
         
         return view
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        if shape.frame != frame {
+            shape.frame = frame
+        }
+    }
 }

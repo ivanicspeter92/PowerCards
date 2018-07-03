@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+typealias ShapeRemovalTuple = (card: PowerFlashCard, shape: Shape)
+
 public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public let id: String
     public var name: String {
@@ -82,6 +84,6 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
     public func remove(shape: Shape) {
         self.shapes.remove(object: shape)
         
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasRemovedFromFlashCard.rawValue), object: self, userInfo: nil))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasRemovedFromFlashCard.rawValue), object: ShapeRemovalTuple(card: self, shape: shape), userInfo: nil))
     }
 }

@@ -40,9 +40,9 @@ class FlashcardImageView: UIImageView {
     
     // MARK: Notification listeners
     @objc func shapeWasRemovedNotificationReceived(_ notification: Notification) {
-        guard let card = self.card, let notificationCard = notification.object as? PowerFlashCard, notificationCard  === card else { return }
+        guard let card = self.card, let notificationTuple = notification.object as? ShapeRemovalTuple, notificationTuple.card  === card else { return }
         
-        loadCardToView()
+        subviews.compactMap({ $0 as? ShapeView }).first(where: { $0.shape == notificationTuple.shape })?.removeFromSuperview()
     }
     
     // MARK: Private

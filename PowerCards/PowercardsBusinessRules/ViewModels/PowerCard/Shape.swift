@@ -9,7 +9,7 @@
 import UIKit
 
 public class Shape: Equatable {
-    private(set) var frame: CGRect
+    var frame: CGRect
     private(set) var backgroundColor: UIColor
     private(set) var borderColor: UIColor
     private(set) var borderWidth: CGFloat
