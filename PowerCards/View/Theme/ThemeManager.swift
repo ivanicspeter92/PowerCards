@@ -26,12 +26,26 @@ struct ThemeManager {
         UserDefaults.standard.setValue(theme.rawValue, forKey: SelectedThemeKey)
         UserDefaults.standard.synchronize()
         
+//        applyUIViewSettings(for: theme)
         applyToolbarUIViewSettings(for: theme)
+        applyUITabBarViewSettings(for: theme)
+        
+        UIApplication.shared.statusBarStyle = theme.statusBarStyle
     }
     
     // MARK: Private
+    static private func applyUIViewSettings(for theme: Theme) {
+        UITabBar.appearance().backgroundColor = theme.mainColor
+        
+    }
+    
     static private func applyToolbarUIViewSettings(for theme: Theme) {
         ToolbarUIView.appearance().backgroundColor = theme.toolbarBackgroundColor
+    }
+    
+    static private func applyUITabBarViewSettings(for theme: Theme) {
+        UITabBar.appearance().backgroundColor = theme.tabbarBackgroundColor
+        UITabBar.appearance().tintColor = theme.tabbarTintColor
     }
 }
 

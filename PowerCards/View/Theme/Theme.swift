@@ -25,6 +25,12 @@ enum Theme: Int {
         }
     }
     
+    var thirdColor: UIColor {
+        switch self {
+        case .default: return greenColor
+        }
+    }
+    
     var mainBackgroundColor: UIColor {
         switch self {
         case .default:
@@ -102,6 +108,24 @@ enum Theme: Int {
         }
     }
     
+    var tabbarBackgroundColor: UIColor {
+        switch self {
+        case .default: return thirdColor
+        }
+    }
+    
+    var tabbarTintColor: UIColor {
+        switch self {
+        case .default: return UIColor.white
+        }
+    }
+    
+    var statusBarStyle: UIStatusBarStyle {
+        switch self {
+        case .default: return UIStatusBarStyle.lightContent
+        }
+    }
+    
     // MARK: Private
     private var darkBlueColor: UIColor {
         return UIColor(red: 11.0/255.0, green: 50.0/255.0, blue: 103.0/255.0, alpha: 1.0)
@@ -109,5 +133,9 @@ enum Theme: Int {
     
     private var lightBlueColor: UIColor {
         return UIColor(red: 209.0 / 255.0, green: 221.0 / 255.0, blue: 236.0 / 255, alpha: 1.0)
+    }
+    
+    private var greenColor: UIColor {
+        return UIColor(red: 149.0 / 255.0, green: 180.0 / 255.0, blue: 104.0 / 255.0, alpha: 1.0)
     }
 }
