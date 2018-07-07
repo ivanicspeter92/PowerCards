@@ -30,6 +30,10 @@ class StudySessionViewController: UIViewController {
         session.nextState()
     }
     
+    @IBAction func completeButtonTapped(_ sender: UIBarButtonItem) {
+        finishSession()
+    }
+    
     @IBAction func imageWasTapped(_ sender: UITapGestureRecognizer) {
         let point = sender.location(in: cardImageView)
         
@@ -38,6 +42,13 @@ class StudySessionViewController: UIViewController {
     
     func findShapeView(for shape: Shape) -> ShapeView? {
         return cardImageView.subviews.compactMap({ $0 as? ShapeView }).first(where: { $0.shape == shape })
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sessionSummaryVC = segue.destination as? SessionSummaryViewController ?? (segue.destination as? UINavigationController)?.topViewController as? SessionSummaryViewController, let summary = sender as? StudySessionSummary {
+            sessionSummaryVC.summary = summary
+        }
     }
     
     // MARK: Private
@@ -50,11 +61,17 @@ class StudySessionViewController: UIViewController {
         self.cardImageView.card = self.session.currentCard as? PowerFlashCard
     }
     
+    private func finishSession() {
+        let summary = session.finishSession()
+        
+        performSegue(withIdentifier: "toSessionSummary", sender: summary)
+    }
+    
     private func presentAreYouSureToExitAlert() {
         let alert = UIAlertController(title: "Are You Sure?", message: "The current status and results will be lost.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Exit", style: .default, handler: { [weak self] alert in
-            self?.dismiss(animated: true, completion: nil)
+            self?.finishSession()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
@@ -68,7 +85,8 @@ extension StudySessionViewController: StudySessionDelegate {
     }
     
     func lastStateWasReached() {
-        nextButton.isEnabled = false
+        nextButton.title = "Complete"
+        nextButton.action = #selector(completeButtonTapped(_:))
     }
     
     func sessionFinished() {
@@ -84,19 +102,25 @@ extension StudySessionViewController: StudySessionDelegate {
     }
     
     func shouldShowResultPicker(for shape: Shape) {
-        if let view = findShapeView(for: shape) {
+        if !session.hasResult(for: shape), let view = findShapeView(for: shape) {
             let alert = UIAlertController(title: "Result", message: nil, preferredStyle: .actionSheet)
             alert.popoverPresentationController?.sourceView = view
             alert.popoverPresentationController?.sourceRect = view.bounds
             alert.popoverPresentationController?.permittedArrowDirections = [.down, .up]
-            
             
             StudyModeResult.all.forEach({ result in
                 alert.addAction(UIAlertAction(title: result.title, style: .default, image: result.image?.withRenderingMode(.alwaysOriginal), handler: { alert in
                     self.session.setResult(to: result, shape: shape)
                 }))
             })
-            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] alert in
+                    //                self.session.setResult(to: nil, shape: shape)
+                    self?.shouldShowResultPicker(for: shape)
+                })
+                
+                alert.addAction(cancelAction)
+            }
             present(alert, animated: true)
         }
     }

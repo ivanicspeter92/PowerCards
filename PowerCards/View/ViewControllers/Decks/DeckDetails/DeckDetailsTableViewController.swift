@@ -191,9 +191,10 @@ class DeckDetailsTableViewController: UITableViewController {
         let label = UILabel()
         label.text = text
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        label.textColor = ThemeManager.current.tabbarTintColor
         label.sizeToFit()
         
-        let leftItem = UIBarButtonItem(customView: label)
+        let leftItem = PrimaryBarButtonItem(customView: label)
         navigationItem.leftBarButtonItem = leftItem
     }
     

@@ -13,14 +13,14 @@
         <scene sceneID="wK5-bA-7y1">
             <objects>
                 <tableViewController id="5GO-3b-h7P" customClass="DeckDetailsTableViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DqD-1J-dkb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="DqD-1J-dkb" customClass="SecondaryTableView" customModule="PowerCards" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="ECJ-wX-baW">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <connections>
                             <outlet property="dataSource" destination="5GO-3b-h7P" id="SPH-xI-Bb9"/>
@@ -44,7 +44,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="ItA-7O-LuS"/>
+                    <navigationItem key="navigationItem" id="ItA-7O-LuS" customClass="PowercardsNavigationItem" customModule="PowerCards" customModuleProvider="target"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addCardButton" destination="E8W-4w-nAZ" id="Oeq-EX-AYI"/>
@@ -127,6 +127,9 @@
                                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-m5-OjX" customClass="FlashcardImageView" customModule="PowerCards" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="628" height="841"/>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UhG-aV-OET" appends="YES" id="oxE-16-f1R"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -154,7 +157,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Edit flashcard" id="oWs-5J-Ubl">
+                    <navigationItem key="navigationItem" title="Edit flashcard" id="oWs-5J-Ubl" customClass="PowercardsNavigationItem" customModule="PowerCards" customModuleProvider="target">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="hgO-FZ-fqQ">
                             <connections>
                                 <action selector="backTapped:" destination="ISL-0v-NYF" id="74N-Xi-xG5"/>
@@ -177,6 +180,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbx-rE-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UhG-aV-OET">
+                    <connections>
+                        <action selector="cardImageViewWasTapped:" destination="ISL-0v-NYF" id="QKT-Sv-G68"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2780" y="211"/>
         </scene>
@@ -184,8 +192,8 @@
         <scene sceneID="FAx-Vk-hFf">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="sOb-UK-x5p" customClass="PowerdeckListTableViewController" customModule="PowerCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7dR-gX-5J5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7dR-gX-5J5" customClass="PrimaryTableView" customModule="PowerCards" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="DvD-d2-zqf">
@@ -200,19 +208,19 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="JdU-uj-mVX"/>
-                        <barButtonItem systemItem="add" id="4Mv-oS-8EF">
+                        <barButtonItem systemItem="add" id="4Mv-oS-8EF" customClass="PrimaryBarButtonItem" customModule="PowerCards" customModuleProvider="target">
                             <connections>
                                 <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="9wv-nn-3h7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="New PowerDeck" id="Tb3-mu-544">
+                        <barButtonItem title="New PowerDeck" id="Tb3-mu-544" customClass="PrimaryBarButtonItem" customModule="PowerCards" customModuleProvider="target">
                             <connections>
                                 <action selector="addDeckButtonTapped:" destination="sOb-UK-x5p" id="xEz-Jl-9Zt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="g7f-az-WKP"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="PowerDecks" id="EIq-T4-KPA"/>
+                    <navigationItem key="navigationItem" title="PowerDecks" id="EIq-T4-KPA" customClass="PowercardsNavigationItem" customModule="PowerCards" customModuleProvider="target"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="ny5-RB-UhY" kind="show" identifier="toDeckDetails" id="akv-6D-Skg"/>
@@ -257,13 +265,12 @@
             <objects>
                 <navigationController toolbarHidden="NO" id="i7b-xO-6A7" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQ3-qz-OWY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zQ3-qz-OWY" customClass="PowercardsNavigationBar" customModule="PowerCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q86-xJ-St9">
-                        <rect key="frame" x="0.0" y="931" width="320" height="44"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Q86-xJ-St9" customClass="PowercardsToolbar" customModule="PowerCards" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="980" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -278,10 +285,9 @@
         <scene sceneID="1y3-AC-fqK">
             <objects>
                 <tabBarController id="IqE-D4-yvh" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aaM-xJ-uYe">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aaM-xJ-uYe" customClass="PowercardsTabBar" customModule="PowerCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="Vas-EA-Duf" kind="relationship" relationship="viewControllers" id="wsT-Df-IXu"/>
@@ -343,8 +349,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ny5-RB-UhY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nwj-f0-ksA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nwj-f0-ksA" customClass="PowercardsNavigationBar" customModule="PowerCards" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -365,7 +371,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GZF-H1-qC8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GXz-Au-Qcd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GXz-Au-Qcd" customClass="PowercardsNavigationBar" customModule="PowerCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -398,6 +404,6 @@
         <image name="icons8-User-50" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="akv-6D-Skg"/>
+        <segue reference="qdi-Ik-pXg"/>
     </inferredMetricsTieBreakers>
 </document>

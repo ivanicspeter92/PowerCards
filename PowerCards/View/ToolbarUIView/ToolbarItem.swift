@@ -16,6 +16,7 @@ enum ToolbarItem {
     case draw
     case crop
 //    case move
+    case delete
     
     static var all: [ToolbarItem] {
         return [
@@ -25,7 +26,8 @@ enum ToolbarItem {
             .rotate,
 //            .resize,
 //            .move,
-            .crop
+            .crop,
+            .delete
         ]
     }
     
@@ -38,6 +40,7 @@ enum ToolbarItem {
         case .draw: return UIImage(named: "draw")
         case .crop: return UIImage(named: "crop")
 //        case .move: return UIImage(named: "move")
+        case .delete: return UIImage(named: "delete")
         }
     }
     
@@ -50,12 +53,13 @@ enum ToolbarItem {
         case .draw: return "Draw"
         case .crop: return "Crop"
 //        case .move: return "Move"
+        case .delete: return "Delete"
         }
     }
     
     var isEnabled: Bool {
         switch self {
-        case .shape: return true
+        case .shape, .delete: return true
 //        case .resize, .move: return true
         default: return false
         }
@@ -64,6 +68,7 @@ enum ToolbarItem {
     var isSticky: Bool {
         switch self {
 //        case .resize, .move: return true
+        case .delete: return true
         default: return false
         }
     }

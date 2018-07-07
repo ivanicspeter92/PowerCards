@@ -15,4 +15,5 @@ public enum NotificationKeys: String {
     case cardSubtitleChanged = "cardSubtitleChangedNotification"
     case cardImageChanged = "cardImageChangedNotification"
     case shapeWasAddedToFlashCard = "shapeWasAddedToFlashCardNotification"
+    case shapeWasRemovedFromFlashCard = "shapeWasRemovedFromFlashCardNotification"
 }

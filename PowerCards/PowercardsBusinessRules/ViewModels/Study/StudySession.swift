@@ -6,6 +6,8 @@
 //  Copyright © 2018 Powercards. All rights reserved.
 //
 
+public typealias ResultOnCardShape = (result: StudyModeResult?, card: Powercard, shape: Shape)
+
 struct StudySession {
     let mode: StudyMode
     let deck: Powerdeck
@@ -14,13 +16,14 @@ struct StudySession {
             if oldValue != currentState {
                 delegate?.stateHasChanged()
                 
-                if currentState == statesCount {
+                if isInLastState {
                     delegate?.lastStateWasReached()
                 }
             }
         }
     }
     var delegate: StudySessionDelegate?
+    private(set) var results: [ResultOnCardShape] = []
     
     public init(mode: StudyMode, deck: Powerdeck, delegate: StudySessionDelegate?) {
         self.mode = mode
@@ -41,8 +44,16 @@ struct StudySession {
         return self.deck.card(at: currentState - 1)!
     }
     
+    public var isInLastState: Bool {
+        return currentState == statesCount
+    }
+    
     public mutating func nextState() {
         currentState = currentState + 1
+    }
+    
+    public mutating func finishSession() -> StudySessionSummary {
+        return StudySessionSummary(results: self.results)
     }
     
     public func selected(shape: Shape) {
@@ -53,8 +64,14 @@ struct StudySession {
         }
     }
     
-    public func setResult(to result: StudyModeResult, shape: Shape) {
-        
+    public mutating func setResult(to result: StudyModeResult?, shape: Shape) {
+        results.append((result: result, card: currentCard, shape: shape))
+    }
+    
+    public func hasResult(for shape: Shape) -> Bool {
+        return self.results.contains(where: { previousResult in
+            return previousResult.shape == shape
+        })
     }
 }
 
