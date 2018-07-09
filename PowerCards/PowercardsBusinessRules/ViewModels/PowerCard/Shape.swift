@@ -18,13 +18,14 @@ public class Shape: Equatable {
     private(set) var widthRelative: CGFloat = 1.0
     private(set) var heightRelative: CGFloat = 1.0
     
-    public convenience init(layer: CALayer) {
-        self.init(frame: layer.frame, backgroundColor: UIColor(cgColor: layer.backgroundColor ?? UIColor.clear.cgColor), borderColor: UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor), borderWidth: layer.borderWidth)
-    }
-    
     public convenience init(view: UIView) {
-        let xCenterRelative = view.center.x / (view.superview?.center.x ?? view.center.x)
-        let yCenterRelative = view.center.y / (view.superview?.center.y ?? view.center.y)
+//        print("X center coordinate: \(view.center.x), Y center coordinate: \(view.center.y)")
+//        print("Superview center coordinate X: \(view.superview?.center.x), Superview center coordinate Y: \(view.superview?.center.y)")
+        
+        let point = view.superview!.convert(view.center, to: view.superview!)
+        
+        let xCenterRelative = point.x / view.superview!.bounds.midX
+        let yCenterRelative = point.y / view.superview!.bounds.midY
         let widthRelative = view.frame.width / (view.superview?.frame.width ?? view.frame.width)
         let heightRelative = view.frame.height / (view.superview?.frame.height ?? view.frame.height)
         
@@ -40,9 +41,11 @@ public class Shape: Equatable {
         self.yCenterRelative = yCenterRelative
         self.widthRelative = widthRelative
         self.heightRelative = heightRelative
+        
+//        print("X Center: \(xCenterRelative), Y Center: \(yCenterRelative), width relative: \(widthRelative), height relative \(heightRelative)")
     }
 }
 
 public func ==(lhs: Shape, rhs: Shape) -> Bool {
-    return lhs.frame == rhs.frame && lhs.backgroundColor == rhs.backgroundColor && lhs.borderWidth == rhs.borderWidth && lhs.borderColor == rhs.borderColor && lhs.xCenterRelative == rhs.xCenterRelative && lhs.yCenterRelative == rhs.yCenterRelative && lhs.widthRelative == rhs.widthRelative && lhs.heightRelative == rhs.heightRelative
+    return lhs.frame == rhs.frame && lhs.backgroundColor == rhs.backgroundColor && lhs.borderWidth == rhs.borderWidth && lhs.borderColor == rhs.borderColor && lhs.xCenterRelative == rhs.xCenterRelative && lhs.yCenterRelative == rhs.yCenterRelative && lhs.widthRelative == rhs.widthRelative
 }

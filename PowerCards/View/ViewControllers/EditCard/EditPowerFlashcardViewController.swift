@@ -60,7 +60,7 @@ class EditPowerFlashcardViewController: UIViewController {
         card.image = cardImageView.image
         card.name = titleTextField.text ?? ""
         card.subTitle = subTitleTextField.text
-        card.setShapes(to: cardImageView.subviews)
+        card.setShapes(to: cardImageView.subviews.compactMap({ $0 as? ShapeView }))
     }
     
     // MARK: Event handlers
@@ -94,7 +94,9 @@ class EditPowerFlashcardViewController: UIViewController {
     func addNewShapeToView() {
         let view = ShapeView.instantiate(for: Shape(frame: CGRect(x: 0, y: 0, width: 200, height: 50), backgroundColor: UIColor.red, borderColor: UIColor.black, borderWidth: 3))
         
+        view.shapeViewDelegate = cardImageView
         cardImageView.addSubview(view)
+        cardImageView.addLayoutConstraints(for: view)
     }
     
     // MARK: Private

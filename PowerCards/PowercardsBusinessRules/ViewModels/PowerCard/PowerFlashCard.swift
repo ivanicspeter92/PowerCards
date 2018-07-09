@@ -73,12 +73,8 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
         self.shapes = shapes
     }
     
-    public func setShapes(to layers: [CALayer]) {
-        self.setShapes(to: layers.compactMap({ Shape(layer: $0 )}))
-    }
-    
-    public func setShapes(to views: [UIView]) {
-        self.setShapes(to: views.compactMap({ Shape(view: $0 )}))
+    func setShapes(to views: [ShapeView]) {
+        self.setShapes(to: views.map({ $0.shape }))
     }
     
     public func remove(shape: Shape) {

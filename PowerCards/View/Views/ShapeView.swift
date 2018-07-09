@@ -30,20 +30,41 @@ class ShapeView: SPUserResizableView {
         view.disable = disabled
         view.disablePan = disabled
         view.shapeViewDelegate = delegate
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = view
         
         return view
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
+//    func enableDragging() {
+//        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(viewWasDragged(_:))))
+//    }
+//    
+//    @objc func viewWasDragged(_ gesture: UIPanGestureRecognizer) {
+//        print(gesture)
+//        
+//        switch gesture.state {
+//        case .began:
+//            shapeViewDelegate?.touchesStarted(for: self)
+//        case .changed:
+//            let translation = gesture.translation(in: self)
+//            self.center = CGPoint(x: self.center.x + translation.x, y: self.center.y + translation.y)
+//            gesture.setTranslation(CGPoint.zero, in: self)
+//        case .ended, .cancelled:
+//            shape = Shape(view: self)
+//            shapeViewDelegate?.touchesEnded(for: self)
+//        default: return
+//        }
+//    }
+}
+
+extension ShapeView: SPUserResizableViewDelegate {
+    func userResizableViewDidBeginEditing(_ userResizableView: SPUserResizableView!) {
         shapeViewDelegate?.touchesStarted(for: self)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
+    func userResizableViewDidEndEditing(_ userResizableView: SPUserResizableView!) {
         shape = Shape(view: self)
-        
         shapeViewDelegate?.touchesEnded(for: self)
     }
 }
