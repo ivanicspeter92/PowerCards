@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Shape: Equatable {
+public class Shape: Equatable, CustomStringConvertible {
     private(set) var frame: CGRect
     private(set) var backgroundColor: UIColor
     private(set) var borderColor: UIColor
@@ -32,7 +32,11 @@ public class Shape: Equatable {
         self.init(frame: view.frame, backgroundColor: view.backgroundColor ?? UIColor.clear, borderColor: UIColor(cgColor: view.layer.borderColor ?? UIColor.clear.cgColor), borderWidth: view.layer.borderWidth, xCenterRelative: xCenterRelative, yCenterRelative: yCenterRelative, widthRelative: widthRelative, heightRelative: heightRelative)
     }
     
-    public init(frame: CGRect, backgroundColor: UIColor, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0, xCenterRelative: CGFloat = 1.0, yCenterRelative: CGFloat = 1.0, widthRelative: CGFloat = 0.1, heightRelative: CGFloat = 0.1) {
+    public var description: String {
+        return "Shape(frame: CGRect.zero, xCenterRelative: CGFloat(\(xCenterRelative)), yCenterRelative: CGFloat(\(yCenterRelative)), widthRelative: CGFloat(\(widthRelative)), heightRelative: CGFloat(\(xCenterRelative)))"
+    }
+    
+    public init(frame: CGRect, backgroundColor: UIColor = UIColor.red, borderColor: UIColor = UIColor.black, borderWidth: CGFloat = 3, xCenterRelative: CGFloat = 1.0, yCenterRelative: CGFloat = 1.0, widthRelative: CGFloat = 0.3, heightRelative: CGFloat = 0.05) {
         self.frame = frame
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
