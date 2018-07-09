@@ -18,7 +18,7 @@ public enum StudyModeResult {
     public var title: String {
         switch self {
         case .red: return "I'll keep on trying!"
-        case .yellow: return "I'd need to see this one again"
+        case .yellow: return "Not sure"
         case .green: return "Confidently perfect"
         }
     }
