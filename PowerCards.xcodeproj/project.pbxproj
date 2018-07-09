@@ -68,6 +68,7 @@
 		737523C120C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */; };
 		737BB0251F5BE2EB007804E5 /* UISplitViewController+MasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */; };
 		737BB0271F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */; };
+		7388FA4A20F3965D00F138BC /* UIImageView+contentClippingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388FA4920F3965D00F138BC /* UIImageView+contentClippingRect.swift */; };
 		739463B520D003A4007C5550 /* ToolbarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B420D003A4007C5550 /* ToolbarUIView.swift */; };
 		739463B820D0256E007C5550 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B720D0256E007C5550 /* ThemeManager.swift */; };
 		739463BA20D0259F007C5550 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739463B920D0259F007C5550 /* Theme.swift */; };
@@ -198,6 +199,7 @@
 		737523C020C866C90030C56C /* DeckDetailsTableViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckDetailsTableViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		737BB0241F5BE2EA007804E5 /* UISplitViewController+MasterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISplitViewController+MasterDetailViewController.swift"; sourceTree = "<group>"; };
 		737BB0261F5BE986007804E5 /* PowerdeckListTableViewController+UISplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PowerdeckListTableViewController+UISplitViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		7388FA4920F3965D00F138BC /* UIImageView+contentClippingRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+contentClippingRect.swift"; sourceTree = "<group>"; };
 		739463B420D003A4007C5550 /* ToolbarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarUIView.swift; sourceTree = "<group>"; };
 		739463B720D0256E007C5550 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		739463B920D0259F007C5550 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				734AA9C420C94E150049E37E /* UIImage+InitializeWithColor.swift */,
+				7388FA4920F3965D00F138BC /* UIImageView+contentClippingRect.swift */,
 				730BD31120DD33020077B73A /* UIAlertAction+Image.swift */,
 			);
 			path = Extensions;
@@ -915,6 +918,7 @@
 				73BC29181F51902800C3EB2C /* EditPowerFlashcardViewController.swift in Sources */,
 				7337F64320C6C38E00887FC9 /* DeckDetailsTableViewController+TBEmptyDataSetDelegate.swift in Sources */,
 				734AA9D220C94E150049E37E /* PowerdeckListSection.swift in Sources */,
+				7388FA4A20F3965D00F138BC /* UIImageView+contentClippingRect.swift in Sources */,
 				73EA176920DF8E21001A59FF /* Shape.swift in Sources */,
 				734DCB011F50BC3800CBE709 /* PowerDeckDetailsViewController.swift in Sources */,
 				734AA9F920C94E150049E37E /* Powercard.swift in Sources */,
