@@ -60,22 +60,13 @@ class FlashcardImageView: UIImageView {
     }
     
     func addLayoutConstraints(for shapeView: ShapeView) {
-//        print("Adding constraitns")
-//        shapeView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: shapeView.shape.widthRelative).isActive = true
-//        shapeView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: shapeView.shape.heightRelative).isActive = true
-//        shapeView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        shapeView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
         self.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: shapeView.shape.xCenterRelative, constant: 0.0))
         self.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: shapeView.shape.yCenterRelative, constant: 0.0))
         self.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.width, multiplier: shapeView.shape.widthRelative, constant: 0.0))
         self.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.height, multiplier: shapeView.shape.heightRelative, constant: 0.0))
-        
-//        print(constraints.map({ ($0.firstAttribute.rawValue, $0.secondAttribute.rawValue, $0.multiplier) }))
     }
     
     private func removeLayoutConstraints(for shapeView: ShapeView) {
-        print("Removing constraitns")
         let constraints = self.constraints.filter({ ($0.firstItem as? ShapeView) === shapeView || ($0.secondItem as? ShapeView) === shapeView})
         
         self.removeConstraints(constraints)
