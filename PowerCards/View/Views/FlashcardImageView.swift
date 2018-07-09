@@ -41,9 +41,10 @@ class FlashcardImageView: UIImageView {
     
     // MARK: Notification listeners
     @objc func shapeWasRemovedNotificationReceived(_ notification: Notification) {
-        guard let card = self.card, let notificationTuple = notification.object as? ShapeRemovalTuple, notificationTuple.card  === card else { return }
+        guard let card = self.card, let notificationTuple = notification.object as? ShapeRemovalTuple, notificationTuple.card  === card, let shapeView = subviews.compactMap({ $0 as? ShapeView }).first(where: { $0.shape == notificationTuple.shape }) else { return }
         
-        subviews.compactMap({ $0 as? ShapeView }).first(where: { $0.shape == notificationTuple.shape })?.removeFromSuperview()
+        shapeView.disable = true
+        shapeView.removeFromSuperview()
     }
     
     // MARK: Private

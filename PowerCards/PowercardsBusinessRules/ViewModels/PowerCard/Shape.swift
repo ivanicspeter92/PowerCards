@@ -9,7 +9,6 @@
 import UIKit
 
 public class Shape: Equatable, CustomStringConvertible {
-    private(set) var frame: CGRect
     private(set) var backgroundColor: UIColor
     private(set) var borderColor: UIColor
     private(set) var borderWidth: CGFloat
@@ -29,15 +28,14 @@ public class Shape: Equatable, CustomStringConvertible {
         let widthRelative = view.frame.width / (view.superview?.frame.width ?? view.frame.width)
         let heightRelative = view.frame.height / (view.superview?.frame.height ?? view.frame.height)
         
-        self.init(frame: view.frame, backgroundColor: view.backgroundColor ?? UIColor.clear, borderColor: UIColor(cgColor: view.layer.borderColor ?? UIColor.clear.cgColor), borderWidth: view.layer.borderWidth, xCenterRelative: xCenterRelative, yCenterRelative: yCenterRelative, widthRelative: widthRelative, heightRelative: heightRelative)
+        self.init(backgroundColor: view.backgroundColor ?? UIColor.clear, borderColor: UIColor(cgColor: view.layer.borderColor ?? UIColor.clear.cgColor), borderWidth: view.layer.borderWidth, xCenterRelative: xCenterRelative, yCenterRelative: yCenterRelative, widthRelative: widthRelative, heightRelative: heightRelative)
     }
     
     public var description: String {
         return "Shape(frame: CGRect.zero, xCenterRelative: CGFloat(\(xCenterRelative)), yCenterRelative: CGFloat(\(yCenterRelative)), widthRelative: CGFloat(\(widthRelative)), heightRelative: CGFloat(\(xCenterRelative)))"
     }
     
-    public init(frame: CGRect, backgroundColor: UIColor = UIColor.red, borderColor: UIColor = UIColor.black, borderWidth: CGFloat = 3, xCenterRelative: CGFloat = 1.0, yCenterRelative: CGFloat = 1.0, widthRelative: CGFloat = 0.3, heightRelative: CGFloat = 0.05) {
-        self.frame = frame
+    public init(backgroundColor: UIColor = UIColor.red, borderColor: UIColor = UIColor.black, borderWidth: CGFloat = 3, xCenterRelative: CGFloat = 1.0, yCenterRelative: CGFloat = 1.0, widthRelative: CGFloat = 0.3, heightRelative: CGFloat = 0.05) {
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
         self.borderWidth = borderWidth
@@ -51,5 +49,5 @@ public class Shape: Equatable, CustomStringConvertible {
 }
 
 public func ==(lhs: Shape, rhs: Shape) -> Bool {
-    return lhs.frame == rhs.frame && lhs.backgroundColor == rhs.backgroundColor && lhs.borderWidth == rhs.borderWidth && lhs.borderColor == rhs.borderColor && lhs.xCenterRelative == rhs.xCenterRelative && lhs.yCenterRelative == rhs.yCenterRelative && lhs.widthRelative == rhs.widthRelative
+    return lhs.backgroundColor == rhs.backgroundColor && lhs.borderWidth == rhs.borderWidth && lhs.borderColor == rhs.borderColor && lhs.xCenterRelative == rhs.xCenterRelative && lhs.yCenterRelative == rhs.yCenterRelative && lhs.widthRelative == rhs.widthRelative
 }

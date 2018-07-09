@@ -92,7 +92,7 @@ class EditPowerFlashcardViewController: UIViewController {
     
     // MARK: Toolbar event handlers
     func addNewShapeToView() {
-        let view = ShapeView.instantiate(for: Shape(frame: CGRect(x: 0, y: 0, width: 200, height: 50), backgroundColor: UIColor.red, borderColor: UIColor.black, borderWidth: 3))
+        let view = ShapeView.instantiate(for: Shape(backgroundColor: UIColor.red, borderColor: UIColor.black, borderWidth: 3))
         
         view.shapeViewDelegate = cardImageView
         cardImageView.addSubview(view)

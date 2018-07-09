@@ -61,9 +61,8 @@ public class PowerFlashCard: Powercard, Flashcard, IDHolder {
         self.image = UIImage(color: backgroundColor, size: size)
     }
     
-    public func insertRectangleOverImage(backgroundColor: UIColor, x: CGFloat = 0, y: CGFloat = 0, width: CGFloat = 200, height: CGFloat = 50) {
-        let rect = CGRect(x: x, y: y, width: width, height: height)
-        let newShape = Shape(frame: rect, backgroundColor: backgroundColor, borderColor: UIColor.black, borderWidth: 2)
+    public func insertRectangleOverImage(backgroundColor: UIColor, borderWidth: CGFloat = 2.0) {
+        let newShape = Shape(backgroundColor: backgroundColor, borderColor: UIColor.black, borderWidth: borderWidth)
         shapes.append(newShape)
 
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: NotificationKeys.shapeWasAddedToFlashCard.rawValue), object: self, userInfo: nil))
