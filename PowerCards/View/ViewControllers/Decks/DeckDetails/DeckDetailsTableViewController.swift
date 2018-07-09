@@ -203,6 +203,7 @@ class DeckDetailsTableViewController: UITableViewController {
         let cameraViewController = CameraViewController(croppingParameters: croppingParameters, allowsLibraryAccess: true, allowsSwapCameraOrientation: true, allowVolumeButtonCapture: true, completion: { [weak self] image, asset in
             guard let image = image else {
                 // handle errors
+                self?.dismiss(animated: true, completion: nil)
                 return
             }
             
