@@ -13,5 +13,6 @@ class PowercardsTabBar: UITabBar {
         super.awakeFromNib()
         
         barTintColor = ThemeManager.current.tabbarBackgroundColor
+        unselectedItemTintColor = UIColor.black
     }
 }
