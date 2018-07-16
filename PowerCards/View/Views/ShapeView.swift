@@ -33,6 +33,7 @@ class ShapeView: SPUserResizableView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = view
         
+        
         return view
     }
     
@@ -56,6 +57,23 @@ class ShapeView: SPUserResizableView {
 //        default: return
 //        }
 //    }
+    
+    // MARK: Private
+    private func addCirclesOnCorners() {
+        let view = UIView(frame: .zero)
+        
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = self.shape.borderColor
+        
+        view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.shape.borderWidth * 2))
+        view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.shape.borderWidth * 2))
+
+        self.addSubview(view)
+        
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: -1 * self.shape.borderWidth / 2))
+        self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: -1 * self.shape.borderWidth / 2))
+    }
 }
 
 extension ShapeView: SPUserResizableViewDelegate {

@@ -68,7 +68,7 @@ class FlashcardImageView: UIImageView {
     }
     
     private func removeLayoutConstraints(for shapeView: ShapeView) {
-        let constraints = self.constraints.filter({ ($0.firstItem as? ShapeView) === shapeView || ($0.secondItem as? ShapeView) === shapeView})
+        let constraints = self.constraints.filter({ (($0.firstItem as? ShapeView) === shapeView && $0.secondItem === self) || (($0.secondItem as? ShapeView) === shapeView && $0.firstItem === self) })
         
         self.removeConstraints(constraints)
     }

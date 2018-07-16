@@ -58,7 +58,7 @@ class StudySessionViewController: UIViewController {
     }
     
     private func loadCurrentCardToView() {
-        self.cardImageView.card = self.session.currentCard as? PowerFlashCard
+        cardImageView.card = session.currentCard as? PowerFlashCard
     }
     
     private func finishSession() {
@@ -123,6 +123,22 @@ extension StudySessionViewController: StudySessionDelegate {
             }
             present(alert, animated: true)
         }
+    }
+    
+    func resultWasSet(for shape: Shape, to result: StudyModeResult) {
+        guard let shapeView = findShapeView(for: shape) else { return }
+        
+        let imageView = UIImageView(image: result.image)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: shape.borderWidth * 10))
+        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: shape.borderWidth * 10))
+        
+        view.addSubview(imageView)
+        
+        view.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: -1 * shape.borderWidth / 2))
+        view.addConstraint(NSLayoutConstraint(item: shapeView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: imageView, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: -1 * shape.borderWidth / 2))
     }
 }
 
