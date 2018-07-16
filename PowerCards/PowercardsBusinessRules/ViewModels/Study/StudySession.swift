@@ -64,8 +64,9 @@ struct StudySession {
         }
     }
     
-    public mutating func setResult(to result: StudyModeResult?, shape: Shape) {
+    public mutating func setResult(to result: StudyModeResult, shape: Shape) {
         results.append((result: result, card: currentCard, shape: shape))
+        delegate?.resultWasSet(for: shape, to: result)
     }
     
     public func hasResult(for shape: Shape) -> Bool {
@@ -81,4 +82,10 @@ protocol StudySessionDelegate {
     func sessionFinished()
     func shouldReveal(shape: Shape)
     func shouldShowResultPicker(for shape: Shape)
+    func resultWasSet(for shape: Shape, to result: StudyModeResult)
+}
+
+extension StudySessionDelegate {
+    func resultWasSet(for shape: Shape, to result: StudyModeResult) {
+    }
 }
