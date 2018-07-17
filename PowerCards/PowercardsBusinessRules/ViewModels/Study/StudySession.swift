@@ -15,10 +15,7 @@ struct StudySession {
         didSet {
             if oldValue != currentState {
                 delegate?.stateHasChanged()
-                
-                if isInLastState {
-                    delegate?.lastStateWasReached()
-                }
+                notifyDelegetaIfInLastState()
             }
         }
     }
@@ -30,6 +27,8 @@ struct StudySession {
         self.deck = deck
         self.currentState = 1
         self.delegate = delegate
+        
+        notifyDelegetaIfInLastState()
     }
     
     public var statesCount: Int {
@@ -73,6 +72,13 @@ struct StudySession {
         return self.results.contains(where: { previousResult in
             return previousResult.shape == shape
         })
+    }
+    
+    // MARK; Private
+    private func notifyDelegetaIfInLastState() {
+        if isInLastState {
+            delegate?.lastStateWasReached()
+        }
     }
 }
 
