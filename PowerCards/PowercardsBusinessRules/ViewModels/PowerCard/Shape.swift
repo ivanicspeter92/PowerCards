@@ -32,7 +32,7 @@ public class Shape: Equatable, CustomStringConvertible {
     }
     
     public var description: String {
-        return "Shape(frame: CGRect.zero, xCenterRelative: CGFloat(\(xCenterRelative)), yCenterRelative: CGFloat(\(yCenterRelative)), widthRelative: CGFloat(\(widthRelative)), heightRelative: CGFloat(\(xCenterRelative)))"
+        return "Shape(frame: CGRect.zero, xCenterRelative: CGFloat(\(xCenterRelative)), yCenterRelative: CGFloat(\(yCenterRelative)), widthRelative: CGFloat(\(widthRelative)), heightRelative: CGFloat(\(heightRelative)))"
     }
     
     public init(backgroundColor: UIColor = UIColor.red, borderColor: UIColor = UIColor.black, borderWidth: CGFloat = 3, xCenterRelative: CGFloat = 1.0, yCenterRelative: CGFloat = 1.0, widthRelative: CGFloat = 0.3, heightRelative: CGFloat = 0.05) {
