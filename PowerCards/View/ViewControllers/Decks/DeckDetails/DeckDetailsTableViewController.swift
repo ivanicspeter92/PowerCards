@@ -25,10 +25,7 @@ class DeckDetailsTableViewController: UITableViewController {
                 tableView.reloadData()
             }
             loadDeckTitleToView()
-            
-            takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
-            shareButton.isEnabled = powerdeck != nil && powerdeck?.canModifySharingOptions == true
-            addCardButton.isEnabled = powerdeck != nil
+            enableToolbarButtonsIfNeeded()
         }
     }
     
@@ -125,6 +122,7 @@ class DeckDetailsTableViewController: UITableViewController {
         guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
         loadDeckTitleToView()
+        enableToolbarButtonsIfNeeded()
         tableView.reloadData()
     }
     
@@ -132,6 +130,7 @@ class DeckDetailsTableViewController: UITableViewController {
         guard let deck = notification.object as? Powerdeck, deck == self.powerdeck else { return }
         
         loadDeckTitleToView()
+        enableToolbarButtonsIfNeeded()
     }
     
     // MARK: - Navigation
@@ -212,6 +211,12 @@ class DeckDetailsTableViewController: UITableViewController {
         })
         
         present(cameraViewController, animated: true, completion: nil)
+    }
+    
+    private func enableToolbarButtonsIfNeeded() {
+        takeQuizButton.isEnabled = powerdeck != nil && powerdeck?.cards.count != 0
+        shareButton.isEnabled = powerdeck != nil && powerdeck?.canModifySharingOptions == true
+        addCardButton.isEnabled = powerdeck != nil
     }
     
     func addNewCardToDeck(withImage pickedImage: UIImage, name: String = "New flashcard") {
